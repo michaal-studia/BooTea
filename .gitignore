@@ -1,0 +1,16 @@
+# Unity specific
+Library/
+Temp/
+Obj/
+Logs/
+UserSettings/
+MemoryCaptures/
+*.csproj
+*.unityproj
+*.sln
+*.suo
+*.user
+*.userprefs
+*.pidb
+*.booproj
+*.svd
