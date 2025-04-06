@@ -3,12 +3,23 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
-    [SerializeField] private float moveSpeed = 5f;
+    [SerializeField]
+    private float moveSpeed = 5f;
+
     private Rigidbody2D rb;
     private Vector2 moveInput;
     private Animator animator;
     private Vector2 movementDirection;
     private Vector2 lastValidDirection;
+    private bool playingFootsteps = false;
+    public float footstepSpeed = 0.5f;
+
+    AudioManager audioManager;
+
+    private void Awake()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
 
     void Start()
     {
@@ -20,12 +31,22 @@ public class PlayerMovement : MonoBehaviour
     {
         if (PauseController.IsGamePaused)
         {
-            rb.linearVelocity = Vector2.zero; //stop movement
+            rb.linearVelocity = Vector2.zero;
             animator.SetBool("isWalking", false);
+            StopFootsteps();
             return;
         }
         rb.linearVelocity = movementDirection * moveSpeed;
         animator.SetBool("isWalking", rb.linearVelocity.magnitude > 0);
+
+        if (rb.linearVelocity.magnitude > 0 && !playingFootsteps)
+        {
+            StartFootsteps();
+        }
+        else if (rb.linearVelocity.magnitude == 0)
+        {
+            StopFootsteps();
+        }
     }
 
     public void Move(InputAction.CallbackContext context)
@@ -38,18 +59,39 @@ public class PlayerMovement : MonoBehaviour
             movementDirection = Vector2.zero;
             return;
         }
-        
+
         moveInput = context.ReadValue<Vector2>();
         Vector2 newDirection = GetDirection(moveInput);
-        
+
         if (newDirection != Vector2.zero)
         {
             lastValidDirection = newDirection;
         }
-        
+
         movementDirection = newDirection;
+        animator.SetBool("isWalking", movementDirection != Vector2.zero);
         animator.SetFloat("InputX", movementDirection.x);
         animator.SetFloat("InputY", movementDirection.y);
+    }
+
+    void StartFootsteps()
+    {
+        playingFootsteps = true;
+        InvokeRepeating(nameof(PlayFootsteps), 0f, footstepSpeed);
+    }
+
+    void StopFootsteps()
+    {
+        playingFootsteps = false;
+        CancelInvoke(nameof(PlayFootsteps));
+    }
+
+    void PlayFootsteps()
+    {
+        if (audioManager == null || audioManager.footsteps == null) return;
+
+        float randomPitch = Random.Range(0.95f, 1.15f);
+        audioManager.PlayFootstepSFX(randomPitch);
     }
 
     private Vector2 GetDirection(Vector2 input)
