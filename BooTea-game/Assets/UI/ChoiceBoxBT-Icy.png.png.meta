@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ChoiceBoxBT-Icy.png_0: -508294183334234538
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

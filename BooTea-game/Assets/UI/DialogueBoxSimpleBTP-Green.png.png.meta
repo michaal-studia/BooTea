@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      DialogueBoxSimpleBTP-Green.png_0: 8946187965365028203
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
