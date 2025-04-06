@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      DialogueBoxSimpleBTP-Burg.png_0: -3126373615275522376
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

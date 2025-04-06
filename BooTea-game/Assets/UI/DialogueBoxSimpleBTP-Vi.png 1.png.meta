@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      DialogueBoxSimpleBTP-Vi.png 1_0: -2143479270624109033
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

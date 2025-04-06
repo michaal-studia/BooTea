@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ChoiceBoxBT-Green.png_0: 540801558748025836
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

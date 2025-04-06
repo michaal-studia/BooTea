@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ChoiceBoxBT-Burg.png_0: -7912788875458996503
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
