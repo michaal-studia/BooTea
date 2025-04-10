@@ -21,12 +21,9 @@ public class PlayerItemCollector : MonoBehaviour
 
                 if (itemAdded)
                 {
+                    item.PickUp();
                     // Destroy the item in the world
                     Destroy(collision.gameObject);
-                }
-                else
-                {
-                    Debug.Log("Inventory is full! Cannot add item: " + item.name);
                 }
             }
         }
