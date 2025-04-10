@@ -1,0 +1,79 @@
+using System.Collections.Generic;
+using Unity.VisualScripting;
+using UnityEngine;
+
+public class InventoryController : MonoBehaviour
+{
+    private ItemDictionary itemDictionery;
+    public GameObject inventoryPanel;
+    public GameObject slotPrefab;            // Prefab slota
+    public int slotCount;                    // Liczba slot�w w ekwipunku
+    public GameObject[] itemPrefabs;         // Tablica slot�w
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
+    {
+        itemDictionery = FindFirstObjectByType<ItemDictionary>(); //Poprawiono na FindFirstObjectByType zamiast FindObjectOfType
+
+        // for (int i = 0; i < slotCount; i++)
+        // {
+        //    Slot slot = Instantiate(slotPrefab, inventoryPanel.transform).GetComponent<Slot>();
+        //    if (i < itemPrefabs.Length)
+        //     {
+        //         GameObject item = Instantiate(itemPrefabs[i], slot.transform);
+        //         item.GetComponent<RectTransform>().anchoredPosition = Vector2.zero; // Ustawienie pozycji przedmiotu w slocie
+        //         slot.currentItem = item; // Przypisanie przedmiotu do slota
+        //     }
+        // }
+    }
+
+    public List<InventorySaveData> GetInventoryItems()
+    {
+        List<InventorySaveData> invData = new List<InventorySaveData>();
+        foreach (Transform slotTransform in inventoryPanel.transform)
+        {
+            Slot slot = slotTransform.GetComponent<Slot>();
+            if (slot.currentItem != null)
+            {
+                Item item = slot.currentItem.GetComponent<Item>();
+                invData.Add(new InventorySaveData
+                {
+                    itemID = item.ID,
+                    slotIndex = slotTransform.GetSiblingIndex()
+                });
+            }
+        }
+        return invData;
+    }
+
+    public void SetInventoryItems(List<InventorySaveData> inventorySaveData)
+    {
+        //Clear inventory panel - avoid duplication
+        foreach(Transform child in inventoryPanel.transform)
+        {
+            Destroy(child.gameObject);
+        }
+
+        //Create new slots
+        for(int i = 0; i < slotCount; i++)
+        {
+            Instantiate(slotPrefab, inventoryPanel.transform);
+        }
+
+        //Populate slots with saved items
+        foreach(InventorySaveData data in inventorySaveData)
+        {
+            if(data.slotIndex < slotCount)
+            {
+                Slot slot = inventoryPanel.transform.GetChild(data.slotIndex).GetComponent<Slot>();
+                GameObject itemPrefab = itemDictionery.GetItemPrefab(data.itemID);
+                if(itemPrefab != null)
+                {
+                    GameObject item = Instantiate(itemPrefab, slot.transform);
+                    item.GetComponent<RectTransform>().anchoredPosition = Vector2.zero; // Ustawienie pozycji przedmiotu w slocie
+                    slot.currentItem = item; // Przypisanie przedmiotu do slota
+                }
+            }
+        }
+    }
+    
+}
