@@ -8,6 +8,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8001215306773883909, guid: dd06bca9e6a16fe40b3540f14c085723, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 7b0006c92a003ac469fd474277d390e4, type: 3}
+    - target: {fileID: 8001215306773883909, guid: dd06bca9e6a16fe40b3540f14c085723, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8147131105462844588, guid: dd06bca9e6a16fe40b3540f14c085723, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -91,7 +99,7 @@ PrefabInstance:
     - target: {fileID: 8803692929835455334, guid: dd06bca9e6a16fe40b3540f14c085723, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 8025649199667744028, guid: 7b0006c92a003ac469fd474277d390e4, type: 3}
+      objectReference: {fileID: 21300000, guid: 7b0006c92a003ac469fd474277d390e4, type: 3}
     - target: {fileID: 8979867163389329660, guid: dd06bca9e6a16fe40b3540f14c085723, type: 3}
       propertyPath: m_Name
       value: LemonItem Variant

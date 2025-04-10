@@ -7,8 +7,8 @@ public class InventoryController : MonoBehaviour
     private ItemDictionary itemDictionery;
     public GameObject inventoryPanel;
     public GameObject slotPrefab;            // Prefab slota
-    public int slotCount;                    // Liczba slot�w w ekwipunku
-    public GameObject[] itemPrefabs;         // Tablica slot�w
+    public int slotCount;                    // Liczba slot w w ekwipunku
+    public GameObject[] itemPrefabs;         // Tablica slot w
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -24,6 +24,24 @@ public class InventoryController : MonoBehaviour
         //         slot.currentItem = item; // Przypisanie przedmiotu do slota
         //     }
         // }
+    }
+
+    public bool AddItem(GameObject itemPrefab)
+    {
+        //Look for empty slot
+        foreach (Transform slotTransform in inventoryPanel.transform)
+        {
+            Slot slot = slotTransform.GetComponent<Slot>();
+            if (slot != null && slot.currentItem == null)
+            {
+                GameObject newItem = Instantiate(itemPrefab, slotTransform);
+                newItem.GetComponent<RectTransform>().anchoredPosition = Vector2.zero; // Ustawienie pozycji przedmiotu w slocie
+                slot.currentItem = newItem; // Przypisanie przedmiotu do slota
+                return true; // Item added successfully
+            }
+        }
+        Debug.Log("Inventory is full!");
+        return false; // No empty slot found
     }
 
     public List<InventorySaveData> GetInventoryItems()
