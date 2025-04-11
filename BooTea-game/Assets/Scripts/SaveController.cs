@@ -1,11 +1,13 @@
 using System.IO;
 using UnityEngine;
 using Unity.Cinemachine;
+using System.Collections.Generic;
 
 public class SaveController : MonoBehaviour
 {
     private string saveLocation;
     private InventoryController inventoryController; // INVENTORY
+    private HotbarController hotbarController;
     private GameObject player;
     private CinemachineConfiner2D cinemachineConfiner; // Uzycie CinemachineConfiner2D
 
@@ -16,8 +18,9 @@ public class SaveController : MonoBehaviour
         cinemachineConfiner = Object.FindFirstObjectByType<CinemachineConfiner2D>(); // Znajdz CinemachineConfiner2D
 
         // INVENTORY
-        inventoryController = Object.FindFirstObjectByType<InventoryController>(); // Zamieniono z FindObjectOfType na FindFirstObjectByType
+        inventoryController = FindFirstObjectByType<InventoryController>(); // Zamieniono z FindObjectOfType na FindFirstObjectByType
         //
+        hotbarController = FindFirstObjectByType<HotbarController>();
 
         LoadGame();
     }
@@ -30,8 +33,9 @@ public class SaveController : MonoBehaviour
             mapBoundary = cinemachineConfiner.BoundingShape2D?.gameObject.name, // Poprawiono na BoundingShape2D
 
             // INVENTORY
-            inventorySaveData = inventoryController.GetInventoryItems()
+            inventorySaveData = inventoryController.GetInventoryItems(),
             //
+            hotbarSaveData = hotbarController.GetHotbarItems()
         };
 
         string json = JsonUtility.ToJson(saveData, true);
@@ -53,6 +57,7 @@ public class SaveController : MonoBehaviour
             // INVENTORY
             inventoryController.SetInventoryItems(saveData.inventorySaveData); // Ustawienie przedmiotow w ekwipunku
             //
+            hotbarController.SetHotbarItems(saveData.hotbarSaveData);
 
             Debug.Log("Game loaded successfully.");
         }
@@ -60,6 +65,10 @@ public class SaveController : MonoBehaviour
         {
             Debug.LogWarning("Save file not found. Creating a new save.");
             SaveGame(); // Save game if no save file exists
+
+            // INVENTORY
+            inventoryController.SetInventoryItems(new List<InventorySaveData>());
+            //
         }
     }
 }
