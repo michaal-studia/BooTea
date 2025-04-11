@@ -1,19 +1,10 @@
 fileFormatVersion: 2
-guid: 532a45b18c7beb34bbf3bcd9ee34f223
+guid: b379553f29703654e81b5c3a48b6a604
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1699618382321965116
-    second: Walk Left v2.0_0
-  - first:
-      213: -3676963021027151875
-    second: Walk Left v2.0_1
-  - first:
-      213: -8034087728635640759
-    second: Walk Left v2.0_2
-  - first:
-      213: -2246238909266023828
-    second: Walk Left v2.0_3
+      213: -7071386513176565603
+    second: Earl Grey_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -55,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -109,89 +100,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Walk Left v2.0_0
+      name: Earl Grey_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 40
-        width: 32
-        height: 40
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c38560ce9e1469710800000000000000
-      internalID: 1699618382321965116
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Walk Left v2.0_2
-      rect:
-        serializedVersion: 2
-        x: 0
+        x: 9
         y: 0
-        width: 32
-        height: 40
+        width: 18
+        height: 31
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: dffed6f1d9dc8fcc0800000000000000
-      internalID: -3676963021027151875
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Walk Left v2.0_1
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 40
-        width: 32
-        height: 40
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9440958f6cf218090800000000000000
-      internalID: -8034087728635640759
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Walk Left v2.0_3
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 0
-        width: 32
-        height: 40
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c6aa984fc91c3d0e0800000000000000
-      internalID: -2246238909266023828
+      spriteID: d986f9c9e636ddd90800000000000000
+      internalID: -7071386513176565603
       vertices: []
       indices: 
       edges: []
@@ -200,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: ff7f09dfb6eea1440a13c56c5eee3c51
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -210,10 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Walk Left v2.0_0: 1699618382321965116
-      Walk Left v2.0_1: -8034087728635640759
-      Walk Left v2.0_2: -3676963021027151875
-      Walk Left v2.0_3: -2246238909266023828
+      Earl Grey_0: -7071386513176565603
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
