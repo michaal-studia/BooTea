@@ -1,7 +1,5 @@
 using System.Collections;
-using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class NPC : MonoBehaviour, IInteractable
 {
@@ -23,7 +21,7 @@ public class NPC : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-        if(dialogueData == null || (PauseController.IsGamePaused && !isDialogueActive))
+        if (dialogueData == null || (PauseController.IsGamePaused && !isDialogueActive))
             return;
 
         if (isDialogueActive)
@@ -60,7 +58,7 @@ public class NPC : MonoBehaviour, IInteractable
         //Clear choices
         dialogueUI.ClearChoices();
         //Check endDialogueLines
-        if(dialogueData.endDialogueLines.Length > dialogueIndex && dialogueData.endDialogueLines[dialogueIndex])
+        if (dialogueData.endDialogueLines.Length > dialogueIndex && dialogueData.endDialogueLines[dialogueIndex])
         {
             EndDialogue();
             return;
@@ -68,7 +66,7 @@ public class NPC : MonoBehaviour, IInteractable
         //Check if choices & display
         foreach (DialogueChoice dialogueChoice in dialogueData.choices)
         {
-            if(dialogueChoice.dialogueIndex == dialogueIndex)
+            if (dialogueChoice.dialogueIndex == dialogueIndex)
             {
                 DisplayChoices(dialogueChoice);
                 return;
@@ -109,10 +107,10 @@ public class NPC : MonoBehaviour, IInteractable
 
     void DisplayChoices(DialogueChoice choice)
     {
-        for(int i=0;i<choice.choices.Length; i++)
+        for (int i = 0; i < choice.choices.Length; i++)
         {
             int nextIndex = choice.nextDialogueIndexes[i];
-            dialogueUI.CreateChoiceButton(choice.choices[i],() => ChooseOption(nextIndex));
+            dialogueUI.CreateChoiceButton(choice.choices[i], () => ChooseOption(nextIndex));
         }
     }
 
