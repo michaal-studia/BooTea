@@ -1,25 +1,19 @@
 fileFormatVersion: 2
-guid: 07f5efc74d09fc74499005fec403649d
+guid: 3f3e4d987d50ae649b59d4e95e52bcc2
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2288720309512347673
-    second: Idle Left v2.0_0
+      213: -4297872677749862557
+    second: Pick Up Up v2.0_0
   - first:
-      213: -3512185520341200169
-    second: Idle Left v2.0_1
+      213: -4387373727140177981
+    second: Pick Up Up v2.0_1
   - first:
-      213: -4920964235031180093
-    second: Idle Left v2.0_2
+      213: -5679040980795243646
+    second: Pick Up Up v2.0_2
   - first:
-      213: -3375615711470341305
-    second: Idle Left v2.0_3
-  - first:
-      213: 6687191425419797369
-    second: Idle Left v2.0_4
-  - first:
-      213: 2011550709690071687
-    second: Idle Left v2.0_5
+      213: 1785384722675125141
+    second: Pick Up Up v2.0_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -115,73 +109,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Idle Left v2.0_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 80
-        width: 32
-        height: 40
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7ef5b413105dc30e0800000000000000
-      internalID: -2288720309512347673
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Idle Left v2.0_1
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 80
-        width: 32
-        height: 40
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7d2dacaa0e5324fc0800000000000000
-      internalID: -3512185520341200169
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Idle Left v2.0_2
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 80
-        width: 32
-        height: 40
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3cc8092c91935bbb0800000000000000
-      internalID: -4920964235031180093
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Idle Left v2.0_3
+      name: Pick Up Up v2.0_0
       rect:
         serializedVersion: 2
         x: 0
@@ -196,14 +124,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 743359b25676721d0800000000000000
-      internalID: -3375615711470341305
+      spriteID: 36fccd81293ea54c0800000000000000
+      internalID: -4297872677749862557
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle Left v2.0_4
+      name: Pick Up Up v2.0_1
       rect:
         serializedVersion: 2
         x: 32
@@ -218,36 +146,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9736f21db2dadcc50800000000000000
-      internalID: 6687191425419797369
+      spriteID: 3c79de827daec13c0800000000000000
+      internalID: -4387373727140177981
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Idle Left v2.0_5
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 40
-        width: 32
-        height: 40
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 78af2ca76b67aeb10800000000000000
-      internalID: 2011550709690071687
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Idle Left v2.0_6
+      name: Pick Up Up v2.0_2
       rect:
         serializedVersion: 2
         x: 0
@@ -255,15 +161,37 @@ TextureImporter:
         width: 32
         height: 40
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: e1c80b6e21ef7a94ba8d11e2e1fdb863
-      internalID: 855423741
+      spriteID: 28340da115eff21b0800000000000000
+      internalID: -5679040980795243646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pick Up Up v2.0_3
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 59bc57622f5f6c810800000000000000
+      internalID: 1785384722675125141
       vertices: []
       indices: 
       edges: []
@@ -272,7 +200,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 31ea0626b4108164e9ee665f43420eff
+    spriteID: d9b52529eeb02224ab764e8bbb543cef
     internalID: 0
     vertices: []
     indices: 
@@ -282,13 +210,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Idle Left v2.0_0: -2288720309512347673
-      Idle Left v2.0_1: -3512185520341200169
-      Idle Left v2.0_2: -4920964235031180093
-      Idle Left v2.0_3: -3375615711470341305
-      Idle Left v2.0_4: 6687191425419797369
-      Idle Left v2.0_5: 2011550709690071687
-      Idle Left v2.0_6: 855423741
+      Pick Up Up v2.0_0: -4297872677749862557
+      Pick Up Up v2.0_1: -4387373727140177981
+      Pick Up Up v2.0_2: -5679040980795243646
+      Pick Up Up v2.0_3: 1785384722675125141
+      Pick Up Up v2.0_4: -1092119849
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
