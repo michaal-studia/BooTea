@@ -6,6 +6,12 @@ public class Item : MonoBehaviour
     public int ID; 
     public string Name;
 
+    public virtual void UseItem()
+    {
+        // Implement item usage logic here
+        Debug.Log($"Using item: {Name}");
+    }
+
     public virtual void PickUp()
     {
         //Sprite itemIcon = GetComponent<SpriteRenderer>().sprite;

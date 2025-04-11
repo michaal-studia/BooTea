@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class InventoryController : MonoBehaviour
 {
-    private ItemDictionary itemDictionery;
+    private ItemDictionary itemDictionary;
     public GameObject inventoryPanel;
     public GameObject slotPrefab;            // Prefab slota
     public int slotCount;                    // Liczba slot w w ekwipunku
@@ -12,7 +12,7 @@ public class InventoryController : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        itemDictionery = FindFirstObjectByType<ItemDictionary>(); //Poprawiono na FindFirstObjectByType zamiast FindObjectOfType
+        itemDictionary = FindFirstObjectByType<ItemDictionary>(); //Poprawiono na FindFirstObjectByType zamiast FindObjectOfType
 
         // for (int i = 0; i < slotCount; i++)
         // {
