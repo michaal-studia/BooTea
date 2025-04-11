@@ -33,13 +33,15 @@ public class SaveController : MonoBehaviour
             mapBoundary = cinemachineConfiner.BoundingShape2D?.gameObject.name, // Poprawiono na BoundingShape2D
 
             // INVENTORY
-            inventorySaveData = inventoryController.GetInventoryItems(),
+            //inventorySaveData = inventoryController.GetInventoryItems(),
+            inventorySaveData = inventoryController.GetInventoryItems() ?? new List<InventorySaveData>(),
             //
             hotbarSaveData = hotbarController.GetHotbarItems()
         };
 
-        string json = JsonUtility.ToJson(saveData, true);
-        File.WriteAllText(saveLocation, json);
+        //string json = JsonUtility.ToJson(saveData, true);
+        //File.WriteAllText(saveLocation, json);
+        File.WriteAllText(saveLocation, JsonUtility.ToJson(saveData));
         Debug.Log("Game saved successfully.");
     }
 
@@ -47,8 +49,9 @@ public class SaveController : MonoBehaviour
     {
         if(File.Exists(saveLocation))
         {
-            string json = File.ReadAllText(saveLocation);
-            SaveData saveData = JsonUtility.FromJson<SaveData>(json);
+            //string json = File.ReadAllText(saveLocation);
+            //SaveData saveData = JsonUtility.FromJson<SaveData>(json);
+            SaveData saveData = JsonUtility.FromJson<SaveData>(File.ReadAllText(saveLocation));
 
             player.transform.position = saveData.playerPosition;
             GameObject boundaryObject = GameObject.Find(saveData.mapBoundary);
@@ -69,6 +72,7 @@ public class SaveController : MonoBehaviour
             // INVENTORY
             inventoryController.SetInventoryItems(new List<InventorySaveData>());
             //
+            hotbarController.SetHotbarItems(new List<InventorySaveData>());
         }
     }
 }
