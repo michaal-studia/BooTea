@@ -12447,6 +12447,9 @@ GameObject:
   - component: {fileID: 966725092}
   - component: {fileID: 966725091}
   - component: {fileID: 966725095}
+  - component: {fileID: 966725098}
+  - component: {fileID: 966725097}
+  - component: {fileID: 966725096}
   m_Layer: 0
   m_Name: Cat
   m_TagString: Untagged
@@ -12557,7 +12560,7 @@ SpriteRenderer:
   m_SortingLayerID: -471812773
   m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: 3199564880826799559, guid: d473f56bc0947da4883513f854682a17, type: 3}
+  m_Sprite: {fileID: 912797380, guid: d473f56bc0947da4883513f854682a17, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -12597,8 +12600,60 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waypointParent: {fileID: 1714713173}
   moveSpeed: 1
-  waitTime: 0.1
+  waitTime: 0
   loopWaypoints: 1
+--- !u!114 &966725096
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 966725090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed8b1ae4e4e52b34ea557c1c11e076fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_CategoryHash: 0.009161512
+  m_labelHash: 4.8434204e-20
+  m_SpriteKey: 0
+  m_SpriteHash: 0
+--- !u!114 &966725097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 966725090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c29cff538c195c249b69c6f2236de67b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Library: []
+  m_SpriteLibraryAsset: {fileID: 7108339969198208228, guid: d724ca930ca1eba4a9bb493b9aacf3af, type: 3}
+--- !u!95 &966725098
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 966725090}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: abe868b7d8b275f4c8fdb4ff650a89c4, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &989736477
 GameObject:
   m_ObjectHideFlags: 0
@@ -12917,6 +12972,8 @@ GameObject:
   - component: {fileID: 1206648057}
   - component: {fileID: 1206648062}
   - component: {fileID: 1206648063}
+  - component: {fileID: 1206648065}
+  - component: {fileID: 1206648064}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -13111,7 +13168,7 @@ SpriteRenderer:
   m_SortingLayerID: -471812773
   m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: -3486430335295725490, guid: 02ca8719072115746864258aaa7de78a, type: 3}
+  m_Sprite: {fileID: -2246238909266023828, guid: 532a45b18c7beb34bbf3bcd9ee34f223, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -13198,7 +13255,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2, y: 2.5}
+    oldSize: {x: 1.9375, y: 2.4375}
     newSize: {x: 0.15, y: 0.16}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -13206,6 +13263,36 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.94640106, y: 0.6458235}
   m_EdgeRadius: 0
+--- !u!114 &1206648064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1206648056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed8b1ae4e4e52b34ea557c1c11e076fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_CategoryHash: 1.8625731e-11
+  m_labelHash: 0.0000031036107
+  m_SpriteKey: 0
+  m_SpriteHash: 446834009
+--- !u!114 &1206648065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1206648056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c29cff538c195c249b69c6f2236de67b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Library: []
+  m_SpriteLibraryAsset: {fileID: 7108339969198208228, guid: d69f09f3751cac944af420d591a76331, type: 3}
 --- !u!1 &1217716665
 GameObject:
   m_ObjectHideFlags: 0
