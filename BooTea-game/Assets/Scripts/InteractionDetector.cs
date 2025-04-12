@@ -5,7 +5,7 @@ public class InteractionDetector : MonoBehaviour
 {
     private IInteractable interactableInRange = null; //Closest interactable
     public GameObject interactionIcon;
-    
+
     void Start()
     {
         interactionIcon.SetActive(false);

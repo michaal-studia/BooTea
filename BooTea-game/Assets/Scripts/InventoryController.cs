@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using Unity.VisualScripting;
+//using Unity.VisualScripting;
 using UnityEngine;
 
 public class InventoryController : MonoBehaviour
@@ -66,25 +66,25 @@ public class InventoryController : MonoBehaviour
     public void SetInventoryItems(List<InventorySaveData> inventorySaveData)
     {
         //Clear inventory panel - avoid duplication
-        foreach(Transform child in inventoryPanel.transform)
+        foreach (Transform child in inventoryPanel.transform)
         {
             Destroy(child.gameObject);
         }
 
         //Create new slots
-        for(int i = 0; i < slotCount; i++)
+        for (int i = 0; i < slotCount; i++)
         {
             Instantiate(slotPrefab, inventoryPanel.transform);
         }
 
         //Populate slots with saved items
-        foreach(InventorySaveData data in inventorySaveData)
+        foreach (InventorySaveData data in inventorySaveData)
         {
-            if(data.slotIndex < slotCount)
+            if (data.slotIndex < slotCount)
             {
                 Slot slot = inventoryPanel.transform.GetChild(data.slotIndex).GetComponent<Slot>();
                 GameObject itemPrefab = itemDictionary.GetItemPrefab(data.itemID);
-                if(itemPrefab != null)
+                if (itemPrefab != null)
                 {
                     GameObject item = Instantiate(itemPrefab, slot.transform);
                     item.GetComponent<RectTransform>().anchoredPosition = Vector2.zero; // Ustawienie pozycji przedmiotu w slocie
@@ -93,5 +93,5 @@ public class InventoryController : MonoBehaviour
             }
         }
     }
-    
+
 }
