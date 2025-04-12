@@ -116,6 +116,7 @@ public class AudioManager : MonoBehaviour
     public void PlayBackgroundMusic(AudioClip clip)
     {
         musicSource.clip = clip;
+        //Debug.Log(clip);
         musicSource.Play();
     }
 

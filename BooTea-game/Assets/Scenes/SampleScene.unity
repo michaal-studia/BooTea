@@ -8068,6 +8068,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueData: {fileID: 11400000, guid: a9071e6739e1e944e861d4616b169635, type: 2}
+  NPCId: 1
 --- !u!61 &469332449
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8196,11 +8197,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fd478bba9b0f7d4b8550ab69c76f59d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backgroundMusicChoices:
-  - {fileID: 8300000, guid: 78f61d633eb97d34382eb019c6c8476c, type: 3}
-  - {fileID: 8300000, guid: 683fe0e4f47ca6f408e565ca9db7900e, type: 3}
-  - {fileID: 8300000, guid: 802dd736d1a59a849b72d44dd6146a42, type: 3}
-  - {fileID: 8300000, guid: d90f2fa253f33fa41915a1300ba6181d, type: 3}
 --- !u!1 &473795973
 GameObject:
   m_ObjectHideFlags: 0
@@ -13744,6 +13740,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueData: {fileID: 11400000, guid: 0095922b73d9c3f469d50007a125e86d, type: 2}
+  NPCId: 0
 --- !u!61 &966725092
 BoxCollider2D:
   m_ObjectHideFlags: 0

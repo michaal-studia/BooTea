@@ -4,22 +4,23 @@ public class PianoNPC : MonoBehaviour
 {
     private AudioManager audioManager;
 
-    [Header("Background Music for Choices")]
-    public AudioClip[] backgroundMusicChoices;
-    private int currentChoiceIndex = -1;
-
     private void Start()
     {
         audioManager = AudioManager.Instance;
     }
 
-    public void OnChoiceMade(int choiceIndex)
+    public void PlayBackgroundMusicForChoice(int choiceIndex)
     {
-        if (choiceIndex >= 0 && choiceIndex < backgroundMusicChoices.Length)
+        AudioClip[] PianoNPCMusicChoices = { audioManager.backgroundMusic1, audioManager.backgroundMusic2, audioManager.backgroundMusic3, audioManager.backgroundMusic4 };
+
+        if (choiceIndex >= 0 && choiceIndex < PianoNPCMusicChoices.Length)
         {
-            currentChoiceIndex = choiceIndex;
-            audioManager.StopMusic();
-            audioManager.PlayBackgroundMusic(backgroundMusicChoices[currentChoiceIndex]);
+            AudioClip selectedClip = PianoNPCMusicChoices[choiceIndex];
+            audioManager.PlayBackgroundMusic(selectedClip);
+        }
+        else
+        {
+            Debug.LogWarning("Nieprawid³owy wybór muzyki!");
         }
     }
 }
