@@ -92,7 +92,11 @@ public class NPC : MonoBehaviour, IInteractable
         foreach (char letter in dialogueData.dialogueLines[dialogueIndex])
         {
             dialogueUI.SetDialogueText(dialogueUI.dialogueText.text += letter);
-            //SoundEffectManager.PlayVoice(dialogueData.voiceSound, dialogueData.voicePitch); do dzwieku mowienia xd
+            if (dialogueData.voiceSound != null)
+            {
+                float variedPitch = dialogueData.voicePitch * Random.Range(0.95f, 1.15f);
+                AudioManager.Instance.PlayVoice(dialogueData.voiceSound, variedPitch);
+            }
             yield return new WaitForSeconds(dialogueData.typingSpeed);
         }
 
@@ -119,6 +123,16 @@ public class NPC : MonoBehaviour, IInteractable
         dialogueIndex = nextIndex;
         dialogueUI.ClearChoices();
         DisplayCurrentLine();
+
+        // SprawdŸ, czy to NPC 2, który ma specyficzn¹ muzykê
+        if (this.gameObject.CompareTag("PianoNPC"))
+        {
+            PianoNPC npc2MusicManager = GetComponent<PianoNPC>();
+            if (npc2MusicManager != null)
+            {
+                npc2MusicManager.OnChoiceMade(dialogueIndex); // Wywo³aj metodê zmiany muzyki
+            }
+        }
     }
 
     void DisplayCurrentLine()

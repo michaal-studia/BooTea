@@ -22,8 +22,8 @@ MonoBehaviour:
   autoProgressLines: 01010000
   endDialogueLines: 00000101
   autoProgressDelay: 1.5
-  typingSpeed: 0.05
-  voiceSound: {fileID: 0}
+  typingSpeed: 0.08
+  voiceSound: {fileID: 8300000, guid: 078266dcf6675bf44836b53e9dab5e47, type: 3}
   voicePitch: 1
   choices:
   - dialogueIndex: 1
