@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88fd001d98ae4af468776251240e35a7, type: 3}
+  m_Name: PianoDialogue
+  m_EditorClassIdentifier: 
+  npcName: Regular Piano
+  npcPortrait: {fileID: -32630665278540272, guid: 57cceae7ab7d9fc44812a9755c2f9cb1, type: 3}
+  dialogueLines:
+  - Hello! I'm just a regular piano. I can help you with setting up any atmosphere
+    that you'd like to have at your tea place.
+  - Let me know what music to play.
+  - Oh, nice pick! I really like this one! Though the devs should think about replacing
+    it with something else due to copyrights, ha ha...
+  - If you want to change music, just hit me up anytime!
+  - Bye!
+  - Perfect piece for unwinding
+  - If you want to change music, just hit me up anytime!
+  - Bye!
+  - Lofi beat coming right at you!
+  - If you want to change music, just hit me up anytime!
+  - Bye!
+  - Serving awesome tunes for you!
+  - If you want to change music, just hit me up anytime!
+  - Bye!
+  autoProgressLines: 0000000000000000000000000000
+  endDialogueLines: 0000000001000001000001000001
+  autoProgressDelay: 1.5
+  typingSpeed: 0.05
+  voiceSound: {fileID: 8300000, guid: fd36a8a74deeb4f4da0c4fc3e81c882e, type: 3}
+  voicePitch: 1
+  choices:
+  - dialogueIndex: 1
+    choices:
+    - BackgroundMusic1
+    - BackgroundMusic2
+    - BackgroundMusic3
+    - BackgroundMusic4
+    nextDialogueIndexes: 0200000005000000080000000b000000

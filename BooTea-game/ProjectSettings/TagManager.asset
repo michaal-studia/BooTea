@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 3
   tags:
   - Audio
+  - Item
+  - PianoNPC
   layers:
   - Default
   - TransparentFX

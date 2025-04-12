@@ -87,6 +87,11 @@ MonoBehaviour:
       m_Sprite: {fileID: 2011550709690071687, guid: 07f5efc74d09fc74499005fec403649d, type: 3}
       m_FromMain: 0
       m_SpriteOverride: {fileID: 2011550709690071687, guid: 07f5efc74d09fc74499005fec403649d, type: 3}
+    - m_Name: Idle Left v2.0_6
+      m_Hash: 167692577
+      m_Sprite: {fileID: 855423741, guid: 07f5efc74d09fc74499005fec403649d, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 855423741, guid: 07f5efc74d09fc74499005fec403649d, type: 3}
     - m_Name: Idle Right v2.0_0
       m_Hash: 364652767
       m_Sprite: {fileID: -1068464018035081157, guid: f69ec21fb63e9e543b7fe64da0d8c4fa, type: 3}
@@ -118,7 +123,7 @@ MonoBehaviour:
       m_FromMain: 0
       m_SpriteOverride: {fileID: -5790014914033373111, guid: 1f25486a2d359f54493dea55c6409335, type: 3}
     m_FromMain: 0
-    m_EntryOverrideCount: 20
+    m_EntryOverrideCount: 21
   - m_Name: Walk
     m_Hash: 765711723
     m_CategoryList: []
@@ -160,14 +165,14 @@ MonoBehaviour:
       m_SpriteOverride: {fileID: 1699618382321965116, guid: 532a45b18c7beb34bbf3bcd9ee34f223, type: 3}
     - m_Name: Walk Left v2.0_1
       m_Hash: 408823436
-      m_Sprite: {fileID: -3676963021027151875, guid: 532a45b18c7beb34bbf3bcd9ee34f223, type: 3}
-      m_FromMain: 0
-      m_SpriteOverride: {fileID: -3676963021027151875, guid: 532a45b18c7beb34bbf3bcd9ee34f223, type: 3}
-    - m_Name: Walk Left v2.0_2
-      m_Hash: 22509366
       m_Sprite: {fileID: -8034087728635640759, guid: 532a45b18c7beb34bbf3bcd9ee34f223, type: 3}
       m_FromMain: 0
       m_SpriteOverride: {fileID: -8034087728635640759, guid: 532a45b18c7beb34bbf3bcd9ee34f223, type: 3}
+    - m_Name: Walk Left v2.0_2
+      m_Hash: 22509366
+      m_Sprite: {fileID: -3676963021027151875, guid: 532a45b18c7beb34bbf3bcd9ee34f223, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -3676963021027151875, guid: 532a45b18c7beb34bbf3bcd9ee34f223, type: 3}
     - m_Name: Walk Left v2.0_3
       m_Hash: 911230880
       m_Sprite: {fileID: -2246238909266023828, guid: 532a45b18c7beb34bbf3bcd9ee34f223, type: 3}
@@ -225,6 +230,122 @@ MonoBehaviour:
       m_SpriteOverride: {fileID: 1569812071796523620, guid: 9a9d72ab818b5164b8355b5b4a51debc, type: 3}
     m_FromMain: 0
     m_EntryOverrideCount: 20
+  - m_Name: Pick Up
+    m_Hash: 208898825
+    m_CategoryList: []
+    m_OverrideEntries:
+    - m_Name: Pick Up Down v2.1_0
+      m_Hash: 830499692
+      m_Sprite: {fileID: 407502015379650150, guid: d943d7373fc9a8a4cadaf298424c14e2, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 407502015379650150, guid: d943d7373fc9a8a4cadaf298424c14e2, type: 3}
+    - m_Name: Pick Up Down v2.1_1
+      m_Hash: 109534202
+      m_Sprite: {fileID: 7556259340140313313, guid: d943d7373fc9a8a4cadaf298424c14e2, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 7556259340140313313, guid: d943d7373fc9a8a4cadaf298424c14e2, type: 3}
+    - m_Name: Pick Up Down v2.1_2
+      m_Hash: 529402432
+      m_Sprite: {fileID: 6063237713943676708, guid: d943d7373fc9a8a4cadaf298424c14e2, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 6063237713943676708, guid: d943d7373fc9a8a4cadaf298424c14e2, type: 3}
+    - m_Name: Pick Up Down v2.1_3
+      m_Hash: 680082134
+      m_Sprite: {fileID: 327507178450296503, guid: d943d7373fc9a8a4cadaf298424c14e2, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 327507178450296503, guid: d943d7373fc9a8a4cadaf298424c14e2, type: 3}
+    - m_Name: Pick Up Down v2.1_4
+      m_Hash: 921546613
+      m_Sprite: {fileID: -765339227719141345, guid: d943d7373fc9a8a4cadaf298424c14e2, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -765339227719141345, guid: d943d7373fc9a8a4cadaf298424c14e2, type: 3}
+    - m_Name: Pick Up Down v2.1_5
+      m_Hash: 32153571
+      m_Sprite: {fileID: 1296576870256803380, guid: d943d7373fc9a8a4cadaf298424c14e2, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 1296576870256803380, guid: d943d7373fc9a8a4cadaf298424c14e2, type: 3}
+    - m_Name: Pick Up Left v2.0_0
+      m_Hash: 191040262
+      m_Sprite: {fileID: -2528393057716871589, guid: 98cf8269974b94b42aec53708476522a, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -2528393057716871589, guid: 98cf8269974b94b42aec53708476522a, type: 3}
+    - m_Name: Pick Up Left v2.0_1
+      m_Hash: 1013201808
+      m_Sprite: {fileID: -3195524060314904702, guid: 98cf8269974b94b42aec53708476522a, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -3195524060314904702, guid: 98cf8269974b94b42aec53708476522a, type: 3}
+    - m_Name: Pick Up Left v2.0_2
+      m_Hash: 627927594
+      m_Sprite: {fileID: 95943154364189024, guid: 98cf8269974b94b42aec53708476522a, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 95943154364189024, guid: 98cf8269974b94b42aec53708476522a, type: 3}
+    - m_Name: Pick Up Left v2.0_3
+      m_Hash: 308959932
+      m_Sprite: {fileID: -655850573871883542, guid: 98cf8269974b94b42aec53708476522a, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -655850573871883542, guid: 98cf8269974b94b42aec53708476522a, type: 3}
+    - m_Name: Pick Up Left v2.0_4
+      m_Hash: 202297119
+      m_Sprite: {fileID: -5248815440691514618, guid: 98cf8269974b94b42aec53708476522a, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -5248815440691514618, guid: 98cf8269974b94b42aec53708476522a, type: 3}
+    - m_Name: Pick Up Left v2.0_5
+      m_Hash: 990510985
+      m_Sprite: {fileID: 7519294879603565545, guid: 98cf8269974b94b42aec53708476522a, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 7519294879603565545, guid: 98cf8269974b94b42aec53708476522a, type: 3}
+    - m_Name: Pick Up Right v2.0_0
+      m_Hash: 640591856
+      m_Sprite: {fileID: 7603343062973804212, guid: 5d3a15ec56ef41143ad67d8b660449a7, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 7603343062973804212, guid: 5d3a15ec56ef41143ad67d8b660449a7, type: 3}
+    - m_Name: Pick Up Right v2.0_1
+      m_Hash: 287938406
+      m_Sprite: {fileID: -303230192476657801, guid: 5d3a15ec56ef41143ad67d8b660449a7, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -303230192476657801, guid: 5d3a15ec56ef41143ad67d8b660449a7, type: 3}
+    - m_Name: Pick Up Right v2.0_2
+      m_Hash: 136365788
+      m_Sprite: {fileID: 6838475346803290733, guid: 5d3a15ec56ef41143ad67d8b660449a7, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 6838475346803290733, guid: 5d3a15ec56ef41143ad67d8b660449a7, type: 3}
+    - m_Name: Pick Up Right v2.0_3
+      m_Hash: 1059583562
+      m_Sprite: {fileID: -5546893416183383257, guid: 5d3a15ec56ef41143ad67d8b660449a7, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -5546893416183383257, guid: 5d3a15ec56ef41143ad67d8b660449a7, type: 3}
+    - m_Name: Pick Up Right v2.0_4
+      m_Hash: 558064617
+      m_Sprite: {fileID: 6905673861142229302, guid: 5d3a15ec56ef41143ad67d8b660449a7, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 6905673861142229302, guid: 5d3a15ec56ef41143ad67d8b660449a7, type: 3}
+    - m_Name: Pick Up Right v2.0_5
+      m_Hash: 373576575
+      m_Sprite: {fileID: 4194513105668878336, guid: 5d3a15ec56ef41143ad67d8b660449a7, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 4194513105668878336, guid: 5d3a15ec56ef41143ad67d8b660449a7, type: 3}
+    - m_Name: Pick Up Up v2.0_0
+      m_Hash: 863225692
+      m_Sprite: {fileID: -4297872677749862557, guid: 3f3e4d987d50ae649b59d4e95e52bcc2, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -4297872677749862557, guid: 3f3e4d987d50ae649b59d4e95e52bcc2, type: 3}
+    - m_Name: Pick Up Up v2.0_1
+      m_Hash: 74774474
+      m_Sprite: {fileID: -4387373727140177981, guid: 3f3e4d987d50ae649b59d4e95e52bcc2, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -4387373727140177981, guid: 3f3e4d987d50ae649b59d4e95e52bcc2, type: 3}
+    - m_Name: Pick Up Up v2.0_2
+      m_Hash: 494773872
+      m_Sprite: {fileID: -5679040980795243646, guid: 3f3e4d987d50ae649b59d4e95e52bcc2, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: -5679040980795243646, guid: 3f3e4d987d50ae649b59d4e95e52bcc2, type: 3}
+    - m_Name: Pick Up Up v2.0_3
+      m_Hash: 712677094
+      m_Sprite: {fileID: 1785384722675125141, guid: 3f3e4d987d50ae649b59d4e95e52bcc2, type: 3}
+      m_FromMain: 0
+      m_SpriteOverride: {fileID: 1785384722675125141, guid: 3f3e4d987d50ae649b59d4e95e52bcc2, type: 3}
+    m_FromMain: 0
+    m_EntryOverrideCount: 22
   m_PrimaryLibraryGUID: 
-  m_ModificationHash: 638799216833622456
+  m_ModificationHash: 638800982295924959
   m_Version: 1

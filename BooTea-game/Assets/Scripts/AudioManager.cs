@@ -9,6 +9,8 @@ public class AudioManager : MonoBehaviour
     AudioSource musicSource;
     [SerializeField]
     AudioSource SFXSource;
+    [SerializeField]
+    AudioSource voiceSource;
 
     [Header("--------------- Audio Clip ---------------")]
     public AudioClip backgroundMusic1;
@@ -20,7 +22,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip teaLeafsRustle;
     public AudioClip iceCubesClatter;
     public AudioClip NPCInteraction;
-    public AudioClip NPCspeaking; // it will be as in undertale where one really short sound sample is made in order to then be denoised, trimmed and have its pitch changed and repeated for each text sign that the npc is going to say making words for sentences
+    public AudioClip NPCSpeaking; // it will be as in undertale where one really short sound sample is made in order to then be denoised, trimmed and have its pitch changed and repeated for each text sign that the npc is going to say making words for sentences
     public AudioClip footsteps;
     public AudioClip clientsChatter;
     public AudioClip wallTouch;
@@ -51,6 +53,18 @@ public class AudioManager : MonoBehaviour
     private Slider MusicSlider;
     [SerializeField]
     private Slider SFXSlider;
+    [SerializeField]
+    private Slider VoiceSlider;
+
+    public static AudioManager Instance { get; private set; } // Singleton
+
+    private void Awake()
+    {
+        if (Instance == null)
+            Instance = this;
+        else
+            Destroy(gameObject);
+    }
 
     private void Start()
     {
@@ -63,6 +77,9 @@ public class AudioManager : MonoBehaviour
 
         if (SFXSlider != null)
             SFXSlider.onValueChanged.AddListener(SetSFXVolume);
+
+        if (VoiceSlider != null)
+            VoiceSlider.onValueChanged.AddListener(SetVoiceVolume);
     }
 
     public void PlaySFX(AudioClip clip)
@@ -91,6 +108,18 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    public void StopMusic()
+    {
+        musicSource.Stop();
+    }
+
+    public void PlayBackgroundMusic(AudioClip clip)
+    {
+        musicSource.clip = clip;
+        //Debug.Log(clip);
+        musicSource.Play();
+    }
+
     public bool IsSFXPlaying()
     {
         return SFXSource.isPlaying;
@@ -100,6 +129,12 @@ public class AudioManager : MonoBehaviour
     {
         SFXSource.pitch = pitch; // Ustaw losowy pitch
         SFXSource.PlayOneShot(footsteps); // Odtwórz dźwięk
+    }
+
+    public void PlayVoice(AudioClip clip, float pitch)
+    {
+        voiceSource.pitch = pitch;
+        voiceSource.PlayOneShot(clip);
     }
 
     public void SetMusicVolume(float volume)
@@ -116,18 +151,30 @@ public class AudioManager : MonoBehaviour
         PlayerPrefs.Save();
     }
 
+    public void SetVoiceVolume(float volume)
+    {
+        voiceSource.volume = volume;
+        PlayerPrefs.SetFloat("VoiceVolume", volume);
+        PlayerPrefs.Save();
+    }
+
     private void LoadVolumeSettings()
     {
         float savedMusicVolume = PlayerPrefs.GetFloat("MusicVolume", 0.5f);
         float savedSFXVolume = PlayerPrefs.GetFloat("SFXVolume", 0.5f);
+        float savedVoiceVolume = PlayerPrefs.GetFloat("VoiceVolume", 0.5f);
 
         musicSource.volume = savedMusicVolume;
         SFXSource.volume = savedSFXVolume;
+        voiceSource.volume = savedVoiceVolume;
 
         if (MusicSlider != null)
             MusicSlider.value = savedMusicVolume;
 
         if (SFXSlider != null)
             SFXSlider.value = savedSFXVolume;
+
+        if (VoiceSlider != null)
+            VoiceSlider.value = savedVoiceVolume;
     }
 }

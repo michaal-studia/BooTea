@@ -37,7 +37,7 @@ public class DialogueController : MonoBehaviour
 
     public void ClearChoices()
     {
-        foreach(Transform child in  choiceContainer) Destroy(child.gameObject);
+        foreach (Transform child in choiceContainer) Destroy(child.gameObject);
     }
 
     public void CreateChoiceButton(string choiceText, UnityEngine.Events.UnityAction onClick)

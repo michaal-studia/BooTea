@@ -112,12 +112,12 @@ TextureImporter:
       name: Walk Left v2.0_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 39
-        width: 31
-        height: 41
+        x: 0
+        y: 40
+        width: 32
+        height: 40
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -131,15 +131,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walk Left v2.0_1
+      name: Walk Left v2.0_2
       rect:
         serializedVersion: 2
-        x: 1
+        x: 0
         y: 0
-        width: 31
+        width: 32
         height: 40
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -153,15 +153,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walk Left v2.0_2
+      name: Walk Left v2.0_1
       rect:
         serializedVersion: 2
-        x: 33
-        y: 39
-        width: 31
+        x: 32
+        y: 40
+        width: 32
         height: 40
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -178,12 +178,12 @@ TextureImporter:
       name: Walk Left v2.0_3
       rect:
         serializedVersion: 2
-        x: 33
+        x: 32
         y: 0
-        width: 31
-        height: 39
+        width: 32
+        height: 40
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -200,7 +200,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: ff7f09dfb6eea1440a13c56c5eee3c51
     internalID: 0
     vertices: []
     indices: 
@@ -211,8 +211,8 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       Walk Left v2.0_0: 1699618382321965116
-      Walk Left v2.0_1: -3676963021027151875
-      Walk Left v2.0_2: -8034087728635640759
+      Walk Left v2.0_1: -8034087728635640759
+      Walk Left v2.0_2: -3676963021027151875
       Walk Left v2.0_3: -2246238909266023828
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0

@@ -1,7 +1,5 @@
 using System.Collections;
-using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class NPC : MonoBehaviour, IInteractable
 {
@@ -10,6 +8,9 @@ public class NPC : MonoBehaviour, IInteractable
     private DialogueController dialogueUI;
     private int dialogueIndex;
     private bool isTyping, isDialogueActive;
+
+    [Header("NPC Settings")]
+    public int NPCId;  // Unikalny identyfikator NPC, np. 0 = Cat, 1 = Piano, itd.
 
     public void Start()
     {
@@ -23,7 +24,7 @@ public class NPC : MonoBehaviour, IInteractable
 
     public void Interact()
     {
-        if(dialogueData == null || (PauseController.IsGamePaused && !isDialogueActive))
+        if (dialogueData == null || (PauseController.IsGamePaused && !isDialogueActive))
             return;
 
         if (isDialogueActive)
@@ -40,6 +41,7 @@ public class NPC : MonoBehaviour, IInteractable
     {
         isDialogueActive = true;
         dialogueIndex = 0;
+        dialogueUI.ClearChoices();
         dialogueUI.SetNPCInfo(dialogueData.npcName, dialogueData.npcPortrait);
         dialogueUI.ShowDialogueUI(true);
         PauseController.SetPause(true);
@@ -60,7 +62,7 @@ public class NPC : MonoBehaviour, IInteractable
         //Clear choices
         dialogueUI.ClearChoices();
         //Check endDialogueLines
-        if(dialogueData.endDialogueLines.Length > dialogueIndex && dialogueData.endDialogueLines[dialogueIndex])
+        if (dialogueData.endDialogueLines.Length > dialogueIndex && dialogueData.endDialogueLines[dialogueIndex])
         {
             EndDialogue();
             return;
@@ -68,7 +70,7 @@ public class NPC : MonoBehaviour, IInteractable
         //Check if choices & display
         foreach (DialogueChoice dialogueChoice in dialogueData.choices)
         {
-            if(dialogueChoice.dialogueIndex == dialogueIndex)
+            if (dialogueChoice.dialogueIndex == dialogueIndex)
             {
                 DisplayChoices(dialogueChoice);
                 return;
@@ -94,7 +96,11 @@ public class NPC : MonoBehaviour, IInteractable
         foreach (char letter in dialogueData.dialogueLines[dialogueIndex])
         {
             dialogueUI.SetDialogueText(dialogueUI.dialogueText.text += letter);
-            //SoundEffectManager.PlayVoice(dialogueData.voiceSound, dialogueData.voicePitch); do dzwieku mowienia xd
+            if (dialogueData.voiceSound != null)
+            {
+                float variedPitch = dialogueData.voicePitch * Random.Range(0.95f, 1.15f);
+                AudioManager.Instance.PlayVoice(dialogueData.voiceSound, variedPitch);
+            }
             yield return new WaitForSeconds(dialogueData.typingSpeed);
         }
 
@@ -109,18 +115,28 @@ public class NPC : MonoBehaviour, IInteractable
 
     void DisplayChoices(DialogueChoice choice)
     {
-        for(int i=0;i<choice.choices.Length; i++)
+        for (int i = 0; i < choice.choices.Length; i++)
         {
             int nextIndex = choice.nextDialogueIndexes[i];
-            dialogueUI.CreateChoiceButton(choice.choices[i],() => ChooseOption(nextIndex));
+            int musicChoiceIndex = i;
+            dialogueUI.CreateChoiceButton(choice.choices[i], () => ChooseOption(nextIndex, musicChoiceIndex));
         }
     }
 
-    void ChooseOption(int nextIndex)
+    void ChooseOption(int nextIndex, int musicChoiceIndex)
     {
         dialogueIndex = nextIndex;
         dialogueUI.ClearChoices();
+
+        if (NPCId == 1) // if Piano is interacting with us we want to change music based on the clicked option that we were given
+        {
+            Debug.Log(musicChoiceIndex);
+            PianoNPC pianoNPC = FindFirstObjectByType<PianoNPC>();
+            pianoNPC.PlayBackgroundMusicForChoice(musicChoiceIndex);
+        }
+
         DisplayCurrentLine();
+
     }
 
     void DisplayCurrentLine()
