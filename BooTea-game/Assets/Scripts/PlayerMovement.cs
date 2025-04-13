@@ -14,6 +14,11 @@ public class PlayerMovement : MonoBehaviour
     private bool playingFootsteps = false;
     public float footstepSpeed = 0.5f;
 
+    [SerializeField] private float sprintMultiplier = 1.75f;
+    [SerializeField] private float sprintFootstepSpeed = 1.5f;
+
+    private bool isSprinting = false;
+
     AudioManager audioManager;
 
     private void Awake()
@@ -33,11 +38,18 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.linearVelocity = Vector2.zero;
             animator.SetBool("isWalking", false);
+            animator.speed = 1f;
             StopFootsteps();
             return;
         }
-        rb.linearVelocity = movementDirection * moveSpeed;
+
+        float currentSpeed = isSprinting ? moveSpeed * sprintMultiplier : moveSpeed;
+        float currentFootstepSpeed = isSprinting ? sprintFootstepSpeed : footstepSpeed;
+
+        rb.linearVelocity = movementDirection * currentSpeed;
+
         animator.SetBool("isWalking", rb.linearVelocity.magnitude > 0);
+        animator.speed = isSprinting ? 1.5f : 1f;
 
         if (rb.linearVelocity.magnitude > 0 && !playingFootsteps)
         {
@@ -74,10 +86,30 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat("InputY", movementDirection.y);
     }
 
+    public void SetSprinting(bool value)
+    {
+        isSprinting = value;
+    }
+
+    public void Sprint(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+            isSprinting = true;
+        else if (context.canceled)
+            isSprinting = false;
+
+        if (rb.linearVelocity.magnitude > 0)
+        {
+            StopFootsteps();
+            StartFootsteps();
+        }
+    }
+
     void StartFootsteps()
     {
         playingFootsteps = true;
-        InvokeRepeating(nameof(PlayFootsteps), 0f, footstepSpeed);
+        float delay = isSprinting ? sprintFootstepSpeed : footstepSpeed;
+        InvokeRepeating(nameof(PlayFootsteps), 0f, delay);
     }
 
     void StopFootsteps()
