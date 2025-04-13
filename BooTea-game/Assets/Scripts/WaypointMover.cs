@@ -43,8 +43,8 @@ public class WaypointMover : MonoBehaviour
     {
         Transform target = waypoints[currentWaypointIndex];
         Vector2 direction = (target.position - transform.position).normalized;
-        
-        if(direction.magnitude > 0f)
+
+        if (direction.magnitude > 0f)
         {
             lastInputX = direction.x;
             lastInputY = direction.y;
@@ -69,10 +69,10 @@ public class WaypointMover : MonoBehaviour
         animator.SetFloat("LastInputY", lastInputY);
 
         yield return new WaitForSeconds(waitTime);
-        
+
         //If looping is enabled: increment currentWaypointIndex and wrap around if needed
         //If not looping: increment currentWaypointIndex but dont exceed last waypoint
-        currentWaypointIndex = loopWaypoints ? (currentWaypointIndex + 1) % waypoints.Length : Mathf.Min(currentWaypointIndex + 1, waypoints.Length -1);
+        currentWaypointIndex = loopWaypoints ? (currentWaypointIndex + 1) % waypoints.Length : Mathf.Min(currentWaypointIndex + 1, waypoints.Length - 1);
 
         isWaiting = false;
     }
