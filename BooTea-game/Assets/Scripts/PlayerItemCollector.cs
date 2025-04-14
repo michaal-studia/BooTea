@@ -32,7 +32,7 @@ public class PlayerItemCollector : MonoBehaviour
                     collision.enabled = false;
 
                     // Start a coroutine to handle the item's visibility and destruction
-                    StartCoroutine(HandleItemAfterPickup(collision.gameObject, 0.8f));
+                    StartCoroutine(HandleItemAfterPickup(collision.gameObject, 0.6f));
                 }
             }
         }
