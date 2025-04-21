@@ -107,9 +107,9 @@ public class PlayerMovement : MonoBehaviour
 
     void StartFootsteps()
     {
-        playingFootsteps = true;
-        float delay = isSprinting ? sprintFootstepSpeed : footstepSpeed;
-        InvokeRepeating(nameof(PlayFootsteps), 0f, delay);
+        //playingFootsteps = true;
+        //float delay = isSprinting ? sprintFootstepSpeed : footstepSpeed;
+        //InvokeRepeating(nameof(PlayFootsteps), 0f, delay);
     }
 
     void StopFootsteps()
@@ -118,7 +118,7 @@ public class PlayerMovement : MonoBehaviour
         CancelInvoke(nameof(PlayFootsteps));
     }
 
-    void PlayFootsteps()
+    public void PlayFootsteps()
     {
         if (audioManager == null || audioManager.footsteps == null) return;
 
