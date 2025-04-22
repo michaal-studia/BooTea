@@ -12,9 +12,20 @@ public class NPC : MonoBehaviour, IInteractable
     [Header("NPC Settings")]
     public int NPCId;  // Unikalny identyfikator NPC, np. 0 = Cat, 1 = Piano, itd.
 
+    [Header("Player Info")]
+    public string playerName = "Player";
+    public Sprite playerPortrait;
+
     public void Start()
     {
         dialogueUI = DialogueController.Instance;
+
+        // Use default player info if not set in dialogue data
+        if (dialogueData.playerName == "Player" && !string.IsNullOrEmpty(playerName))
+            dialogueData.playerName = playerName;
+
+        if (dialogueData.playerPortrait == null && playerPortrait != null)
+            dialogueData.playerPortrait = playerPortrait;
     }
 
     public bool canInteract()
@@ -42,7 +53,10 @@ public class NPC : MonoBehaviour, IInteractable
         isDialogueActive = true;
         dialogueIndex = 0;
         dialogueUI.ClearChoices();
-        dialogueUI.SetNPCInfo(dialogueData.npcName, dialogueData.npcPortrait);
+
+        // Set initial speaker
+        UpdateSpeakerInfo();
+
         dialogueUI.ShowDialogueUI(true);
         PauseController.SetPause(true);
 
@@ -79,6 +93,8 @@ public class NPC : MonoBehaviour, IInteractable
 
         if (++dialogueIndex < dialogueData.dialogueLines.Length)
         {
+            // Update speaker info for the new line
+            UpdateSpeakerInfo();
             DisplayCurrentLine();
         }
         else
@@ -87,19 +103,39 @@ public class NPC : MonoBehaviour, IInteractable
         }
     }
 
+    // New method to update the speaker information based on current line
+    void UpdateSpeakerInfo()
+    {
+        bool isPlayer = dialogueData.isPlayerSpeaking.Length > dialogueIndex && dialogueData.isPlayerSpeaking[dialogueIndex];
+
+        if (isPlayer)
+        {
+            dialogueUI.SetSpeakerInfo(dialogueData.playerName, dialogueData.playerPortrait);
+        }
+        else
+        {
+            dialogueUI.SetSpeakerInfo(dialogueData.npcName, dialogueData.npcPortrait);
+        }
+    }
+
     IEnumerator TypeLine()
     {
         isTyping = true;
         dialogueUI.SetDialogueText("");
 
+        // Get whether the current speaker is player or NPC
+        bool isPlayer = dialogueData.isPlayerSpeaking.Length > dialogueIndex && dialogueData.isPlayerSpeaking[dialogueIndex];
+        AudioClip voiceToUse = isPlayer ? dialogueData.playerVoiceSound : dialogueData.voiceSound;
+        float pitchToUse = isPlayer ? dialogueData.playerVoicePitch : dialogueData.voicePitch;
+
         // Type out the current line
         foreach (char letter in dialogueData.dialogueLines[dialogueIndex])
         {
             dialogueUI.SetDialogueText(dialogueUI.dialogueText.text += letter);
-            if (dialogueData.voiceSound != null)
+            if (voiceToUse != null)
             {
-                float variedPitch = dialogueData.voicePitch * Random.Range(0.95f, 1.15f);
-                AudioManager.Instance.PlayVoice(dialogueData.voiceSound, variedPitch);
+                float variedPitch = pitchToUse * Random.Range(0.95f, 1.15f);
+                AudioManager.Instance.PlayVoice(voiceToUse, variedPitch);
             }
             yield return new WaitForSeconds(dialogueData.typingSpeed);
         }
@@ -135,8 +171,9 @@ public class NPC : MonoBehaviour, IInteractable
             pianoNPC.PlayBackgroundMusicForChoice(musicChoiceIndex);
         }
 
+        // Update speaker info for the new dialogue line
+        UpdateSpeakerInfo();
         DisplayCurrentLine();
-
     }
 
     void DisplayCurrentLine()
