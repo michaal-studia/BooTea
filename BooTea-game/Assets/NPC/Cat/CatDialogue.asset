@@ -14,17 +14,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   npcName: Cat
   npcPortrait: {fileID: -7527145504033472756, guid: 5bd39c06a87a5c44f9e54b89b871c710, type: 3}
+  playerName: Player
+  playerPortrait: {fileID: -9180426125723624345, guid: d163dfeb4849edd42a10d15c40a84d36, type: 3}
   dialogueLines:
   - Meow uiuiuiui
   - Meow Meow?
   - Purrrrr <3
   - wrrrr
+  isPlayerSpeaking: 00010000
   autoProgressLines: 00000000
   endDialogueLines: 00000101
   autoProgressDelay: 1.5
   typingSpeed: 0.08
   voiceSound: {fileID: 8300000, guid: 078266dcf6675bf44836b53e9dab5e47, type: 3}
   voicePitch: 1
+  playerVoiceSound: {fileID: 0}
+  playerVoicePitch: 1
   choices:
   - dialogueIndex: 1
     choices:
