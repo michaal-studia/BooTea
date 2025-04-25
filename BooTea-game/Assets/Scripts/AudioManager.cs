@@ -4,51 +4,14 @@ using UnityEngine.UI;
 
 public class AudioManager : MonoBehaviour
 {
-    [Header("--------------- Audio Source ---------------")]
-    [SerializeField]
-    AudioSource musicSource;
-    [SerializeField]
-    AudioSource SFXSource;
-    [SerializeField]
-    AudioSource voiceSource;
+    public static AudioManager Instance { get; private set; }
 
-    [Header("--------------- Audio Clip ---------------")]
-    public AudioClip backgroundMusic1;
-    public AudioClip backgroundMusic2;
-    public AudioClip backgroundMusic3;
-    public AudioClip backgroundMusic4;
-    public AudioClip teacupFilling;
-    public AudioClip teacupPuttingDown;
-    public AudioClip teaLeafsRustle;
-    public AudioClip iceCubesClatter;
-    public AudioClip NPCInteraction;
-    public AudioClip NPCSpeaking; // it will be as in undertale where one really short sound sample is made in order to then be denoised, trimmed and have its pitch changed and repeated for each text sign that the npc is going to say making words for sentences
-    public AudioClip footsteps;
-    public AudioClip clientsChatter;
-    public AudioClip wallTouch;
-    public AudioClip teaReady;
-    public AudioClip ingredientAdding;
-    public AudioClip staircaseWalking;
-    public AudioClip teaSlurping;
-    public AudioClip stirringTea;
-    public AudioClip teaKettleWhistling;
-    public AudioClip catMeow;
-    public AudioClip catPurr;
-    public AudioClip dishesClatter;
-    public AudioClip ghostHowlMale;
-    public AudioClip ghostHowlFemale;
-    public AudioClip steamHiss;
-    public AudioClip bellChime; // jeden z najważnieszych
-    public AudioClip pageFlip; // Przewracanie stron starej księgi (może do przepisu?)
-    public AudioClip woodenFloorCreak;  // Skrzypienie podłogi
-    public AudioClip candleFlicker;  // Dźwięk trzaskającego płomienia świecy
-    public AudioClip rainOnWindow;  // Deszcz uderzający o szybę
-    public AudioClip chairMove; // Przesuwanie drewnianego krzesła
-    public AudioClip bookOpen; // Otwieranie starej książki z przepisami
-    public AudioClip broomSweep; // Zamiatanie podłogi
-    public AudioClip cashRegister; // Dźwięk monet (jeśli w grze jest system płatności)
+    private static AudioSource audioSource;
+    private static AudioSource randomPitchAudioSource;
+    private static AudioSource voiceAudioSource;
+    private static AudioLibrary audioLibrary;
+    private static AudioSource musicSource;
 
-    [Header("--------------- UI Elements ---------------")]
     [SerializeField]
     private Slider MusicSlider;
     [SerializeField]
@@ -56,16 +19,39 @@ public class AudioManager : MonoBehaviour
     [SerializeField]
     private Slider VoiceSlider;
 
-    public static AudioManager Instance { get; private set; } // Singleton
-
     private void Awake()
     {
         if (Instance == null)
+        {
             Instance = this;
+            AudioSource[] audioSources = GetComponents<AudioSource>();
+            audioSource = audioSources[0];
+            randomPitchAudioSource = audioSources[1];
+            voiceAudioSource = audioSources[2];
+            musicSource = audioSources[3];
+            audioLibrary = GetComponent<AudioLibrary>();
+        }
         else
             Destroy(gameObject);
     }
 
+    public static void Play(string soundName, bool randomPitch = false)
+    {
+        AudioClip audioClip = audioLibrary.GetRandomClip(soundName);
+        if (audioClip != null)
+        {
+            if (randomPitch)
+            {
+                randomPitchAudioSource.pitch = Random.Range(1f, 1.5f);
+                randomPitchAudioSource.PlayOneShot(audioClip);
+            }
+            else
+            {
+                audioSource.PlayOneShot(audioClip);
+            }
+        }
+
+    }
     private void Start()
     {
         LoadVolumeSettings();
@@ -73,31 +59,23 @@ public class AudioManager : MonoBehaviour
         StartCoroutine(LoopMusic());
 
         if (MusicSlider != null)
-            MusicSlider.onValueChanged.AddListener(SetMusicVolume);
+            MusicSlider.onValueChanged.AddListener(delegate { SetMusicVolume(MusicSlider.value); });
 
         if (SFXSlider != null)
-            SFXSlider.onValueChanged.AddListener(SetSFXVolume);
+            SFXSlider.onValueChanged.AddListener(delegate { SetSFXVolume(SFXSlider.value); });
 
         if (VoiceSlider != null)
-            VoiceSlider.onValueChanged.AddListener(SetVoiceVolume);
-    }
-
-    public void PlaySFX(AudioClip clip)
-    {
-        if (!SFXSource.isPlaying) // Zapobiega nakładaniu się dźwięków
-        {
-            SFXSource.PlayOneShot(clip);
-        }
+            VoiceSlider.onValueChanged.AddListener(delegate { SetVoiceVolume(VoiceSlider.value); });
     }
 
     private IEnumerator LoopMusic()
     {
-        AudioClip[] backgroundTracks = { backgroundMusic1, backgroundMusic2, backgroundMusic3, backgroundMusic4 };
+        AudioClip[] backgroundTracks = audioLibrary.GetClips("BackgroundMusic");
 
         if (backgroundTracks.Length == 0)
         {
-            Debug.LogError("❌ Brak przypisanych utworów! Ustaw backgroundMusic1-4 w Inspectorze.");
-            yield break; // Zatrzymanie coroutine
+            Debug.LogError("Brak przypisanych utworów! Ustaw backgroundMusic1 - 4 w Inspectorze.");
+            yield break;
         }
 
         while (true)
@@ -113,31 +91,24 @@ public class AudioManager : MonoBehaviour
         musicSource.Stop();
     }
 
-    public void PlayBackgroundMusic(AudioClip clip)
+    public void PauseMusic()
+    {
+        musicSource.Pause();
+    }
+
+    public static void PlayBackgroundMusic(AudioClip clip)
     {
         musicSource.clip = clip;
-        //Debug.Log(clip);
         musicSource.Play();
     }
 
-    public bool IsSFXPlaying()
+    public static void PlayVoice(AudioClip clip, float pitch)
     {
-        return SFXSource.isPlaying;
+        voiceAudioSource.pitch = pitch * Random.Range(0.95f, 1.15f);
+        voiceAudioSource.PlayOneShot(clip);
     }
 
-    public void PlayFootstepSFX(float pitch)
-    {
-        SFXSource.pitch = pitch; // Ustaw losowy pitch
-        SFXSource.PlayOneShot(footsteps); // Odtwórz dźwięk
-    }
-
-    public void PlayVoice(AudioClip clip, float pitch)
-    {
-        voiceSource.pitch = pitch;
-        voiceSource.PlayOneShot(clip);
-    }
-
-    public void SetMusicVolume(float volume)
+    public static void SetMusicVolume(float volume)
     {
         musicSource.volume = volume;
         PlayerPrefs.SetFloat("MusicVolume", volume);
@@ -146,14 +117,15 @@ public class AudioManager : MonoBehaviour
 
     public void SetSFXVolume(float volume)
     {
-        SFXSource.volume = volume;
+        audioSource.volume = volume;
+        randomPitchAudioSource.volume = volume;
         PlayerPrefs.SetFloat("SFXVolume", volume);
         PlayerPrefs.Save();
     }
 
     public void SetVoiceVolume(float volume)
     {
-        voiceSource.volume = volume;
+        voiceAudioSource.volume = volume;
         PlayerPrefs.SetFloat("VoiceVolume", volume);
         PlayerPrefs.Save();
     }
@@ -165,8 +137,9 @@ public class AudioManager : MonoBehaviour
         float savedVoiceVolume = PlayerPrefs.GetFloat("VoiceVolume", 0.5f);
 
         musicSource.volume = savedMusicVolume;
-        SFXSource.volume = savedSFXVolume;
-        voiceSource.volume = savedVoiceVolume;
+        audioSource.volume = savedSFXVolume;
+        randomPitchAudioSource.volume = savedSFXVolume;
+        voiceAudioSource.volume = savedVoiceVolume;
 
         if (MusicSlider != null)
             MusicSlider.value = savedMusicVolume;
@@ -176,5 +149,10 @@ public class AudioManager : MonoBehaviour
 
         if (VoiceSlider != null)
             VoiceSlider.value = savedVoiceVolume;
+    }
+
+    public static AudioClip[] GetAudioClipsFromLibrary(string groupName) // dla PianoNPC
+    {
+        return audioLibrary.GetClips(groupName);
     }
 }

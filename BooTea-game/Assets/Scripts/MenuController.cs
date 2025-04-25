@@ -18,6 +18,10 @@ public class MenuController : MonoBehaviour
             {
                 return; // if game is paused by talking with the npc
             }
+            if (menuCanvas.activeSelf)
+                AudioManager.Play("MinimizeSwoosh1");
+            else
+                AudioManager.Play("MaximizeSwoosh1");
             menuCanvas.SetActive(!menuCanvas.activeSelf);
             PauseController.SetPause(menuCanvas.activeSelf);
         }

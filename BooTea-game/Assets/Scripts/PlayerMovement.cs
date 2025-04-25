@@ -11,19 +11,14 @@ public class PlayerMovement : MonoBehaviour
     private Animator animator;
     private Vector2 movementDirection;
     private Vector2 lastValidDirection;
-    private bool playingFootsteps = false;
     public float footstepSpeed = 0.5f;
 
     [SerializeField] private float sprintMultiplier = 1.75f;
-    [SerializeField] private float sprintFootstepSpeed = 1.5f;
 
     private bool isSprinting = false;
 
-    AudioManager audioManager;
-
     private void Awake()
     {
-        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
 
     void Start()
@@ -39,26 +34,15 @@ public class PlayerMovement : MonoBehaviour
             rb.linearVelocity = Vector2.zero;
             animator.SetBool("isWalking", false);
             animator.speed = 1f;
-            StopFootsteps();
             return;
         }
 
         float currentSpeed = isSprinting ? moveSpeed * sprintMultiplier : moveSpeed;
-        float currentFootstepSpeed = isSprinting ? sprintFootstepSpeed : footstepSpeed;
 
         rb.linearVelocity = movementDirection * currentSpeed;
 
         animator.SetBool("isWalking", rb.linearVelocity.magnitude > 0);
         animator.speed = isSprinting ? 1.5f : 1f;
-
-        if (rb.linearVelocity.magnitude > 0 && !playingFootsteps)
-        {
-            StartFootsteps();
-        }
-        else if (rb.linearVelocity.magnitude == 0)
-        {
-            StopFootsteps();
-        }
     }
 
     public void Move(InputAction.CallbackContext context)
@@ -97,33 +81,11 @@ public class PlayerMovement : MonoBehaviour
             isSprinting = true;
         else if (context.canceled)
             isSprinting = false;
-
-        if (rb.linearVelocity.magnitude > 0)
-        {
-            StopFootsteps();
-            StartFootsteps();
-        }
-    }
-
-    void StartFootsteps()
-    {
-        //playingFootsteps = true;
-        //float delay = isSprinting ? sprintFootstepSpeed : footstepSpeed;
-        //InvokeRepeating(nameof(PlayFootsteps), 0f, delay);
-    }
-
-    void StopFootsteps()
-    {
-        playingFootsteps = false;
-        CancelInvoke(nameof(PlayFootsteps));
     }
 
     public void PlayFootsteps()
     {
-        if (audioManager == null || audioManager.footsteps == null) return;
-
-        float randomPitch = Random.Range(0.95f, 1.15f);
-        audioManager.PlayFootstepSFX(randomPitch);
+        AudioManager.Play("Footsteps", true);
     }
 
     private Vector2 GetDirection(Vector2 input)
