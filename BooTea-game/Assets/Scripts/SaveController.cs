@@ -47,7 +47,7 @@ public class SaveController : MonoBehaviour
 
     public void LoadGame()
     {
-        if(File.Exists(saveLocation))
+        if (File.Exists(saveLocation))
         {
             //string json = File.ReadAllText(saveLocation);
             //SaveData saveData = JsonUtility.FromJson<SaveData>(json);
