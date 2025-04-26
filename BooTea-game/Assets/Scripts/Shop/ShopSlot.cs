@@ -9,19 +9,21 @@ public class ShopSlot : MonoBehaviour
     public TMP_Text priceText;
     public Image itemImage;
 
+    [SerializeField] private ShopManager shopManager;
     private int price;
 
     public void Initialized(Item newItemSO, int price)
     {
-        if (itemNameText == null) Debug.LogError("itemNameText is not assigned in ShopSlot!");
-        if (priceText == null) Debug.LogError("priceText is not assigned in ShopSlot!");
-        if (itemImage == null) Debug.LogError("itemImage is not assigned in ShopSlot!");
-
         // Fill the slot with information
         itemSO = newItemSO;
         itemNameText.text = itemSO.Name;
         itemImage.sprite = itemSO.itemIcon;
         this.price = price;
         priceText.text = price.ToString();
+    }
+
+    public void OnBuyButtonClicked()
+    {
+        //shopManager.TryBuyItem(itemSO, price);
     }
 }
