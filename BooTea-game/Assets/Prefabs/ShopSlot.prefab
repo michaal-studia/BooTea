@@ -304,11 +304,11 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 16
+  m_fontSize: 16.05
   m_fontSizeBase: 16
   m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
+  m_enableAutoSizing: 1
+  m_fontSizeMin: 10
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
@@ -342,7 +342,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 1.922905, y: 3.0766468, z: 1.7306213, w: 3.2689342}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -382,7 +382,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000011444, y: -14.102097}
+  m_AnchoredPosition: {x: 0.000011444092, y: -14.102097}
   m_SizeDelta: {x: -40.9869, y: -40.9869}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7365296037164964593
@@ -435,6 +435,7 @@ GameObject:
   - component: {fileID: 603822454720275354}
   - component: {fileID: 2872926740106474251}
   - component: {fileID: 1192925879388824380}
+  - component: {fileID: 1807069097935605378}
   m_Layer: 5
   m_Name: ShopSlot
   m_TagString: Untagged
@@ -546,6 +547,22 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1807069097935605378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6784100640887060066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 585356013034bd540aa54b994f2d03a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemSO: {fileID: 0}
+  itemNameText: {fileID: 1518509753923971445}
+  priceText: {fileID: 8496932361606936478}
+  itemImage: {fileID: 5336374268357761359}
 --- !u!1 &9031043573394338753
 GameObject:
   m_ObjectHideFlags: 0
