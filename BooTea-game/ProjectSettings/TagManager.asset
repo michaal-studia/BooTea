@@ -62,5 +62,8 @@ TagManager:
   - name: Decor
     uniqueID: 2993210231
     locked: 0
+  - name: ForegroundParticles
+    uniqueID: 1450121531
+    locked: 0
   m_RenderingLayers:
   - Default
