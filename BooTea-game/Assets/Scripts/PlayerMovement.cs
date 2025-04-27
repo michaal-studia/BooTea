@@ -39,6 +39,7 @@ public class PlayerMovement : MonoBehaviour
 
         float currentSpeed = isSprinting ? moveSpeed * sprintMultiplier : moveSpeed;
 
+        //rb.linearVelocity = moveInput * moveSpeed;
         rb.linearVelocity = movementDirection * currentSpeed;
 
         animator.SetBool("isWalking", rb.linearVelocity.magnitude > 0);
@@ -47,6 +48,7 @@ public class PlayerMovement : MonoBehaviour
 
     public void Move(InputAction.CallbackContext context)
     {
+        //moveInput = context.ReadValue<Vector2>();
         if (context.canceled)
         {
             animator.SetBool("isWalking", false);
@@ -90,14 +92,15 @@ public class PlayerMovement : MonoBehaviour
 
     private Vector2 GetDirection(Vector2 input)
     {
-        if (Mathf.Abs(input.x) > Mathf.Abs(input.y))
-        {
-            return new Vector2(Mathf.Sign(input.x), 0); // Priorytet poziomy
-        }
-        else if (Mathf.Abs(input.y) > Mathf.Abs(input.x))
-        {
-            return new Vector2(0, Mathf.Sign(input.y)); // Priorytet pionowy
-        }
-        return lastValidDirection; // Nie resetuj do zera, jeśli naciskane są dwa przyciski
+        // if (Mathf.Abs(input.x) > Mathf.Abs(input.y))
+        // {
+        //     return new Vector2(Mathf.Sign(input.x), 0); // Priorytet poziomy
+        // }
+        // else if (Mathf.Abs(input.y) > Mathf.Abs(input.x))
+        // {
+        //     return new Vector2(0, Mathf.Sign(input.y)); // Priorytet pionowy
+        // }
+        // return lastValidDirection; // Nie resetuj do zera, jeśli naciskane są dwa przyciski
+        return input.normalized;
     }
 }
