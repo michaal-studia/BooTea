@@ -1,7 +1,7 @@
-using System.IO;
-using UnityEngine;
-using Unity.Cinemachine;
 using System.Collections.Generic;
+using System.IO;
+using Unity.Cinemachine;
+using UnityEngine;
 
 public class SaveController : MonoBehaviour
 {
@@ -27,6 +27,7 @@ public class SaveController : MonoBehaviour
 
     public void SaveGame()
     {
+        AudioManager.Play("ButtonAffirmative");
         SaveData saveData = new SaveData
         {
             playerPosition = player.transform.position,
@@ -47,10 +48,11 @@ public class SaveController : MonoBehaviour
 
     public void LoadGame()
     {
-        if(File.Exists(saveLocation))
+        if (File.Exists(saveLocation))
         {
             //string json = File.ReadAllText(saveLocation);
             //SaveData saveData = JsonUtility.FromJson<SaveData>(json);
+            AudioManager.Play("ButtonAffirmative");
             SaveData saveData = JsonUtility.FromJson<SaveData>(File.ReadAllText(saveLocation));
 
             player.transform.position = saveData.playerPosition;

@@ -11,14 +11,14 @@ public class PlayerMovement : MonoBehaviour
     private Animator animator;
     private Vector2 movementDirection;
     private Vector2 lastValidDirection;
-    private bool playingFootsteps = false;
     public float footstepSpeed = 0.5f;
 
-    AudioManager audioManager;
+    [SerializeField] private float sprintMultiplier = 1.75f;
+
+    private bool isSprinting = false;
 
     private void Awake()
     {
-        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
 
     void Start()
@@ -33,24 +33,22 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.linearVelocity = Vector2.zero;
             animator.SetBool("isWalking", false);
-            StopFootsteps();
+            animator.speed = 1f;
             return;
         }
-        rb.linearVelocity = movementDirection * moveSpeed;
-        animator.SetBool("isWalking", rb.linearVelocity.magnitude > 0);
 
-        if (rb.linearVelocity.magnitude > 0 && !playingFootsteps)
-        {
-            StartFootsteps();
-        }
-        else if (rb.linearVelocity.magnitude == 0)
-        {
-            StopFootsteps();
-        }
+        float currentSpeed = isSprinting ? moveSpeed * sprintMultiplier : moveSpeed;
+
+        //rb.linearVelocity = moveInput * moveSpeed;
+        rb.linearVelocity = movementDirection * currentSpeed;
+
+        animator.SetBool("isWalking", rb.linearVelocity.magnitude > 0);
+        animator.speed = isSprinting ? 1.5f : 1f;
     }
 
     public void Move(InputAction.CallbackContext context)
     {
+        //moveInput = context.ReadValue<Vector2>();
         if (context.canceled)
         {
             animator.SetBool("isWalking", false);
@@ -74,36 +72,35 @@ public class PlayerMovement : MonoBehaviour
         animator.SetFloat("InputY", movementDirection.y);
     }
 
-    void StartFootsteps()
+    public void SetSprinting(bool value)
     {
-        playingFootsteps = true;
-        InvokeRepeating(nameof(PlayFootsteps), 0f, footstepSpeed);
+        isSprinting = value;
     }
 
-    void StopFootsteps()
+    public void Sprint(InputAction.CallbackContext context)
     {
-        playingFootsteps = false;
-        CancelInvoke(nameof(PlayFootsteps));
+        if (context.performed)
+            isSprinting = true;
+        else if (context.canceled)
+            isSprinting = false;
     }
 
-    void PlayFootsteps()
+    public void PlayFootsteps()
     {
-        if (audioManager == null || audioManager.footsteps == null) return;
-
-        float randomPitch = Random.Range(0.95f, 1.15f);
-        audioManager.PlayFootstepSFX(randomPitch);
+        AudioManager.Play("Footsteps", true);
     }
 
     private Vector2 GetDirection(Vector2 input)
     {
-        if (Mathf.Abs(input.x) > Mathf.Abs(input.y))
-        {
-            return new Vector2(Mathf.Sign(input.x), 0); // Priorytet poziomy
-        }
-        else if (Mathf.Abs(input.y) > Mathf.Abs(input.x))
-        {
-            return new Vector2(0, Mathf.Sign(input.y)); // Priorytet pionowy
-        }
-        return lastValidDirection; // Nie resetuj do zera, jeśli naciskane są dwa przyciski
+        // if (Mathf.Abs(input.x) > Mathf.Abs(input.y))
+        // {
+        //     return new Vector2(Mathf.Sign(input.x), 0); // Priorytet poziomy
+        // }
+        // else if (Mathf.Abs(input.y) > Mathf.Abs(input.x))
+        // {
+        //     return new Vector2(0, Mathf.Sign(input.y)); // Priorytet pionowy
+        // }
+        // return lastValidDirection; // Nie resetuj do zera, jeśli naciskane są dwa przyciski
+        return input.normalized;
     }
 }

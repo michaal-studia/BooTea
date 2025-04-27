@@ -205,8 +205,7 @@ public class NPC : MonoBehaviour, IInteractable
             dialogueUI.SetDialogueText(dialogueUI.dialogueTextRef.text += letter);
             if (voiceToUse != null)
             {
-                float variedPitch = pitchToUse * Random.Range(0.95f, 1.15f);
-                AudioManager.Instance.PlayVoice(voiceToUse, variedPitch);
+                AudioManager.PlayVoice(dialogueData.voiceSound, dialogueData.voicePitch);
             }
             yield return new WaitForSeconds(currentDialogue.typingSpeed);
         }

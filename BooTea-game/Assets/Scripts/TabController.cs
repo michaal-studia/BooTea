@@ -5,6 +5,7 @@ public class TabController : MonoBehaviour
 {
     public Image[] tabImages;
     public GameObject[] pages;
+    private int lastActiveTab = 0;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -18,7 +19,12 @@ public class TabController : MonoBehaviour
             pages[i].SetActive(false);
             tabImages[i].color = Color.gray;
         }
+        if (lastActiveTab != tabNO)
+        {
+            AudioManager.Play("MaximizeSwoosh2");
+        }
         pages[tabNO].SetActive(true);
+        lastActiveTab = tabNO;
         tabImages[tabNO].color = Color.white;
     }
 }

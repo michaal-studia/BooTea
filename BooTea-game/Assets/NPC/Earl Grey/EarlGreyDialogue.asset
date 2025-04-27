@@ -91,8 +91,8 @@ MonoBehaviour:
   endDialogueLines: 00000000000000000000000000000000000000000000000000000000000000000000000001
   autoProgressDelay: 1.5
   typingSpeed: 0.05
-  voiceSound: {fileID: 0}
+  voiceSound: {fileID: 8300000, guid: b9c9d295e5d8e5b4997f8d7a56be8fd5, type: 3}
   voicePitch: 1
-  playerVoiceSound: {fileID: 0}
+  playerVoiceSound: {fileID: 8300000, guid: b9c9d295e5d8e5b4997f8d7a56be8fd5, type: 3}
   playerVoicePitch: 1
   choices: []

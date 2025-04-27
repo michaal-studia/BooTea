@@ -12,12 +12,16 @@ public class MenuController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Tab))
+        if (Input.GetKeyDown(KeyCode.Tab) || Input.GetKeyDown(KeyCode.C))
         {
             if (!menuCanvas.activeSelf && PauseController.IsGamePaused)
             {
                 return; // if game is paused by talking with the npc
             }
+            if (menuCanvas.activeSelf)
+                AudioManager.Play("MinimizeSwoosh1");
+            else
+                AudioManager.Play("MaximizeSwoosh1");
             menuCanvas.SetActive(!menuCanvas.activeSelf);
             PauseController.SetPause(menuCanvas.activeSelf);
         }

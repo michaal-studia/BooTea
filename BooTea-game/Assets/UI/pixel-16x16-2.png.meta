@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: d1d96c4a724cfc94bb52b790b9d45015
+guid: f14dcb28c6bc0bb42b6e176cc973b5e1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2143479270624109033
-    second: DialogueBoxSimpleBTP-Vi.png 1_0
+      213: -3287401966357956257
+    second: pixel-16x16-2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: DialogueBoxSimpleBTP-Vi.png 1_0
+      name: pixel-16x16-2_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 3160
-        height: 600
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 71e5903c5f4d042e0800000000000000
-      internalID: -2143479270624109033
+      spriteID: f593059345dc062d0800000000000000
+      internalID: -3287401966357956257
       vertices: []
       indices: 
       edges: []
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      DialogueBoxSimpleBTP-Vi.png 1_0: -2143479270624109033
+      pixel-16x16-2_0: -3287401966357956257
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
