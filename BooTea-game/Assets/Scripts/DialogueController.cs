@@ -5,13 +5,14 @@ using UnityEngine.UI;
 public class DialogueController : MonoBehaviour
 {
     public static DialogueController Instance { get; private set; } //Singleton instance
-
     public GameObject dialoguePanel;
     public TMP_Text dialogueText, nameText;
     public Image portraitImage;
-
     public Transform choiceContainer;
     public GameObject choiceButtonPrefab;
+
+    // Make dialogueText publicly accessible for the NPC class
+    [HideInInspector] public TMP_Text dialogueTextRef => dialogueText;
 
     void Awake()
     {
@@ -24,9 +25,10 @@ public class DialogueController : MonoBehaviour
         dialoguePanel.SetActive(show);//Toggle UI visabillity
     }
 
-    public void SetNPCInfo(string npcName, Sprite portrait)
+    // Renamed from SetNPCInfo to SetSpeakerInfo to be more generic
+    public void SetSpeakerInfo(string speakerName, Sprite portrait)
     {
-        nameText.text = npcName;
+        nameText.text = speakerName;
         portraitImage.sprite = portrait;
     }
 

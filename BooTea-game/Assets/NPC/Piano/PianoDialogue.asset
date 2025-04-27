@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   npcName: Regular Piano
   npcPortrait: {fileID: -32630665278540272, guid: 57cceae7ab7d9fc44812a9755c2f9cb1, type: 3}
+  playerName: Player
+  playerPortrait: {fileID: -9180426125723624345, guid: d163dfeb4849edd42a10d15c40a84d36, type: 3}
   dialogueLines:
   - Hello! I'm just a regular piano. I can help you with setting up any atmosphere
     that you'd like to have at your tea place.
@@ -31,12 +33,15 @@ MonoBehaviour:
   - Serving awesome tunes for you!
   - If you want to change music, just hit me up anytime!
   - Bye!
+  isPlayerSpeaking: 
   autoProgressLines: 0000000000000000000000000000
   endDialogueLines: 0000000001000001000001000001
   autoProgressDelay: 1.5
   typingSpeed: 0.05
   voiceSound: {fileID: 8300000, guid: 4e9fe136dd4acab4b9dd02b1af2bc885, type: 3}
   voicePitch: 1
+  playerVoiceSound: {fileID: 0}
+  playerVoicePitch: 1
   choices:
   - dialogueIndex: 1
     choices:
