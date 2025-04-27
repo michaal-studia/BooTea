@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      main-menu-splash-5-poprawione_0: 3006381603213665002
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

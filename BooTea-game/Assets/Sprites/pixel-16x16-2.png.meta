@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 7d53b7c258efc6d46897770d6e2d5938
+guid: c4cef1642727876488c6c194717f9e49
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3126373615275522376
-    second: DialogueBoxSimpleBTP-Burg.png_0
+      213: -3287401966357956257
+    second: pixel-16x16-2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 60
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -100,23 +100,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: DialogueBoxSimpleBTP-Burg.png_0
+      name: pixel-16x16-2_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 101
-        width: 3160
-        height: 499
+        y: 0
+        width: 16
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 146, y: 0, z: 171, w: 132}
+      border: {x: 5, y: 5, z: 5, w: 6}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8b6495ad2c3ec94d0800000000000000
-      internalID: -3126373615275522376
+      spriteID: f593059345dc062d0800000000000000
+      internalID: -3287401966357956257
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: eff68678427fd1f42b822c35eaa701bb
+    spriteID: b094b9034498e2d40ba6b8ce5b8009b6
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      DialogueBoxSimpleBTP-Burg.png_0: -3126373615275522376
+      pixel-16x16-2_0: -3287401966357956257
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
