@@ -275,6 +275,7 @@ public class NPC : MonoBehaviour, IInteractable
             if (isSecondDialogueCompleted)
             {
                 indicatorController.HideAllIndicators();
+                indicatorController.ShowEmoteAfter2ndDialogue();
                 StartReverseMovement();
             }
         }

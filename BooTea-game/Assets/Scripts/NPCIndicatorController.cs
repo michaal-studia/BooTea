@@ -1,9 +1,11 @@
+using System.Collections;
 using UnityEngine;
 
 public class NPCIndicatorController : MonoBehaviour
 {
     public GameObject yellowQuestionMark;
     public GameObject greyQuestionMark;
+    public GameObject emoteAfter2ndDialogue;
 
     public void ShowInitialQuestIndicator()
     {
@@ -38,6 +40,21 @@ public class NPCIndicatorController : MonoBehaviour
         if (greyQuestionMark != null)
         {
             greyQuestionMark.SetActive(false);
+        }
+    }
+
+    public void ShowEmoteAfter2ndDialogue()
+    {
+        StartCoroutine(ShowAndHideEmote());   
+    }
+
+    private IEnumerator ShowAndHideEmote()
+    {
+        if (emoteAfter2ndDialogue != null)
+        {
+            emoteAfter2ndDialogue.SetActive(true);
+            yield return new WaitForSeconds(2f);
+            emoteAfter2ndDialogue.SetActive(false);
         }
     }
 }
