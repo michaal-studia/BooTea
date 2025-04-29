@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float sprintMultiplier = 1.75f;
 
     private bool isSprinting = false;
+    private bool isMovementBlocked = false;
 
     private void Awake()
     {
@@ -37,6 +38,13 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
 
+        if (isMovementBlocked)
+        {
+            // Stop movement but allow animations to play
+            rb.linearVelocity = Vector2.zero;
+            return;
+        }
+
         float currentSpeed = isSprinting ? moveSpeed * sprintMultiplier : moveSpeed;
 
         //rb.linearVelocity = moveInput * moveSpeed;
@@ -48,6 +56,10 @@ public class PlayerMovement : MonoBehaviour
 
     public void Move(InputAction.CallbackContext context)
     {
+        if (isMovementBlocked)
+        {
+            return;
+        }
         //moveInput = context.ReadValue<Vector2>();
         if (context.canceled)
         {
@@ -102,5 +114,18 @@ public class PlayerMovement : MonoBehaviour
         // }
         // return lastValidDirection; // Nie resetuj do zera, jeśli naciskane są dwa przyciski
         return input.normalized;
+    }
+
+    // Methods to control the private isMovementBlocked flag
+    public void BlockMovement()
+    {
+        isMovementBlocked = true;
+        movementDirection = Vector2.zero; // Reset movement direction when blocking
+        rb.linearVelocity = Vector2.zero; // Ensure velocity is also reset
+    }
+
+    public void UnblockMovement()
+    {
+        isMovementBlocked = false;
     }
 }
