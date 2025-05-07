@@ -9508,7 +9508,7 @@ GameObject:
   - component: {fileID: 469332448}
   - component: {fileID: 469332452}
   m_Layer: 0
-  m_Name: Piano NPC
+  m_Name: NPC_Piano
   m_TagString: PianoNPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

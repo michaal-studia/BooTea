@@ -19,7 +19,7 @@ public class ShopKeeper : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(playerInRange)
+        if (playerInRange)
         {
             if (Input.GetButtonDown("Interact"))
             {
