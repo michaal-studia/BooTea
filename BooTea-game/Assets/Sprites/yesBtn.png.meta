@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 2e3f472a1b6345b4d8ba5b3637ce8430
+guid: f71620c8e26129c4bae7b19a43081f9d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7071386513176565603
-    second: Earl Grey_0
+      213: -7598614946822835876
+    second: yesBtn_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Earl Grey_0
+      name: yesBtn_0
       rect:
         serializedVersion: 2
-        x: 3
-        y: 0
-        width: 27
-        height: 17
+        x: 2
+        y: 7
+        width: 28
+        height: 18
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d986f9c9e636ddd90800000000000000
-      internalID: -7071386513176565603
+      spriteID: c51b6ad07fb4c8690800000000000000
+      internalID: -7598614946822835876
       vertices: []
       indices: 
       edges: []
@@ -134,8 +134,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Earl Grey_0: -7071386513176565603
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
