@@ -7,6 +7,14 @@ public class CraftingTableInteraction : MonoBehaviour, IInteractable
 
     public void Interact()
     {
+        if (!isPanelOpen)
+        {
+            AudioManager.Play("MaximizeSwoosh1");
+        }
+        else
+        {
+            AudioManager.Play("MinimizeSwoosh1");
+        }
         isPanelOpen = !isPanelOpen;
         craftingPanel.SetActive(isPanelOpen);
     }
