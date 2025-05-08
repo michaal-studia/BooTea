@@ -28,6 +28,7 @@ public class ShopManager : MonoBehaviour
             {
                 if (InventoryController.Instance.AddItem(itemSO.gameObject))
                 {
+                    AudioManager.Play("CashRegister");
                     Debug.Log($"Bought item: {itemSO.Name}");
                 }
             }

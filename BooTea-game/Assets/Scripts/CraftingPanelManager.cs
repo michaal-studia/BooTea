@@ -41,14 +41,14 @@ public class CraftingPanelManager : MonoBehaviour
                 ClearSlot(slotTea);
                 ClearSlot(slotWater);
                 ClearSlot(slotAddons);
-
+                AudioManager.Play("TeaCrafted");
                 GameObject resultItem = Instantiate(recipe.resultPrefab, slotResult.transform);
                 resultItem.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
                 slotResult.currentItem = resultItem;
                 return;
             }
         }
-
+        AudioManager.Play("Error");
         Debug.Log("Brak pasuj¹cego przepisu.");
     }
 

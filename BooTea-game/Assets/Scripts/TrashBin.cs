@@ -31,10 +31,14 @@ public class TrashBin : MonoBehaviour, IInteractable
                 GameObject itemToDestroy = firstSlot.currentItem;
                 firstSlot.currentItem = null;
                 Destroy(itemToDestroy);
+                AudioManager.Play("TrashThrow");
                 Debug.Log("The item was thrown away.");
             }
             else
+            {
+                AudioManager.Play("Error");
                 Debug.Log("There is nothing in your hand.");
+            }
         }
 
     }

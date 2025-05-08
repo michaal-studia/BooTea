@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor; // Dodaj to na początku pliku, jeśli używasz PrefabUtility
 
 public class SinkPanelManager : MonoBehaviour
 {
@@ -35,6 +34,7 @@ public class SinkPanelManager : MonoBehaviour
             Debug.Log($"Checking recipe: {recipe.emptyPotPrefab?.name}");
             if (recipe.Matches(inputPrefab))
             {
+                AudioManager.Play("RunningWaterTap");
                 Debug.Log("Recipe matched!");
                 ClearSlot(slotEmptyPot);
 
@@ -44,7 +44,7 @@ public class SinkPanelManager : MonoBehaviour
                 return;
             }
         }
-
+        AudioManager.Play("Error");
         Debug.Log("Brak pasującego przepisu.");
     }
 
