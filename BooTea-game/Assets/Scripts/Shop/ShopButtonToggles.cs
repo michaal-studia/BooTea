@@ -16,4 +16,12 @@ public class ShopButtonTogles : MonoBehaviour
             ShopKeeper.currentShopKeeper.OpenExtrasShop();
         }
     }
+
+        public void OpenCupsShop()
+    {
+        if(ShopKeeper.currentShopKeeper != null)
+        {
+            ShopKeeper.currentShopKeeper.OpenCupsShop();
+        }
+    }
 }    

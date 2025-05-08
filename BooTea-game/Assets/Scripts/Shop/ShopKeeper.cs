@@ -11,6 +11,7 @@ public class ShopKeeper : MonoBehaviour, IInteractable
 
     [SerializeField] private List<ShopItems> shopTeaLeaves;
     [SerializeField] private List<ShopItems> shopExtras;
+    [SerializeField] private List<ShopItems> shopCups;
 
     public static event Action<ShopManager, bool> OnShopStateChanged;
 
@@ -18,7 +19,7 @@ public class ShopKeeper : MonoBehaviour, IInteractable
 
     public bool canInteract()
     {
-        return true; // Mo¿esz tu dodaæ warunki, np. czy sklep nie jest zablokowany
+        return true;
     }
 
     public void Interact()
@@ -34,7 +35,10 @@ public class ShopKeeper : MonoBehaviour, IInteractable
             shopCanvasGroup.interactable = true;
             shopCanvasGroup.blocksRaycasts = true;
 
-            OpenTeaLeavesShop();
+            if(currentShopKeeper != null && currentShopKeeper.name == "TeaShop")
+                OpenTeaLeavesShop();
+            if(currentShopKeeper != null && currentShopKeeper.name == "CupsShop")
+                OpenCupsShop();
         }
         else
         {
@@ -57,6 +61,10 @@ public class ShopKeeper : MonoBehaviour, IInteractable
     public void OpenExtrasShop()
     {
         shopManager.PopulateShopItems(shopExtras);
+    }
+    public void OpenCupsShop()
+    {
+        shopManager.PopulateShopItems(shopCups);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
