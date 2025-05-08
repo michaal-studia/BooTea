@@ -18,16 +18,12 @@ public class ShopKeeper : MonoBehaviour, IInteractable
 
     public bool canInteract()
     {
-<<<<<<< HEAD
-        if (playerInRange)
-=======
         return true; // Mo¿esz tu dodaæ warunki, np. czy sklep nie jest zablokowany
     }
 
     public void Interact()
     {
         if (!isShopOpen)
->>>>>>> 7d03565a755505e971121084bfae9738c172e7f7
         {
             Time.timeScale = 0;
             currentShopKeeper = this;
