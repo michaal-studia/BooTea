@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &2696596010997592521
+--- !u!1001 &2087236894484369654
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -8,34 +8,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2172971316097826808, guid: dd06bca9e6a16fe40b3540f14c085723, type: 3}
-      propertyPath: bounceCount
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2172971316097826808, guid: dd06bca9e6a16fe40b3540f14c085723, type: 3}
-      propertyPath: bounceHeight
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 2172971316097826808, guid: dd06bca9e6a16fe40b3540f14c085723, type: 3}
-      propertyPath: bounceDuration
-      value: 0.3
+    - target: {fileID: 3149267294969936952, guid: dd06bca9e6a16fe40b3540f14c085723, type: 3}
+      propertyPath: ID
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3149267294969936952, guid: dd06bca9e6a16fe40b3540f14c085723, type: 3}
       propertyPath: Name
-      value: Lemon
+      value: Jar of Grenadine
       objectReference: {fileID: 0}
     - target: {fileID: 3149267294969936952, guid: dd06bca9e6a16fe40b3540f14c085723, type: 3}
       propertyPath: itemIcon
       value: 
-      objectReference: {fileID: 21300000, guid: 7b0006c92a003ac469fd474277d390e4, type: 3}
+      objectReference: {fileID: 21300000, guid: 4fc93b605d6333c44bdc78a17015617f, type: 3}
     - target: {fileID: 8001215306773883909, guid: dd06bca9e6a16fe40b3540f14c085723, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 7b0006c92a003ac469fd474277d390e4, type: 3}
-    - target: {fileID: 8001215306773883909, guid: dd06bca9e6a16fe40b3540f14c085723, type: 3}
-      propertyPath: m_WasSpriteAssigned
-      value: 1
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 21300000, guid: 4fc93b605d6333c44bdc78a17015617f, type: 3}
     - target: {fileID: 8147131105462844588, guid: dd06bca9e6a16fe40b3540f14c085723, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -78,7 +66,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8147131105462844588, guid: dd06bca9e6a16fe40b3540f14c085723, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8147131105462844588, guid: dd06bca9e6a16fe40b3540f14c085723, type: 3}
       propertyPath: m_LocalRotation.w
@@ -119,10 +107,10 @@ PrefabInstance:
     - target: {fileID: 8803692929835455334, guid: dd06bca9e6a16fe40b3540f14c085723, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 7b0006c92a003ac469fd474277d390e4, type: 3}
+      objectReference: {fileID: 21300000, guid: 4fc93b605d6333c44bdc78a17015617f, type: 3}
     - target: {fileID: 8979867163389329660, guid: dd06bca9e6a16fe40b3540f14c085723, type: 3}
       propertyPath: m_Name
-      value: LemonItem Variant
+      value: JarOfGrenadine PrefabVariant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
