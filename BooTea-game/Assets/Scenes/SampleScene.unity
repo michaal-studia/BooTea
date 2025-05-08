@@ -484,12 +484,12 @@ MonoBehaviour:
   shopManager: {fileID: 652617425}
   shopTeaLeaves:
   - itemSO: {fileID: 1109305160093772291, guid: 659c65f248588a443abfbf791f3f8b97, type: 3}
-    price: 5
+    price: 1
   shopExtras:
   - itemSO: {fileID: 3149267294969936952, guid: dd06bca9e6a16fe40b3540f14c085723, type: 3}
-    price: 10
+    price: 1
   - itemSO: {fileID: 1069686428793769457, guid: 0ec21dabcd64f69478687f27e1b62637, type: 3}
-    price: 3
+    price: 1
 --- !u!58 &16340655
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -873,6 +873,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1835611536}
     m_Modifications:
+    - target: {fileID: 1807069097935605378, guid: 82155c440f3c6474caef5aa5ee1535f2, type: 3}
+      propertyPath: shopManager
+      value: 
+      objectReference: {fileID: 652617425}
     - target: {fileID: 6784100640887060066, guid: 82155c440f3c6474caef5aa5ee1535f2, type: 3}
       propertyPath: m_Name
       value: ShopSlot (6)
@@ -1123,6 +1127,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1835611536}
     m_Modifications:
+    - target: {fileID: 1807069097935605378, guid: 82155c440f3c6474caef5aa5ee1535f2, type: 3}
+      propertyPath: shopManager
+      value: 
+      objectReference: {fileID: 652617425}
     - target: {fileID: 6784100640887060066, guid: 82155c440f3c6474caef5aa5ee1535f2, type: 3}
       propertyPath: m_Name
       value: ShopSlot (1)
@@ -1578,6 +1586,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1835611536}
     m_Modifications:
+    - target: {fileID: 1807069097935605378, guid: 82155c440f3c6474caef5aa5ee1535f2, type: 3}
+      propertyPath: shopManager
+      value: 
+      objectReference: {fileID: 652617425}
     - target: {fileID: 6784100640887060066, guid: 82155c440f3c6474caef5aa5ee1535f2, type: 3}
       propertyPath: m_Name
       value: ShopSlot (5)
@@ -13127,6 +13139,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1835611536}
     m_Modifications:
+    - target: {fileID: 1807069097935605378, guid: 82155c440f3c6474caef5aa5ee1535f2, type: 3}
+      propertyPath: shopManager
+      value: 
+      objectReference: {fileID: 652617425}
     - target: {fileID: 6784100640887060066, guid: 82155c440f3c6474caef5aa5ee1535f2, type: 3}
       propertyPath: m_Name
       value: ShopSlot (7)
@@ -17003,6 +17019,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1835611536}
     m_Modifications:
+    - target: {fileID: 1807069097935605378, guid: 82155c440f3c6474caef5aa5ee1535f2, type: 3}
+      propertyPath: shopManager
+      value: 
+      objectReference: {fileID: 652617425}
     - target: {fileID: 6784100640887060066, guid: 82155c440f3c6474caef5aa5ee1535f2, type: 3}
       propertyPath: m_Name
       value: ShopSlot (4)
@@ -26167,6 +26187,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1835611536}
     m_Modifications:
+    - target: {fileID: 1807069097935605378, guid: 82155c440f3c6474caef5aa5ee1535f2, type: 3}
+      propertyPath: shopManager
+      value: 
+      objectReference: {fileID: 652617425}
     - target: {fileID: 6784100640887060066, guid: 82155c440f3c6474caef5aa5ee1535f2, type: 3}
       propertyPath: m_Name
       value: ShopSlot (2)
@@ -26849,6 +26873,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1835611536}
     m_Modifications:
+    - target: {fileID: 1807069097935605378, guid: 82155c440f3c6474caef5aa5ee1535f2, type: 3}
+      propertyPath: shopManager
+      value: 
+      objectReference: {fileID: 652617425}
     - target: {fileID: 6784100640887060066, guid: 82155c440f3c6474caef5aa5ee1535f2, type: 3}
       propertyPath: m_Name
       value: ShopSlot
@@ -29932,6 +29960,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1835611536}
     m_Modifications:
+    - target: {fileID: 1807069097935605378, guid: 82155c440f3c6474caef5aa5ee1535f2, type: 3}
+      propertyPath: shopManager
+      value: 
+      objectReference: {fileID: 652617425}
     - target: {fileID: 6784100640887060066, guid: 82155c440f3c6474caef5aa5ee1535f2, type: 3}
       propertyPath: m_Name
       value: ShopSlot (3)
