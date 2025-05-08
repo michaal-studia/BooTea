@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &3092346526005037156
+--- !u!1001 &2653036625878423099
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10,20 +10,24 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3149267294969936952, guid: dd06bca9e6a16fe40b3540f14c085723, type: 3}
       propertyPath: ID
-      value: 4
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3149267294969936952, guid: dd06bca9e6a16fe40b3540f14c085723, type: 3}
       propertyPath: Name
-      value: Bergamot Oil
+      value: White Tea Leaves
       objectReference: {fileID: 0}
-    - target: {fileID: 8001215306773883909, guid: dd06bca9e6a16fe40b3540f14c085723, type: 3}
-      propertyPath: m_FlipX
-      value: 0
+    - target: {fileID: 3149267294969936952, guid: dd06bca9e6a16fe40b3540f14c085723, type: 3}
+      propertyPath: itemIcon
+      value: 
+      objectReference: {fileID: 21300000, guid: 59132f89896d93445ac16fca7d31ecd7, type: 3}
+    - target: {fileID: 4402665917703341960, guid: dd06bca9e6a16fe40b3540f14c085723, type: 3}
+      propertyPath: m_BlocksRaycasts
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8001215306773883909, guid: dd06bca9e6a16fe40b3540f14c085723, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 1297021586695669284, guid: 5508a8e014e71ba4fac3b1861ec50533, type: 3}
+      objectReference: {fileID: 21300000, guid: 59132f89896d93445ac16fca7d31ecd7, type: 3}
     - target: {fileID: 8147131105462844588, guid: dd06bca9e6a16fe40b3540f14c085723, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -66,7 +70,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8147131105462844588, guid: dd06bca9e6a16fe40b3540f14c085723, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8147131105462844588, guid: dd06bca9e6a16fe40b3540f14c085723, type: 3}
       propertyPath: m_LocalRotation.w
@@ -86,11 +90,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8147131105462844588, guid: dd06bca9e6a16fe40b3540f14c085723, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 4.79
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8147131105462844588, guid: dd06bca9e6a16fe40b3540f14c085723, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -5.71
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8147131105462844588, guid: dd06bca9e6a16fe40b3540f14c085723, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -107,14 +111,10 @@ PrefabInstance:
     - target: {fileID: 8803692929835455334, guid: dd06bca9e6a16fe40b3540f14c085723, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 1297021586695669284, guid: 5508a8e014e71ba4fac3b1861ec50533, type: 3}
-    - target: {fileID: 8803692929835455334, guid: dd06bca9e6a16fe40b3540f14c085723, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 21300000, guid: 59132f89896d93445ac16fca7d31ecd7, type: 3}
     - target: {fileID: 8979867163389329660, guid: dd06bca9e6a16fe40b3540f14c085723, type: 3}
       propertyPath: m_Name
-      value: EarlGrayAddons
+      value: RedTeaLeaves PrefabVariant 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
