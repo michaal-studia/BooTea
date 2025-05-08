@@ -1,9 +1,23 @@
 using System.Collections.Generic;
-//using Unity.VisualScripting;
 using UnityEngine;
 
 public class InventoryController : MonoBehaviour
 {
+    public static InventoryController Instance { get; private set; } // Singleton instance
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this; // Ustaw instancję singletonu
+        }
+        else
+        {
+            Debug.LogError("Multiple InventoryController instances detected! Destroying the extra one.");
+            Destroy(gameObject); // Zapobiegaj istnieniu wielu instancji
+        }
+    }
+
     private ItemDictionary itemDictionary;
     public GameObject inventoryPanel;
     public GameObject slotPrefab;            // Prefab slota
@@ -42,6 +56,19 @@ public class InventoryController : MonoBehaviour
         }
         Debug.Log("Inventory is full!");
         return false; // No empty slot found
+    }
+
+    public bool HasFreeSlot()
+    {
+        foreach (Transform slotTransform in inventoryPanel.transform)
+        {
+            Slot slot = slotTransform.GetComponent<Slot>();
+            if (slot != null && slot.currentItem == null)
+            {
+                return true; // Found an empty slot
+            }
+        }
+        return false; // No empty slots found
     }
 
     public List<InventorySaveData> GetInventoryItems()
@@ -93,5 +120,4 @@ public class InventoryController : MonoBehaviour
             }
         }
     }
-
 }

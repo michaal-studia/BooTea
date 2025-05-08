@@ -12,7 +12,7 @@ public class ShopSlot : MonoBehaviour
     [SerializeField] private ShopManager shopManager;
     private int price;
 
-    public void Initialized(Item newItemSO, int price)
+    public void Initialized(Item newItemSO/*, int price*/, int price)
     {
         // Fill the slot with information
         itemSO = newItemSO;
@@ -24,6 +24,6 @@ public class ShopSlot : MonoBehaviour
 
     public void OnBuyButtonClicked()
     {
-        //shopManager.TryBuyItem(itemSO, price);
+        shopManager.TryBuyItem(itemSO, price);
     }
 }
