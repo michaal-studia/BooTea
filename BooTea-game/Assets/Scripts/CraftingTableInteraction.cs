@@ -23,4 +23,5 @@ public class CraftingTableInteraction : MonoBehaviour, IInteractable
     {
         return true;
     }
+
 }
