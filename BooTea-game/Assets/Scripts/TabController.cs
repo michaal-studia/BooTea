@@ -7,6 +7,7 @@ public class TabController : MonoBehaviour
     public GameObject[] pages;
     private int lastActiveTab = 0;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+
     void Start()
     {
         ActivateTab(0);

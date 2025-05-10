@@ -5,76 +5,80 @@ using UnityEngine;
 
 public class SaveController : MonoBehaviour
 {
-    private string saveLocation;
-    private InventoryController inventoryController; // INVENTORY
+    private InventoryController inventoryController;
     private HotbarController hotbarController;
     private GameObject player;
-    private CinemachineConfiner2D cinemachineConfiner; // Uzycie CinemachineConfiner2D
+    private CinemachineConfiner2D cinemachineConfiner;
 
     void Start()
     {
-        saveLocation = Path.Combine(Application.persistentDataPath, "saveData.json");
         player = GameObject.FindGameObjectWithTag("Player");
-        cinemachineConfiner = Object.FindFirstObjectByType<CinemachineConfiner2D>(); // Znajdz CinemachineConfiner2D
-
-        // INVENTORY
-        inventoryController = FindFirstObjectByType<InventoryController>(); // Zamieniono z FindObjectOfType na FindFirstObjectByType
-        //
+        cinemachineConfiner = Object.FindFirstObjectByType<CinemachineConfiner2D>();
+        inventoryController = FindFirstObjectByType<InventoryController>();
         hotbarController = FindFirstObjectByType<HotbarController>();
-
-        LoadGame();
     }
 
-    public void SaveGame()
+    private string GetSavePath(string slotName)
     {
+        return Path.Combine(Application.persistentDataPath, $"saveData_{slotName}.json");
+    }
+
+    public void SaveGameToSlot(string slotName)
+    {
+        if (string.IsNullOrEmpty(slotName)) return;
+
         AudioManager.Play("ButtonAffirmative");
+
         SaveData saveData = new SaveData
         {
             playerPosition = player.transform.position,
-            mapBoundary = cinemachineConfiner.BoundingShape2D?.gameObject.name, // Poprawiono na BoundingShape2D
-
-            // INVENTORY
-            //inventorySaveData = inventoryController.GetInventoryItems(),
+            mapBoundary = cinemachineConfiner.BoundingShape2D?.gameObject.name,
             inventorySaveData = inventoryController.GetInventoryItems() ?? new List<InventorySaveData>(),
-            //
             hotbarSaveData = hotbarController.GetHotbarItems()
         };
 
-        //string json = JsonUtility.ToJson(saveData, true);
-        //File.WriteAllText(saveLocation, json);
-        File.WriteAllText(saveLocation, JsonUtility.ToJson(saveData));
-        Debug.Log("Game saved successfully.");
+        string path = GetSavePath(slotName);
+        File.WriteAllText(path, JsonUtility.ToJson(saveData));
+        Debug.Log($"Game saved to slot: {slotName}");
     }
 
-    public void LoadGame()
+    public void LoadGameFromSlot(string slotName)
     {
-        if (File.Exists(saveLocation))
+        string path = GetSavePath(slotName);
+        if (!File.Exists(path))
         {
-            //string json = File.ReadAllText(saveLocation);
-            //SaveData saveData = JsonUtility.FromJson<SaveData>(json);
-            AudioManager.Play("ButtonAffirmative");
-            SaveData saveData = JsonUtility.FromJson<SaveData>(File.ReadAllText(saveLocation));
+            Debug.LogWarning($"Save slot '{slotName}' not found.");
+            return;
+        }
 
-            player.transform.position = saveData.playerPosition;
-            GameObject boundaryObject = GameObject.Find(saveData.mapBoundary);
-            cinemachineConfiner.BoundingShape2D = boundaryObject.GetComponent<PolygonCollider2D>(); // Poprawiono na BoundingShape2D
+        AudioManager.Play("ButtonAffirmative");
+        SaveData saveData = JsonUtility.FromJson<SaveData>(File.ReadAllText(path));
 
-            // INVENTORY
-            inventoryController.SetInventoryItems(saveData.inventorySaveData); // Ustawienie przedmiotow w ekwipunku
-            //
-            hotbarController.SetHotbarItems(saveData.hotbarSaveData);
+        player.transform.position = saveData.playerPosition;
 
-            Debug.Log("Game loaded successfully.");
+        GameObject boundaryObject = GameObject.Find(saveData.mapBoundary);
+        if (boundaryObject)
+        {
+            cinemachineConfiner.BoundingShape2D = boundaryObject.GetComponent<PolygonCollider2D>();
+        }
+
+        inventoryController.SetInventoryItems(saveData.inventorySaveData);
+        hotbarController.SetHotbarItems(saveData.hotbarSaveData);
+
+        Debug.Log($"Game loaded from slot: {slotName}");
+    }
+
+    public void DeleteSlot(string slotName)
+    {
+        string path = GetSavePath(slotName);
+        if (File.Exists(path))
+        {
+            File.Delete(path);
+            Debug.Log($"Deleted save slot: {slotName}");
         }
         else
         {
-            Debug.LogWarning("Save file not found. Creating a new save.");
-            SaveGame(); // Save game if no save file exists
-
-            // INVENTORY
-            inventoryController.SetInventoryItems(new List<InventorySaveData>());
-            //
-            hotbarController.SetHotbarItems(new List<InventorySaveData>());
+            Debug.LogWarning($"No save to delete in slot: {slotName}");
         }
     }
 }
