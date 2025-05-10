@@ -28,6 +28,11 @@ public class InventoryController : MonoBehaviour
     {
         itemDictionary = FindFirstObjectByType<ItemDictionary>(); //Poprawiono na FindFirstObjectByType zamiast FindObjectOfType
 
+        // Create empty slots at startup
+        for (int i = 0; i < slotCount; i++)
+        {
+            Instantiate(slotPrefab, inventoryPanel.transform);
+        }
         // for (int i = 0; i < slotCount; i++)
         // {
         //     Slot slot = Instantiate(slotPrefab, inventoryPanel.transform).GetComponent<Slot>();
