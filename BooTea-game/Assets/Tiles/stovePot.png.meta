@@ -1,10 +1,22 @@
 fileFormatVersion: 2
-guid: 8dbdbd789b8a7894fab3b6f5eda8877a
+guid: fcace6945c6e2cc4aa40037588eae25d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6346362163328875953
-    second: Tea Box Closed_0
+      213: 5949619724160816217
+    second: stovePot_0
+  - first:
+      213: -8031385101409774415
+    second: stovePot_1
+  - first:
+      213: 3839117664523195357
+    second: stovePot_2
+  - first:
+      213: 2349431992118183996
+    second: stovePot_3
+  - first:
+      213: -6736819593249490021
+    second: stovePot_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +58,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -100,13 +112,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Tea Box Closed_0
+      name: stovePot_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 32
-        height: 21
+        width: 48
+        height: 64
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +127,96 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 1bd723953cec21850800000000000000
-      internalID: 6346362163328875953
+      spriteID: 954534fdd9b419250800000000000000
+      internalID: 5949619724160816217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stovePot_1
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 48
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b41b186dc9ca8090800000000000000
+      internalID: -8031385101409774415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stovePot_2
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 48
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd315d4ec29474530800000000000000
+      internalID: 3839117664523195357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stovePot_3
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 0
+        width: 48
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c388422f2fbda9020800000000000000
+      internalID: 2349431992118183996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stovePot_4
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 48
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9bf87ce5420282a0800000000000000
+      internalID: -6736819593249490021
       vertices: []
       indices: 
       edges: []
@@ -125,7 +225,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 7c343eafb15959941906ffad35c178cb
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +235,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Tea Box Closed_0: 6346362163328875953
+      stovePot_0: 5949619724160816217
+      stovePot_1: -8031385101409774415
+      stovePot_2: 3839117664523195357
+      stovePot_3: 2349431992118183996
+      stovePot_4: -6736819593249490021
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
