@@ -3,13 +3,23 @@ using UnityEngine;
 public class TrashBin : MonoBehaviour, IInteractable
 {
     private HotbarController hotbarController;
+
     private void Awake()
     {
         hotbarController = FindFirstObjectByType<HotbarController>();
     }
+
     public bool canInteract()
     {
-        return true;
+        Transform hotbarPanel = hotbarController.hotbarPanel.transform;
+
+        if (hotbarPanel.childCount > 0)
+        {
+            Slot firstSlot = hotbarPanel.GetChild(0).GetComponent<Slot>();
+            if (firstSlot.currentItem != null) return true;
+            else return false;
+        }
+        else return false;
     }
 
     public void Interact()
@@ -22,20 +32,11 @@ public class TrashBin : MonoBehaviour, IInteractable
 
         Transform hotbarPanel = hotbarController.hotbarPanel.transform;
 
-        if (hotbarPanel.childCount > 0)
-        {
-            Slot firstSlot = hotbarPanel.GetChild(0).GetComponent<Slot>();
+        Slot firstSlot = hotbarPanel.GetChild(0).GetComponent<Slot>();
 
-            if (firstSlot.currentItem != null)
-            {
-                GameObject itemToDestroy = firstSlot.currentItem;
-                firstSlot.currentItem = null;
-                Destroy(itemToDestroy);
-                Debug.Log("The item was thrown away.");
-            }
-            else
-                Debug.Log("There is nothing in your hand.");
-        }
-
+        GameObject itemToDestroy = firstSlot.currentItem;
+        firstSlot.currentItem = null;
+        Destroy(itemToDestroy);
+        Debug.Log("The item was thrown away.");
     }
 }
