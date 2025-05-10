@@ -1,8 +1,8 @@
-using UnityEngine;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using UnityEngine;
 using UnityEngine.UI;
-using System.Collections;
 
 public class ItemPickupUIController : MonoBehaviour
 {
@@ -16,7 +16,7 @@ public class ItemPickupUIController : MonoBehaviour
 
     private void Awake()
     {
-        if(Instance == null)
+        if (Instance == null)
         {
             Instance = this;
         }
@@ -33,13 +33,14 @@ public class ItemPickupUIController : MonoBehaviour
         newPopup.GetComponentInChildren<TMP_Text>().text = itemName; // Set the item name text
 
         Image itemImage = newPopup.transform.Find("ItemIcon")?.GetComponent<Image>(); // Get the Image component
-        if(itemImage)
+        if (itemImage)
         {
             itemImage.sprite = itemIcon; // Set the item icon sprite
         }
-        
+
+        AudioManager.Play("PopUp"); // Play the popup sound
         activePopups.Enqueue(newPopup); // Add the new popup to the queue
-        if(activePopups.Count > maxPopups) // Check if the maximum number of popups is exceeded
+        if (activePopups.Count > maxPopups) // Check if the maximum number of popups is exceeded
         {
             Destroy(activePopups.Dequeue()); // Remove the oldest popup
         }
@@ -52,12 +53,12 @@ public class ItemPickupUIController : MonoBehaviour
     {
         // Implement fade out effect here if needed
         yield return new WaitForSeconds(popupDuration); // Wait for the specified duration
-        if(popup == null) yield break; // Check if the popup is still valid
+        if (popup == null) yield break; // Check if the popup is still valid
 
         CanvasGroup canvasGroup = popup.GetComponent<CanvasGroup>(); // Get the CanvasGroup component
-        for(float timePassed = 0f; timePassed < 1f; timePassed += Time.deltaTime)
+        for (float timePassed = 0f; timePassed < 1f; timePassed += Time.deltaTime)
         {
-            if(popup == null) yield break; // Check if the popup is still valid
+            if (popup == null) yield break; // Check if the popup is still valid
             canvasGroup.alpha = 1f - timePassed; // Gradually reduce the alpha value for fade out
             yield return null; // Wait for the next frame
         }

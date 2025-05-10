@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -19,6 +17,7 @@ public class ItemDragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, I
 
     public void OnBeginDrag(PointerEventData eventData)
     {
+        AudioManager.Play("DragItem");
         originalParent = transform.parent; // Save OG parent
         transform.SetParent(transform.root); // Above other canvas'
         canvasGroup.blocksRaycasts = false;
@@ -34,6 +33,7 @@ public class ItemDragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, I
     {
         canvasGroup.blocksRaycasts = true; // Enables raycasts
         canvasGroup.alpha = 1f; // No longer transparent
+        AudioManager.Play("DropItem");
 
         Slot dropSlot = eventData.pointerEnter?.GetComponent<Slot>(); // Slot where item dropped
         if (dropSlot == null)
@@ -68,7 +68,7 @@ public class ItemDragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, I
         else
         {
             // If where we're dropping is not within the inventory
-            if(!IsWithintheInventory(eventData.position))
+            if (!IsWithintheInventory(eventData.position))
             {
                 // Drop our item
                 DropItem(originalSlot);
@@ -100,7 +100,7 @@ public class ItemDragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, I
 
         // Find player
         Transform playerTransform = GameObject.FindGameObjectWithTag("Player")?.transform;
-        if(playerTransform == null)
+        if (playerTransform == null)
         {
             Debug.LogError("Missing 'Player' tag in the scene.");
             return;
@@ -111,7 +111,7 @@ public class ItemDragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, I
         Vector2 dropPosition = (Vector2)playerTransform.position + dropOffset; // Random position around player
 
         // Instantiate drop item
-            //Instantiate(gameObject, dropPosition, Quaternion.identity);
+        //Instantiate(gameObject, dropPosition, Quaternion.identity);
         // but now with BOUNCE
         GameObject dropItem = Instantiate(gameObject, dropPosition, Quaternion.identity);
         dropItem.GetComponent<BounceEffect>().StartBounce(); // Start bounce effect

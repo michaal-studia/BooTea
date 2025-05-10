@@ -26,6 +26,7 @@ public class ShopKeeper : MonoBehaviour, IInteractable
     {
         if (!isShopOpen)
         {
+            AudioManager.Play("MaximizeSwoosh1");
             Time.timeScale = 0;
             currentShopKeeper = this;
             isShopOpen = true;
@@ -35,13 +36,14 @@ public class ShopKeeper : MonoBehaviour, IInteractable
             shopCanvasGroup.interactable = true;
             shopCanvasGroup.blocksRaycasts = true;
 
-            if(currentShopKeeper != null && currentShopKeeper.name == "TeaShop")
+            if (currentShopKeeper != null && currentShopKeeper.name == "TeaShop")
                 OpenTeaLeavesShop();
-            if(currentShopKeeper != null && currentShopKeeper.name == "CupsShop")
+            if (currentShopKeeper != null && currentShopKeeper.name == "CupsShop")
                 OpenCupsShop();
         }
         else
         {
+            AudioManager.Play("MinimizeSwoosh1");
             Time.timeScale = 1;
             currentShopKeeper = null;
             isShopOpen = false;
