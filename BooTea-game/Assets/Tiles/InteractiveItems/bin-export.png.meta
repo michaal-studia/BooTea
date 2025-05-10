@@ -1,25 +1,10 @@
 fileFormatVersion: 2
-guid: 2ec16986b00e02e409c2f114f460a93a
+guid: 8826868ea1f4d594b9a8f71d09833dc6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -985846562326638206
-    second: craftingTablePot-export_0
-  - first:
-      213: 3548440631550447573
-    second: craftingTablePot-export_1
-  - first:
-      213: 211825032703075262
-    second: craftingTablePot-export_2
-  - first:
-      213: 1380042764139407560
-    second: craftingTablePot-export_3
-  - first:
-      213: 1868193691967050991
-    second: craftingTablePot-export_4
-  - first:
-      213: -5338157572268460751
-    second: craftingTablePot-export_5
+      213: 3533068434682758702
+    second: bin-export_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -115,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: craftingTablePot-export_0
+      name: bin-export_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 48
-        height: 32
+        x: 4
+        y: 5
+        width: 24
+        height: 24
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -130,74 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2811b7956c19152f0800000000000000
-      internalID: -985846562326638206
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: craftingTablePot-export_1
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 0
-        width: 48
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5df802634f79e3130800000000000000
-      internalID: 3548440631550447573
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: craftingTablePot-export_2
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 0
-        width: 48
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: eb36dc4bebd80f200800000000000000
-      internalID: 211825032703075262
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: craftingTablePot-export_3
-      rect:
-        serializedVersion: 2
-        x: 144
-        y: 0
-        width: 48
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8c8a06b0595e62310800000000000000
-      internalID: 1380042764139407560
+      spriteID: e264968b50bf70130800000000000000
+      internalID: 3533068434682758702
       vertices: []
       indices: 
       edges: []
@@ -206,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 146446bcddd12b84b8c7fadbb4326cb6
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -216,10 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      craftingTablePot-export_0: -985846562326638206
-      craftingTablePot-export_1: 3548440631550447573
-      craftingTablePot-export_2: 211825032703075262
-      craftingTablePot-export_3: 1380042764139407560
+      bin-export_0: 3533068434682758702
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

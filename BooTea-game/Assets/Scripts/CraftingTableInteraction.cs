@@ -4,6 +4,7 @@ public class CraftingTableInteraction : MonoBehaviour, IInteractable
 {
     public GameObject craftingPanel;
     private bool isPanelOpen = false;
+    public Animator anim;
 
     public void Interact()
     {
@@ -22,6 +23,21 @@ public class CraftingTableInteraction : MonoBehaviour, IInteractable
     public bool canInteract()
     {
         return true;
+    }
+        private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            anim.SetBool("playerInRange", true);
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            anim.SetBool("playerInRange", false);
+        }
     }
 
 }
