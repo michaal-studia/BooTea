@@ -1,10 +1,25 @@
 fileFormatVersion: 2
-guid: ccddb6a1fa0a14644a2adfadec4b4f03
+guid: 2ec16986b00e02e409c2f114f460a93a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3051863748827842547
-    second: Open Book_0
+      213: -985846562326638206
+    second: craftingTablePot-export_0
+  - first:
+      213: 3548440631550447573
+    second: craftingTablePot-export_1
+  - first:
+      213: 211825032703075262
+    second: craftingTablePot-export_2
+  - first:
+      213: 1380042764139407560
+    second: craftingTablePot-export_3
+  - first:
+      213: 1868193691967050991
+    second: craftingTablePot-export_4
+  - first:
+      213: -5338157572268460751
+    second: craftingTablePot-export_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +61,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -100,13 +115,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Open Book_0
+      name: craftingTablePot-export_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 35
-        height: 32
+        width: 48
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +130,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d087934071a95a5d0800000000000000
-      internalID: -3051863748827842547
+      spriteID: 2811b7956c19152f0800000000000000
+      internalID: -985846562326638206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craftingTablePot-export_1
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5df802634f79e3130800000000000000
+      internalID: 3548440631550447573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craftingTablePot-export_2
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb36dc4bebd80f200800000000000000
+      internalID: 211825032703075262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: craftingTablePot-export_3
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 0
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c8a06b0595e62310800000000000000
+      internalID: 1380042764139407560
       vertices: []
       indices: 
       edges: []
@@ -125,7 +206,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: ebcebe961897d1842b4e5426b293d3ba
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +216,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Open Book_0: -3051863748827842547
+      craftingTablePot-export_0: -985846562326638206
+      craftingTablePot-export_1: 3548440631550447573
+      craftingTablePot-export_2: 211825032703075262
+      craftingTablePot-export_3: 1380042764139407560
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
