@@ -9,6 +9,14 @@ public class SinkController : MonoBehaviour, IInteractable
 
     public void Interact()
     {
+        if (!isPanelOpen)
+        {
+            AudioManager.Play("MaximizeSwoosh1");
+        }
+        else
+        {
+            AudioManager.Play("MinimizeSwoosh1");
+        }
         isPanelOpen = !isPanelOpen;
         sinkPanel.SetActive(isPanelOpen);
     }

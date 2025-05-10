@@ -32,11 +32,24 @@ public class TrashBin : MonoBehaviour, IInteractable
 
         Transform hotbarPanel = hotbarController.hotbarPanel.transform;
 
-        Slot firstSlot = hotbarPanel.GetChild(0).GetComponent<Slot>();
+        if (hotbarPanel.childCount > 0)
+        {
+            Slot firstSlot = hotbarPanel.GetChild(0).GetComponent<Slot>();
 
-        GameObject itemToDestroy = firstSlot.currentItem;
-        firstSlot.currentItem = null;
-        Destroy(itemToDestroy);
-        Debug.Log("The item was thrown away.");
+            if (firstSlot.currentItem != null)
+            {
+                GameObject itemToDestroy = firstSlot.currentItem;
+                firstSlot.currentItem = null;
+                Destroy(itemToDestroy);
+                AudioManager.Play("TrashThrow");
+                Debug.Log("The item was thrown away.");
+            }
+            else
+            {
+                AudioManager.Play("Error");
+                Debug.Log("There is nothing in your hand.");
+            }
+        }
+        
     }
 }
