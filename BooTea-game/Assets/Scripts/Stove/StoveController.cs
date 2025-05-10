@@ -6,6 +6,7 @@ public class Stove : MonoBehaviour, IInteractable
     private bool isPanelOpen = false;
     public float closeDistance = 1f;
     private Transform player;
+    public Animator anim;
 
     public bool canInteract()
     {
@@ -35,5 +36,19 @@ public class Stove : MonoBehaviour, IInteractable
             }
         }
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            anim.SetBool("playerInRange", true);
+        }
+    }
 
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            anim.SetBool("playerInRange", false);
+        }
+    }
 }

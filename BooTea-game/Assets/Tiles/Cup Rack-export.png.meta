@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: 5e0aec3f5c24964418e993fdd259401d
+guid: 9ac281e1f68bde9489a312fa33a6e29f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1800316611296404700
-    second: Tea Box Open_0
+      213: 6188071178407830357
+    second: Cup Rack-export_0
+  - first:
+      213: -3120938221806281407
+    second: Cup Rack-export_1
+  - first:
+      213: 5293555500440825183
+    second: Cup Rack-export_2
+  - first:
+      213: 7122538262162724059
+    second: Cup Rack-export_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +55,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -100,13 +109,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Tea Box Open_0
+      name: Cup Rack-export_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 32
-        height: 27
+        height: 40
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +124,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cd4ae836b620cf810800000000000000
-      internalID: 1800316611296404700
+      spriteID: 553e4d173f170e550800000000000000
+      internalID: 6188071178407830357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cup Rack-export_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14d1c43093330b4d0800000000000000
+      internalID: -3120938221806281407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cup Rack-export_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5d27926eac767940800000000000000
+      internalID: 5293555500440825183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cup Rack-export_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd4565700d658d260800000000000000
+      internalID: 7122538262162724059
       vertices: []
       indices: 
       edges: []
@@ -125,7 +200,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: a175f5bee32e61949b948302b03de2ab
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +210,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Tea Box Open_0: 1800316611296404700
+      Cup Rack-export_0: 6188071178407830357
+      Cup Rack-export_1: -3120938221806281407
+      Cup Rack-export_2: 5293555500440825183
+      Cup Rack-export_3: 7122538262162724059
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

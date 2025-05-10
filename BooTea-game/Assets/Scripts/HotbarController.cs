@@ -6,7 +6,7 @@ public class HotbarController : MonoBehaviour
 {
     public GameObject hotbarPanel;
     public GameObject slotPrefab;
-    public int slotCount = 10; // Number of slots in the hotbar 1-0 on the keyboard
+    public int slotCount = 4; // Number of slots in the hotbar 1-0 on the keyboard
 
     private ItemDictionary itemDictionary;
 
@@ -19,7 +19,7 @@ public class HotbarController : MonoBehaviour
         hotbarKeys = new Key[slotCount];
         for (int i = 0; i < slotCount; i++)
         {
-            hotbarKeys[i] = i < 9 ? (Key)((int)Key.Digit1 + i) : Key.Digit0; // e.g. Slot 0 is the first slot on the hotbar but needs to be set to Key.Digit1
+            hotbarKeys[i] = i < 4 ? (Key)((int)Key.Digit1 + i) : Key.Digit0; // e.g. Slot 0 is the first slot on the hotbar but needs to be set to Key.Digit1
             // Arrays in code start at 0, not 1
             //Slot9 = Digit0
         }
