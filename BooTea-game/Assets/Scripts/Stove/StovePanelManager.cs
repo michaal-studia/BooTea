@@ -1,51 +1,54 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor;
 
 public class StovePanelManager : MonoBehaviour
 {
-    public Slot slotFilledPot; // Slot na pełny dzbanek
-    public Slot slotResult;   // Slot na wynik
+    public Slot slotFilledPot;
+    public Slot slotResult;
 
     [System.Serializable]
     public class CraftingRecipe
     {
-        public GameObject filledPotPrefab; // Prefab pełnego dzbanka
-        public GameObject resultPrefab;   // Prefab wyniku
+        public GameObject filledPotPrefab;
+        public GameObject successResultPrefab; // Prefab gdy QTE się uda
+        public GameObject failResultPrefab;    // Prefab gdy QTE się nie uda
+        public int requiredTemperature;        // Wymagana temperatura
 
-        public bool Matches(GameObject inputPrefab)
+        public bool Matches(GameObject inputPrefab, int temperature)
         {
             if (inputPrefab == null) return false;
 
-            // Porównaj nazwy obiektów, ignorując "(Clone)"
-            return inputPrefab.name.Replace("(Clone)", "").Trim() == filledPotPrefab.name.Trim();
+            string inputName = inputPrefab.name.Replace("(Clone)", "").Trim();
+            string prefabName = filledPotPrefab.name.Trim();
+
+            return inputName == prefabName && temperature == requiredTemperature;
         }
     }
 
-    public List<CraftingRecipe> recipes; // Lista przepisów
+    public List<CraftingRecipe> recipes;
 
-    public void TryCraft()
+    public void TryCraft(int temperature, bool qteSuccess)
     {
         GameObject inputPrefab = GetItemPrefab(slotFilledPot);
 
-        Debug.Log($"Input Prefab: {inputPrefab?.name}");
+        if (inputPrefab == null)
+        {
+            Debug.Log("Brak przedmiotu w slocie.");
+            return;
+        }
 
         foreach (CraftingRecipe recipe in recipes)
         {
-            Debug.Log($"Checking recipe: {recipe.filledPotPrefab?.name}");
-            if (recipe.Matches(inputPrefab) && slotResult.currentItem == null)
+            if (recipe.Matches(inputPrefab, temperature) && slotResult.currentItem == null)
             {
-                Debug.Log("Recipe matched!");
                 ClearSlot(slotFilledPot);
 
-                GameObject resultItem = Instantiate(recipe.resultPrefab, slotResult.transform);
+                // Wybierz odpowiedni prefab w zależności od wyniku QTE
+                GameObject resultPrefab = qteSuccess ? recipe.successResultPrefab : recipe.failResultPrefab;
+
+                GameObject resultItem = Instantiate(resultPrefab, slotResult.transform);
                 resultItem.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
                 slotResult.currentItem = resultItem;
-                return;
-            }
-            else if (recipe.Matches(inputPrefab) && slotResult.currentItem != null)
-            {
-                Debug.Log("Slot na wynik nie jest pusty.");
                 return;
             }
         }
@@ -55,16 +58,16 @@ public class StovePanelManager : MonoBehaviour
 
     private GameObject GetItemPrefab(Slot slot)
     {
-        if (slot.currentItem == null) return null; // Jeśli slot jest pusty, zwróć null
-        return slot.currentItem; // Zwróć prefab obecny w slocie
+        return slot.currentItem;
     }
 
     private void ClearSlot(Slot slot)
     {
         if (slot.currentItem != null)
         {
-            Destroy(slot.currentItem); // Usuń obiekt z slotu
-            slot.currentItem = null;   // Ustaw slot jako pusty
+            GameObject itemToDestroy = slot.currentItem;
+            slot.currentItem = null;
+            Destroy(itemToDestroy);
         }
     }
 }
