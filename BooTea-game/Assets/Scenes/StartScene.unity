@@ -478,12 +478,11 @@ Transform:
   m_GameObject: {fileID: 525327372}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: -9, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 860320848}
-  - {fileID: 1724452684}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &525327376
@@ -845,6 +844,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1584446381}
+  - {fileID: 1724452684}
   m_Father: {fileID: 525327375}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -901,8 +901,8 @@ Canvas:
   m_GameObject: {fileID: 860320847}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 525327374}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -1286,6 +1286,79 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1592119046}
   m_CullTransparentMesh: 1
+--- !u!1001 &1635803431
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2252819440931742184, guid: af62654bf2f907944804cb30fc3acf22, type: 3}
+      propertyPath: audioGroups.Array.size
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 2252819440931742184, guid: af62654bf2f907944804cb30fc3acf22, type: 3}
+      propertyPath: audioGroups.Array.data[16].name
+      value: MainMenuBackgroundMusic
+      objectReference: {fileID: 0}
+    - target: {fileID: 2252819440931742184, guid: af62654bf2f907944804cb30fc3acf22, type: 3}
+      propertyPath: audioGroups.Array.data[16].audioClips.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2252819440931742184, guid: af62654bf2f907944804cb30fc3acf22, type: 3}
+      propertyPath: 'audioGroups.Array.data[16].audioClips.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: ddb4f983f341495498685a9fc2b71a3f, type: 3}
+    - target: {fileID: 6514037391138685450, guid: af62654bf2f907944804cb30fc3acf22, type: 3}
+      propertyPath: m_Name
+      value: AudioManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 7605736745612117631, guid: af62654bf2f907944804cb30fc3acf22, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7605736745612117631, guid: af62654bf2f907944804cb30fc3acf22, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7605736745612117631, guid: af62654bf2f907944804cb30fc3acf22, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7605736745612117631, guid: af62654bf2f907944804cb30fc3acf22, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7605736745612117631, guid: af62654bf2f907944804cb30fc3acf22, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7605736745612117631, guid: af62654bf2f907944804cb30fc3acf22, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7605736745612117631, guid: af62654bf2f907944804cb30fc3acf22, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7605736745612117631, guid: af62654bf2f907944804cb30fc3acf22, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7605736745612117631, guid: af62654bf2f907944804cb30fc3acf22, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7605736745612117631, guid: af62654bf2f907944804cb30fc3acf22, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: af62654bf2f907944804cb30fc3acf22, type: 3}
 --- !u!1 &1724452683
 GameObject:
   m_ObjectHideFlags: 0
@@ -1297,7 +1370,7 @@ GameObject:
   - component: {fileID: 1724452684}
   - component: {fileID: 1724452686}
   - component: {fileID: 1724452685}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: LeavesSystem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1312,13 +1385,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1724452683}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 988, y: 618, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0.24014881, w: 0.9707361}
+  m_LocalPosition: {x: 336, y: 232.99998, z: -25.161894}
+  m_LocalScale: {x: 0.015627643, y: 0.015627643, z: 0.015627643}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 525327375}
-  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+  m_Father: {fileID: 860320848}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -27.791}
 --- !u!199 &1724452685
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -1362,7 +1435,7 @@ ParticleSystemRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1450121531
-  m_SortingLayer: 7
+  m_SortingLayer: 8
   m_SortingOrder: -20
   m_RenderMode: 0
   m_MeshDistribution: 0
@@ -6214,10 +6287,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 1584446380}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 525327376}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: OnSettingsClick
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -6269,4 +6342,5 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 525327375}
+  - {fileID: 1635803431}
   - {fileID: 1092198252}

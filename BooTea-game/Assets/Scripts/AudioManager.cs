@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class AudioManager : MonoBehaviour
@@ -23,7 +24,10 @@ public class AudioManager : MonoBehaviour
     {
         if (Instance == null)
         {
+
             Instance = this;
+            DontDestroyOnLoad(gameObject);
+
             AudioSource[] audioSources = GetComponents<AudioSource>();
             audioSource = audioSources[0];
             randomPitchAudioSource = audioSources[1];
@@ -56,7 +60,18 @@ public class AudioManager : MonoBehaviour
     {
         LoadVolumeSettings();
 
-        StartCoroutine(LoopMusic());
+        string currentScene = SceneManager.GetActiveScene().name;
+
+        if (currentScene == "StartScene") // Main Menu
+        {
+            StartCoroutine(LoopMusic("MainMenuBackgroundMusic"));
+        }
+        else if (currentScene == "SampleScene") // Game
+        {
+            StopMusic(); // zatrzymaj poprzednią muzykę
+            StartCoroutine(LoopMusic("BackgroundMusic"));
+        }
+
 
         if (MusicSlider != null)
             MusicSlider.onValueChanged.AddListener(delegate { SetMusicVolume(MusicSlider.value); });
@@ -68,9 +83,9 @@ public class AudioManager : MonoBehaviour
             VoiceSlider.onValueChanged.AddListener(delegate { SetVoiceVolume(VoiceSlider.value); });
     }
 
-    private IEnumerator LoopMusic()
+    private IEnumerator LoopMusic(string music)
     {
-        AudioClip[] backgroundTracks = audioLibrary.GetClips("BackgroundMusic");
+        AudioClip[] backgroundTracks = audioLibrary.GetClips(music);
 
         if (backgroundTracks.Length == 0)
         {
