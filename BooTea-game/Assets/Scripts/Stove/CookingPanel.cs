@@ -28,7 +28,7 @@ public class CookingPanel : MonoBehaviour
 
     public void StartQTE()
     {
-        currentTemperature = (int)temperatureSlider.value;
+        currentTemperature = (int)temperatureSlider.value * 5 + 70;
         temperatureSlider.gameObject.SetActive(false);
         startButton.interactable = false;
         qtePanel.SetActive(true);
