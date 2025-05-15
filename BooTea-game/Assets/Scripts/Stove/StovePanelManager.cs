@@ -51,6 +51,11 @@ public class StovePanelManager : MonoBehaviour
                 slotResult.currentItem = resultItem;
                 return;
             }
+            else if (recipe.Matches(inputPrefab, temperature) && slotResult.currentItem != null)
+            {
+                Debug.Log("Slot na wynik zajęty.");
+                return;
+            }
         }
 
         Debug.Log("Brak pasującego przepisu.");

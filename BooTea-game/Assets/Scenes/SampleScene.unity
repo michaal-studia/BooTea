@@ -19372,10 +19372,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 420439690}
   m_HandleRect: {fileID: 938486962}
   m_Direction: 0
-  m_MinValue: 70
-  m_MaxValue: 100
+  m_MinValue: 0
+  m_MaxValue: 6
   m_WholeNumbers: 1
-  m_Value: 70
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -35003,7 +35003,7 @@ MonoBehaviour:
   - filledPotPrefab: {fileID: 5420540017673487146, guid: 9a91f035650da6046941349cff48eaa9, type: 3}
     successResultPrefab: {fileID: 4678585175034573676, guid: 4e3cbe41643dad94eb06942f18f63136, type: 3}
     failResultPrefab: {fileID: 86848639610744441, guid: b233286e316fa30479350a452cfe55cd, type: 3}
-    requiredTemperature: 93
+    requiredTemperature: 95
 --- !u!114 &1382947791
 MonoBehaviour:
   m_ObjectHideFlags: 0

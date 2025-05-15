@@ -7,7 +7,7 @@ public class SliderController : MonoBehaviour
 
     public void SliderChange(float value)
     {
-        float localValue = value;
+        float localValue = value * 5 + 70;
         sliderText.text = localValue.ToString("0") + "°C";
     }
 }
