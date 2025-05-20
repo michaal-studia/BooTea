@@ -1,0 +1,1538 @@
+GameObject: Main Camera
+Position: (0.00, -9.00, -10.00)
+Rotation: (0.00, 0.00, 0.00)
+Scale: (1.00, 1.00, 1.00)
+Components:
+  - Transform
+  - Camera
+  - AudioListener
+  - UniversalAdditionalCameraData
+  - MainMenu
+
+  GameObject: Canvas
+  Position: (0.00, -9.00, 90.00)
+  Rotation: (0.00, 0.00, 0.00)
+  Scale: (0.01, 0.01, 0.01)
+  Components:
+    - RectTransform
+    - Canvas
+    - CanvasScaler
+    - GraphicRaycaster
+
+    GameObject: MainMenu
+    Position: (0.00, -9.00, 90.00)
+    Rotation: (0.00, 0.00, 0.00)
+    Scale: (1.00, 1.00, 1.00)
+    Components:
+      - RectTransform
+      - CanvasRenderer
+      - Image
+
+      GameObject: Image
+      Position: (4.15, -6.66, 90.00)
+      Rotation: (0.00, 0.00, 0.00)
+      Scale: (3.28, 2.53, 0.88)
+      Components:
+        - RectTransform
+        - CanvasRenderer
+        - Image
+
+      GameObject: PlayButton
+      Position: (4.15, -9.68, 90.02)
+      Rotation: (0.00, 0.00, 0.00)
+      Scale: (1.00, 1.00, 1.00)
+      Components:
+        - RectTransform
+        - CanvasRenderer
+        - Image
+        - Button
+
+        GameObject: Text (TMP)
+        Position: (4.15, -9.68, 90.02)
+        Rotation: (0.00, 0.00, 0.00)
+        Scale: (1.00, 1.00, 1.00)
+        Components:
+          - RectTransform
+          - CanvasRenderer
+          - TextMeshProUGUI
+
+      GameObject: LoadButton
+      Position: (4.15, -10.90, 90.02)
+      Rotation: (0.00, 0.00, 0.00)
+      Scale: (1.00, 1.00, 1.00)
+      Components:
+        - RectTransform
+        - CanvasRenderer
+        - Image
+        - Button
+
+        GameObject: Text (TMP)
+        Position: (4.15, -10.90, 90.02)
+        Rotation: (0.00, 0.00, 0.31)
+        Scale: (1.00, 1.00, 1.00)
+        Components:
+          - RectTransform
+          - CanvasRenderer
+          - TextMeshProUGUI
+
+      GameObject: SettingsButton
+      Position: (4.15, -12.11, 90.02)
+      Rotation: (0.00, 0.00, 0.00)
+      Scale: (1.00, 1.00, 1.00)
+      Components:
+        - RectTransform
+        - CanvasRenderer
+        - Image
+        - Button
+
+        GameObject: Text (TMP)
+        Position: (4.15, -12.11, 90.02)
+        Rotation: (0.00, 0.00, 0.00)
+        Scale: (1.00, 1.00, 1.00)
+        Components:
+          - RectTransform
+          - CanvasRenderer
+          - TextMeshProUGUI
+
+      GameObject: QuitButton
+      Position: (4.15, -13.34, 90.02)
+      Rotation: (0.00, 0.00, 0.00)
+      Scale: (1.00, 1.00, 1.00)
+      Components:
+        - RectTransform
+        - CanvasRenderer
+        - Image
+        - Button
+
+        GameObject: Text (TMP)
+        Position: (4.15, -13.34, 90.02)
+        Rotation: (0.00, 0.00, 0.00)
+        Scale: (1.00, 1.00, 1.00)
+        Components:
+          - RectTransform
+          - CanvasRenderer
+          - TextMeshProUGUI
+
+      GameObject: SettingsPanel
+      Position: (0.00, -9.00, 90.00)
+      Rotation: (0.00, 0.00, 0.00)
+      Scale: (1.00, 1.00, 1.00)
+      Components:
+        - RectTransform
+        - CanvasRenderer
+        - Image
+
+        GameObject: SettingsImage
+        Position: (-0.02, -8.99, 90.00)
+        Rotation: (0.00, 0.00, 0.00)
+        Scale: (1.00, 1.00, 1.00)
+        Components:
+          - RectTransform
+          - CanvasRenderer
+          - Image
+
+        GameObject: MusicSlider
+        Position: (-1.11, -6.43, 90.00)
+        Rotation: (0.00, 0.00, 0.00)
+        Scale: (1.00, 1.00, 1.00)
+        Components:
+          - RectTransform
+          - Slider
+
+          GameObject: Background
+          Position: (-1.11, -6.43, 90.00)
+          Rotation: (0.00, 0.00, 0.00)
+          Scale: (1.00, 1.00, 1.00)
+          Components:
+            - RectTransform
+            - CanvasRenderer
+            - Image
+
+          GameObject: Fill Area
+          Position: (-1.16, -6.43, 90.00)
+          Rotation: (0.00, 0.00, 0.00)
+          Scale: (1.00, 1.00, 1.00)
+          Components:
+            - RectTransform
+
+            GameObject: Fill
+            Position: (-1.13, -6.43, 90.00)
+            Rotation: (0.00, 0.00, 0.00)
+            Scale: (1.00, 1.00, 1.00)
+            Components:
+              - RectTransform
+              - CanvasRenderer
+              - Image
+
+          GameObject: Handle Slide Area
+          Position: (-1.11, -6.43, 90.00)
+          Rotation: (0.00, 0.00, 0.00)
+          Scale: (1.00, 1.00, 1.00)
+          Components:
+            - RectTransform
+
+            GameObject: Handle
+            Position: (1.17, -6.43, 90.00)
+            Rotation: (0.00, 0.00, 0.00)
+            Scale: (1.00, 1.00, 1.00)
+            Components:
+              - RectTransform
+              - CanvasRenderer
+              - Image
+
+        GameObject: MusicVolumeText
+        Position: (-5.54, -6.38, 90.00)
+        Rotation: (0.00, 0.00, 0.00)
+        Scale: (1.00, 1.00, 1.00)
+        Components:
+          - RectTransform
+          - CanvasRenderer
+          - TextMeshProUGUI
+
+        GameObject: SettingsText
+        Position: (-6.82, -5.41, 90.00)
+        Rotation: (0.00, 0.00, 0.00)
+        Scale: (1.00, 1.00, 1.00)
+        Components:
+          - RectTransform
+          - CanvasRenderer
+          - TextMeshProUGUI
+
+        GameObject: SFXSlider
+        Position: (-1.11, -6.99, 90.00)
+        Rotation: (0.00, 0.00, 0.00)
+        Scale: (1.00, 1.00, 1.00)
+        Components:
+          - RectTransform
+          - Slider
+
+          GameObject: Background
+          Position: (-1.11, -6.99, 90.00)
+          Rotation: (0.00, 0.00, 0.00)
+          Scale: (1.00, 1.00, 1.00)
+          Components:
+            - RectTransform
+            - CanvasRenderer
+            - Image
+
+          GameObject: Fill Area
+          Position: (-1.16, -6.99, 90.00)
+          Rotation: (0.00, 0.00, 0.00)
+          Scale: (1.00, 1.00, 1.00)
+          Components:
+            - RectTransform
+
+            GameObject: Fill
+            Position: (-1.13, -6.99, 90.00)
+            Rotation: (0.00, 0.00, 0.00)
+            Scale: (1.00, 1.00, 1.00)
+            Components:
+              - RectTransform
+              - CanvasRenderer
+              - Image
+
+          GameObject: Handle Slide Area
+          Position: (-1.11, -6.99, 90.00)
+          Rotation: (0.00, 0.00, 0.00)
+          Scale: (1.00, 1.00, 1.00)
+          Components:
+            - RectTransform
+
+            GameObject: Handle
+            Position: (1.17, -6.99, 90.00)
+            Rotation: (0.00, 0.00, 0.00)
+            Scale: (1.00, 1.00, 1.00)
+            Components:
+              - RectTransform
+              - CanvasRenderer
+              - Image
+
+        GameObject: SFXVolumeText
+        Position: (-5.31, -6.93, 90.00)
+        Rotation: (0.00, 0.00, 0.00)
+        Scale: (1.00, 1.00, 1.00)
+        Components:
+          - RectTransform
+          - CanvasRenderer
+          - TextMeshProUGUI
+
+        GameObject: VoiceSlider
+        Position: (-1.11, -7.57, 90.00)
+        Rotation: (0.00, 0.00, 0.00)
+        Scale: (1.00, 1.00, 1.00)
+        Components:
+          - RectTransform
+          - Slider
+
+          GameObject: Background
+          Position: (-1.11, -7.57, 90.00)
+          Rotation: (0.00, 0.00, 0.00)
+          Scale: (1.00, 1.00, 1.00)
+          Components:
+            - RectTransform
+            - CanvasRenderer
+            - Image
+
+          GameObject: Fill Area
+          Position: (-1.16, -7.57, 90.00)
+          Rotation: (0.00, 0.00, 0.00)
+          Scale: (1.00, 1.00, 1.00)
+          Components:
+            - RectTransform
+
+            GameObject: Fill
+            Position: (-1.13, -7.57, 90.00)
+            Rotation: (0.00, 0.00, 0.00)
+            Scale: (1.00, 1.00, 1.00)
+            Components:
+              - RectTransform
+              - CanvasRenderer
+              - Image
+
+          GameObject: Handle Slide Area
+          Position: (-1.11, -7.57, 90.00)
+          Rotation: (0.00, 0.00, 0.00)
+          Scale: (1.00, 1.00, 1.00)
+          Components:
+            - RectTransform
+
+            GameObject: Handle
+            Position: (1.17, -7.57, 90.00)
+            Rotation: (0.00, 0.00, 0.00)
+            Scale: (1.00, 1.00, 1.00)
+            Components:
+              - RectTransform
+              - CanvasRenderer
+              - Image
+
+        GameObject: VoiceVolumeText
+        Position: (-5.50, -7.53, 90.00)
+        Rotation: (0.00, 0.00, 0.00)
+        Scale: (1.00, 1.00, 1.00)
+        Components:
+          - RectTransform
+          - CanvasRenderer
+          - TextMeshProUGUI
+
+        GameObject: CloseButton
+        Position: (7.07, -12.37, 90.00)
+        Rotation: (0.00, 0.00, 359.37)
+        Scale: (1.00, 1.00, 1.00)
+        Components:
+          - RectTransform
+          - CanvasRenderer
+          - Image
+          - Button
+
+          GameObject: Text (TMP)
+          Position: (7.07, -12.37, 90.00)
+          Rotation: (0.00, 0.00, 359.37)
+          Scale: (1.00, 1.00, 1.00)
+          Components:
+            - RectTransform
+            - CanvasRenderer
+            - TextMeshProUGUI
+
+    GameObject: LeavesSystem
+    Position: (3.11, -6.84, 89.77)
+    Rotation: (0.00, 0.00, 332.21)
+    Scale: (0.02, 0.02, 0.02)
+    Components:
+      - Transform
+      - ParticleSystem
+      - ParticleSystemRenderer
+
+GameObject: Canvas
+Position: (0.00, -9.00, 90.00)
+Rotation: (0.00, 0.00, 0.00)
+Scale: (0.01, 0.01, 0.01)
+Components:
+  - RectTransform
+  - Canvas
+  - CanvasScaler
+  - GraphicRaycaster
+
+  GameObject: MainMenu
+  Position: (0.00, -9.00, 90.00)
+  Rotation: (0.00, 0.00, 0.00)
+  Scale: (1.00, 1.00, 1.00)
+  Components:
+    - RectTransform
+    - CanvasRenderer
+    - Image
+
+    GameObject: Image
+    Position: (4.15, -6.66, 90.00)
+    Rotation: (0.00, 0.00, 0.00)
+    Scale: (3.28, 2.53, 0.88)
+    Components:
+      - RectTransform
+      - CanvasRenderer
+      - Image
+
+    GameObject: PlayButton
+    Position: (4.15, -9.68, 90.02)
+    Rotation: (0.00, 0.00, 0.00)
+    Scale: (1.00, 1.00, 1.00)
+    Components:
+      - RectTransform
+      - CanvasRenderer
+      - Image
+      - Button
+
+      GameObject: Text (TMP)
+      Position: (4.15, -9.68, 90.02)
+      Rotation: (0.00, 0.00, 0.00)
+      Scale: (1.00, 1.00, 1.00)
+      Components:
+        - RectTransform
+        - CanvasRenderer
+        - TextMeshProUGUI
+
+    GameObject: LoadButton
+    Position: (4.15, -10.90, 90.02)
+    Rotation: (0.00, 0.00, 0.00)
+    Scale: (1.00, 1.00, 1.00)
+    Components:
+      - RectTransform
+      - CanvasRenderer
+      - Image
+      - Button
+
+      GameObject: Text (TMP)
+      Position: (4.15, -10.90, 90.02)
+      Rotation: (0.00, 0.00, 0.31)
+      Scale: (1.00, 1.00, 1.00)
+      Components:
+        - RectTransform
+        - CanvasRenderer
+        - TextMeshProUGUI
+
+    GameObject: SettingsButton
+    Position: (4.15, -12.11, 90.02)
+    Rotation: (0.00, 0.00, 0.00)
+    Scale: (1.00, 1.00, 1.00)
+    Components:
+      - RectTransform
+      - CanvasRenderer
+      - Image
+      - Button
+
+      GameObject: Text (TMP)
+      Position: (4.15, -12.11, 90.02)
+      Rotation: (0.00, 0.00, 0.00)
+      Scale: (1.00, 1.00, 1.00)
+      Components:
+        - RectTransform
+        - CanvasRenderer
+        - TextMeshProUGUI
+
+    GameObject: QuitButton
+    Position: (4.15, -13.34, 90.02)
+    Rotation: (0.00, 0.00, 0.00)
+    Scale: (1.00, 1.00, 1.00)
+    Components:
+      - RectTransform
+      - CanvasRenderer
+      - Image
+      - Button
+
+      GameObject: Text (TMP)
+      Position: (4.15, -13.34, 90.02)
+      Rotation: (0.00, 0.00, 0.00)
+      Scale: (1.00, 1.00, 1.00)
+      Components:
+        - RectTransform
+        - CanvasRenderer
+        - TextMeshProUGUI
+
+    GameObject: SettingsPanel
+    Position: (0.00, -9.00, 90.00)
+    Rotation: (0.00, 0.00, 0.00)
+    Scale: (1.00, 1.00, 1.00)
+    Components:
+      - RectTransform
+      - CanvasRenderer
+      - Image
+
+      GameObject: SettingsImage
+      Position: (-0.02, -8.99, 90.00)
+      Rotation: (0.00, 0.00, 0.00)
+      Scale: (1.00, 1.00, 1.00)
+      Components:
+        - RectTransform
+        - CanvasRenderer
+        - Image
+
+      GameObject: MusicSlider
+      Position: (-1.11, -6.43, 90.00)
+      Rotation: (0.00, 0.00, 0.00)
+      Scale: (1.00, 1.00, 1.00)
+      Components:
+        - RectTransform
+        - Slider
+
+        GameObject: Background
+        Position: (-1.11, -6.43, 90.00)
+        Rotation: (0.00, 0.00, 0.00)
+        Scale: (1.00, 1.00, 1.00)
+        Components:
+          - RectTransform
+          - CanvasRenderer
+          - Image
+
+        GameObject: Fill Area
+        Position: (-1.16, -6.43, 90.00)
+        Rotation: (0.00, 0.00, 0.00)
+        Scale: (1.00, 1.00, 1.00)
+        Components:
+          - RectTransform
+
+          GameObject: Fill
+          Position: (-1.13, -6.43, 90.00)
+          Rotation: (0.00, 0.00, 0.00)
+          Scale: (1.00, 1.00, 1.00)
+          Components:
+            - RectTransform
+            - CanvasRenderer
+            - Image
+
+        GameObject: Handle Slide Area
+        Position: (-1.11, -6.43, 90.00)
+        Rotation: (0.00, 0.00, 0.00)
+        Scale: (1.00, 1.00, 1.00)
+        Components:
+          - RectTransform
+
+          GameObject: Handle
+          Position: (1.17, -6.43, 90.00)
+          Rotation: (0.00, 0.00, 0.00)
+          Scale: (1.00, 1.00, 1.00)
+          Components:
+            - RectTransform
+            - CanvasRenderer
+            - Image
+
+      GameObject: MusicVolumeText
+      Position: (-5.54, -6.38, 90.00)
+      Rotation: (0.00, 0.00, 0.00)
+      Scale: (1.00, 1.00, 1.00)
+      Components:
+        - RectTransform
+        - CanvasRenderer
+        - TextMeshProUGUI
+
+      GameObject: SettingsText
+      Position: (-6.82, -5.41, 90.00)
+      Rotation: (0.00, 0.00, 0.00)
+      Scale: (1.00, 1.00, 1.00)
+      Components:
+        - RectTransform
+        - CanvasRenderer
+        - TextMeshProUGUI
+
+      GameObject: SFXSlider
+      Position: (-1.11, -6.99, 90.00)
+      Rotation: (0.00, 0.00, 0.00)
+      Scale: (1.00, 1.00, 1.00)
+      Components:
+        - RectTransform
+        - Slider
+
+        GameObject: Background
+        Position: (-1.11, -6.99, 90.00)
+        Rotation: (0.00, 0.00, 0.00)
+        Scale: (1.00, 1.00, 1.00)
+        Components:
+          - RectTransform
+          - CanvasRenderer
+          - Image
+
+        GameObject: Fill Area
+        Position: (-1.16, -6.99, 90.00)
+        Rotation: (0.00, 0.00, 0.00)
+        Scale: (1.00, 1.00, 1.00)
+        Components:
+          - RectTransform
+
+          GameObject: Fill
+          Position: (-1.13, -6.99, 90.00)
+          Rotation: (0.00, 0.00, 0.00)
+          Scale: (1.00, 1.00, 1.00)
+          Components:
+            - RectTransform
+            - CanvasRenderer
+            - Image
+
+        GameObject: Handle Slide Area
+        Position: (-1.11, -6.99, 90.00)
+        Rotation: (0.00, 0.00, 0.00)
+        Scale: (1.00, 1.00, 1.00)
+        Components:
+          - RectTransform
+
+          GameObject: Handle
+          Position: (1.17, -6.99, 90.00)
+          Rotation: (0.00, 0.00, 0.00)
+          Scale: (1.00, 1.00, 1.00)
+          Components:
+            - RectTransform
+            - CanvasRenderer
+            - Image
+
+      GameObject: SFXVolumeText
+      Position: (-5.31, -6.93, 90.00)
+      Rotation: (0.00, 0.00, 0.00)
+      Scale: (1.00, 1.00, 1.00)
+      Components:
+        - RectTransform
+        - CanvasRenderer
+        - TextMeshProUGUI
+
+      GameObject: VoiceSlider
+      Position: (-1.11, -7.57, 90.00)
+      Rotation: (0.00, 0.00, 0.00)
+      Scale: (1.00, 1.00, 1.00)
+      Components:
+        - RectTransform
+        - Slider
+
+        GameObject: Background
+        Position: (-1.11, -7.57, 90.00)
+        Rotation: (0.00, 0.00, 0.00)
+        Scale: (1.00, 1.00, 1.00)
+        Components:
+          - RectTransform
+          - CanvasRenderer
+          - Image
+
+        GameObject: Fill Area
+        Position: (-1.16, -7.57, 90.00)
+        Rotation: (0.00, 0.00, 0.00)
+        Scale: (1.00, 1.00, 1.00)
+        Components:
+          - RectTransform
+
+          GameObject: Fill
+          Position: (-1.13, -7.57, 90.00)
+          Rotation: (0.00, 0.00, 0.00)
+          Scale: (1.00, 1.00, 1.00)
+          Components:
+            - RectTransform
+            - CanvasRenderer
+            - Image
+
+        GameObject: Handle Slide Area
+        Position: (-1.11, -7.57, 90.00)
+        Rotation: (0.00, 0.00, 0.00)
+        Scale: (1.00, 1.00, 1.00)
+        Components:
+          - RectTransform
+
+          GameObject: Handle
+          Position: (1.17, -7.57, 90.00)
+          Rotation: (0.00, 0.00, 0.00)
+          Scale: (1.00, 1.00, 1.00)
+          Components:
+            - RectTransform
+            - CanvasRenderer
+            - Image
+
+      GameObject: VoiceVolumeText
+      Position: (-5.50, -7.53, 90.00)
+      Rotation: (0.00, 0.00, 0.00)
+      Scale: (1.00, 1.00, 1.00)
+      Components:
+        - RectTransform
+        - CanvasRenderer
+        - TextMeshProUGUI
+
+      GameObject: CloseButton
+      Position: (7.07, -12.37, 90.00)
+      Rotation: (0.00, 0.00, 359.37)
+      Scale: (1.00, 1.00, 1.00)
+      Components:
+        - RectTransform
+        - CanvasRenderer
+        - Image
+        - Button
+
+        GameObject: Text (TMP)
+        Position: (7.07, -12.37, 90.00)
+        Rotation: (0.00, 0.00, 359.37)
+        Scale: (1.00, 1.00, 1.00)
+        Components:
+          - RectTransform
+          - CanvasRenderer
+          - TextMeshProUGUI
+
+  GameObject: LeavesSystem
+  Position: (3.11, -6.84, 89.77)
+  Rotation: (0.00, 0.00, 332.21)
+  Scale: (0.02, 0.02, 0.02)
+  Components:
+    - Transform
+    - ParticleSystem
+    - ParticleSystemRenderer
+
+GameObject: MainMenu
+Position: (0.00, -9.00, 90.00)
+Rotation: (0.00, 0.00, 0.00)
+Scale: (1.00, 1.00, 1.00)
+Components:
+  - RectTransform
+  - CanvasRenderer
+  - Image
+
+  GameObject: Image
+  Position: (4.15, -6.66, 90.00)
+  Rotation: (0.00, 0.00, 0.00)
+  Scale: (3.28, 2.53, 0.88)
+  Components:
+    - RectTransform
+    - CanvasRenderer
+    - Image
+
+  GameObject: PlayButton
+  Position: (4.15, -9.68, 90.02)
+  Rotation: (0.00, 0.00, 0.00)
+  Scale: (1.00, 1.00, 1.00)
+  Components:
+    - RectTransform
+    - CanvasRenderer
+    - Image
+    - Button
+
+    GameObject: Text (TMP)
+    Position: (4.15, -9.68, 90.02)
+    Rotation: (0.00, 0.00, 0.00)
+    Scale: (1.00, 1.00, 1.00)
+    Components:
+      - RectTransform
+      - CanvasRenderer
+      - TextMeshProUGUI
+
+  GameObject: LoadButton
+  Position: (4.15, -10.90, 90.02)
+  Rotation: (0.00, 0.00, 0.00)
+  Scale: (1.00, 1.00, 1.00)
+  Components:
+    - RectTransform
+    - CanvasRenderer
+    - Image
+    - Button
+
+    GameObject: Text (TMP)
+    Position: (4.15, -10.90, 90.02)
+    Rotation: (0.00, 0.00, 0.31)
+    Scale: (1.00, 1.00, 1.00)
+    Components:
+      - RectTransform
+      - CanvasRenderer
+      - TextMeshProUGUI
+
+  GameObject: SettingsButton
+  Position: (4.15, -12.11, 90.02)
+  Rotation: (0.00, 0.00, 0.00)
+  Scale: (1.00, 1.00, 1.00)
+  Components:
+    - RectTransform
+    - CanvasRenderer
+    - Image
+    - Button
+
+    GameObject: Text (TMP)
+    Position: (4.15, -12.11, 90.02)
+    Rotation: (0.00, 0.00, 0.00)
+    Scale: (1.00, 1.00, 1.00)
+    Components:
+      - RectTransform
+      - CanvasRenderer
+      - TextMeshProUGUI
+
+  GameObject: QuitButton
+  Position: (4.15, -13.34, 90.02)
+  Rotation: (0.00, 0.00, 0.00)
+  Scale: (1.00, 1.00, 1.00)
+  Components:
+    - RectTransform
+    - CanvasRenderer
+    - Image
+    - Button
+
+    GameObject: Text (TMP)
+    Position: (4.15, -13.34, 90.02)
+    Rotation: (0.00, 0.00, 0.00)
+    Scale: (1.00, 1.00, 1.00)
+    Components:
+      - RectTransform
+      - CanvasRenderer
+      - TextMeshProUGUI
+
+  GameObject: SettingsPanel
+  Position: (0.00, -9.00, 90.00)
+  Rotation: (0.00, 0.00, 0.00)
+  Scale: (1.00, 1.00, 1.00)
+  Components:
+    - RectTransform
+    - CanvasRenderer
+    - Image
+
+    GameObject: SettingsImage
+    Position: (-0.02, -8.99, 90.00)
+    Rotation: (0.00, 0.00, 0.00)
+    Scale: (1.00, 1.00, 1.00)
+    Components:
+      - RectTransform
+      - CanvasRenderer
+      - Image
+
+    GameObject: MusicSlider
+    Position: (-1.11, -6.43, 90.00)
+    Rotation: (0.00, 0.00, 0.00)
+    Scale: (1.00, 1.00, 1.00)
+    Components:
+      - RectTransform
+      - Slider
+
+      GameObject: Background
+      Position: (-1.11, -6.43, 90.00)
+      Rotation: (0.00, 0.00, 0.00)
+      Scale: (1.00, 1.00, 1.00)
+      Components:
+        - RectTransform
+        - CanvasRenderer
+        - Image
+
+      GameObject: Fill Area
+      Position: (-1.16, -6.43, 90.00)
+      Rotation: (0.00, 0.00, 0.00)
+      Scale: (1.00, 1.00, 1.00)
+      Components:
+        - RectTransform
+
+        GameObject: Fill
+        Position: (-1.13, -6.43, 90.00)
+        Rotation: (0.00, 0.00, 0.00)
+        Scale: (1.00, 1.00, 1.00)
+        Components:
+          - RectTransform
+          - CanvasRenderer
+          - Image
+
+      GameObject: Handle Slide Area
+      Position: (-1.11, -6.43, 90.00)
+      Rotation: (0.00, 0.00, 0.00)
+      Scale: (1.00, 1.00, 1.00)
+      Components:
+        - RectTransform
+
+        GameObject: Handle
+        Position: (1.17, -6.43, 90.00)
+        Rotation: (0.00, 0.00, 0.00)
+        Scale: (1.00, 1.00, 1.00)
+        Components:
+          - RectTransform
+          - CanvasRenderer
+          - Image
+
+    GameObject: MusicVolumeText
+    Position: (-5.54, -6.38, 90.00)
+    Rotation: (0.00, 0.00, 0.00)
+    Scale: (1.00, 1.00, 1.00)
+    Components:
+      - RectTransform
+      - CanvasRenderer
+      - TextMeshProUGUI
+
+    GameObject: SettingsText
+    Position: (-6.82, -5.41, 90.00)
+    Rotation: (0.00, 0.00, 0.00)
+    Scale: (1.00, 1.00, 1.00)
+    Components:
+      - RectTransform
+      - CanvasRenderer
+      - TextMeshProUGUI
+
+    GameObject: SFXSlider
+    Position: (-1.11, -6.99, 90.00)
+    Rotation: (0.00, 0.00, 0.00)
+    Scale: (1.00, 1.00, 1.00)
+    Components:
+      - RectTransform
+      - Slider
+
+      GameObject: Background
+      Position: (-1.11, -6.99, 90.00)
+      Rotation: (0.00, 0.00, 0.00)
+      Scale: (1.00, 1.00, 1.00)
+      Components:
+        - RectTransform
+        - CanvasRenderer
+        - Image
+
+      GameObject: Fill Area
+      Position: (-1.16, -6.99, 90.00)
+      Rotation: (0.00, 0.00, 0.00)
+      Scale: (1.00, 1.00, 1.00)
+      Components:
+        - RectTransform
+
+        GameObject: Fill
+        Position: (-1.13, -6.99, 90.00)
+        Rotation: (0.00, 0.00, 0.00)
+        Scale: (1.00, 1.00, 1.00)
+        Components:
+          - RectTransform
+          - CanvasRenderer
+          - Image
+
+      GameObject: Handle Slide Area
+      Position: (-1.11, -6.99, 90.00)
+      Rotation: (0.00, 0.00, 0.00)
+      Scale: (1.00, 1.00, 1.00)
+      Components:
+        - RectTransform
+
+        GameObject: Handle
+        Position: (1.17, -6.99, 90.00)
+        Rotation: (0.00, 0.00, 0.00)
+        Scale: (1.00, 1.00, 1.00)
+        Components:
+          - RectTransform
+          - CanvasRenderer
+          - Image
+
+    GameObject: SFXVolumeText
+    Position: (-5.31, -6.93, 90.00)
+    Rotation: (0.00, 0.00, 0.00)
+    Scale: (1.00, 1.00, 1.00)
+    Components:
+      - RectTransform
+      - CanvasRenderer
+      - TextMeshProUGUI
+
+    GameObject: VoiceSlider
+    Position: (-1.11, -7.57, 90.00)
+    Rotation: (0.00, 0.00, 0.00)
+    Scale: (1.00, 1.00, 1.00)
+    Components:
+      - RectTransform
+      - Slider
+
+      GameObject: Background
+      Position: (-1.11, -7.57, 90.00)
+      Rotation: (0.00, 0.00, 0.00)
+      Scale: (1.00, 1.00, 1.00)
+      Components:
+        - RectTransform
+        - CanvasRenderer
+        - Image
+
+      GameObject: Fill Area
+      Position: (-1.16, -7.57, 90.00)
+      Rotation: (0.00, 0.00, 0.00)
+      Scale: (1.00, 1.00, 1.00)
+      Components:
+        - RectTransform
+
+        GameObject: Fill
+        Position: (-1.13, -7.57, 90.00)
+        Rotation: (0.00, 0.00, 0.00)
+        Scale: (1.00, 1.00, 1.00)
+        Components:
+          - RectTransform
+          - CanvasRenderer
+          - Image
+
+      GameObject: Handle Slide Area
+      Position: (-1.11, -7.57, 90.00)
+      Rotation: (0.00, 0.00, 0.00)
+      Scale: (1.00, 1.00, 1.00)
+      Components:
+        - RectTransform
+
+        GameObject: Handle
+        Position: (1.17, -7.57, 90.00)
+        Rotation: (0.00, 0.00, 0.00)
+        Scale: (1.00, 1.00, 1.00)
+        Components:
+          - RectTransform
+          - CanvasRenderer
+          - Image
+
+    GameObject: VoiceVolumeText
+    Position: (-5.50, -7.53, 90.00)
+    Rotation: (0.00, 0.00, 0.00)
+    Scale: (1.00, 1.00, 1.00)
+    Components:
+      - RectTransform
+      - CanvasRenderer
+      - TextMeshProUGUI
+
+    GameObject: CloseButton
+    Position: (7.07, -12.37, 90.00)
+    Rotation: (0.00, 0.00, 359.37)
+    Scale: (1.00, 1.00, 1.00)
+    Components:
+      - RectTransform
+      - CanvasRenderer
+      - Image
+      - Button
+
+      GameObject: Text (TMP)
+      Position: (7.07, -12.37, 90.00)
+      Rotation: (0.00, 0.00, 359.37)
+      Scale: (1.00, 1.00, 1.00)
+      Components:
+        - RectTransform
+        - CanvasRenderer
+        - TextMeshProUGUI
+
+GameObject: Image
+Position: (4.15, -6.66, 90.00)
+Rotation: (0.00, 0.00, 0.00)
+Scale: (3.28, 2.53, 0.88)
+Components:
+  - RectTransform
+  - CanvasRenderer
+  - Image
+
+GameObject: PlayButton
+Position: (4.15, -9.68, 90.02)
+Rotation: (0.00, 0.00, 0.00)
+Scale: (1.00, 1.00, 1.00)
+Components:
+  - RectTransform
+  - CanvasRenderer
+  - Image
+  - Button
+
+  GameObject: Text (TMP)
+  Position: (4.15, -9.68, 90.02)
+  Rotation: (0.00, 0.00, 0.00)
+  Scale: (1.00, 1.00, 1.00)
+  Components:
+    - RectTransform
+    - CanvasRenderer
+    - TextMeshProUGUI
+
+GameObject: LoadButton
+Position: (4.15, -10.90, 90.02)
+Rotation: (0.00, 0.00, 0.00)
+Scale: (1.00, 1.00, 1.00)
+Components:
+  - RectTransform
+  - CanvasRenderer
+  - Image
+  - Button
+
+  GameObject: Text (TMP)
+  Position: (4.15, -10.90, 90.02)
+  Rotation: (0.00, 0.00, 0.31)
+  Scale: (1.00, 1.00, 1.00)
+  Components:
+    - RectTransform
+    - CanvasRenderer
+    - TextMeshProUGUI
+
+GameObject: SettingsButton
+Position: (4.15, -12.11, 90.02)
+Rotation: (0.00, 0.00, 0.00)
+Scale: (1.00, 1.00, 1.00)
+Components:
+  - RectTransform
+  - CanvasRenderer
+  - Image
+  - Button
+
+  GameObject: Text (TMP)
+  Position: (4.15, -12.11, 90.02)
+  Rotation: (0.00, 0.00, 0.00)
+  Scale: (1.00, 1.00, 1.00)
+  Components:
+    - RectTransform
+    - CanvasRenderer
+    - TextMeshProUGUI
+
+GameObject: QuitButton
+Position: (4.15, -13.34, 90.02)
+Rotation: (0.00, 0.00, 0.00)
+Scale: (1.00, 1.00, 1.00)
+Components:
+  - RectTransform
+  - CanvasRenderer
+  - Image
+  - Button
+
+  GameObject: Text (TMP)
+  Position: (4.15, -13.34, 90.02)
+  Rotation: (0.00, 0.00, 0.00)
+  Scale: (1.00, 1.00, 1.00)
+  Components:
+    - RectTransform
+    - CanvasRenderer
+    - TextMeshProUGUI
+
+GameObject: SettingsPanel
+Position: (0.00, -9.00, 90.00)
+Rotation: (0.00, 0.00, 0.00)
+Scale: (1.00, 1.00, 1.00)
+Components:
+  - RectTransform
+  - CanvasRenderer
+  - Image
+
+  GameObject: SettingsImage
+  Position: (-0.02, -8.99, 90.00)
+  Rotation: (0.00, 0.00, 0.00)
+  Scale: (1.00, 1.00, 1.00)
+  Components:
+    - RectTransform
+    - CanvasRenderer
+    - Image
+
+  GameObject: MusicSlider
+  Position: (-1.11, -6.43, 90.00)
+  Rotation: (0.00, 0.00, 0.00)
+  Scale: (1.00, 1.00, 1.00)
+  Components:
+    - RectTransform
+    - Slider
+
+    GameObject: Background
+    Position: (-1.11, -6.43, 90.00)
+    Rotation: (0.00, 0.00, 0.00)
+    Scale: (1.00, 1.00, 1.00)
+    Components:
+      - RectTransform
+      - CanvasRenderer
+      - Image
+
+    GameObject: Fill Area
+    Position: (-1.16, -6.43, 90.00)
+    Rotation: (0.00, 0.00, 0.00)
+    Scale: (1.00, 1.00, 1.00)
+    Components:
+      - RectTransform
+
+      GameObject: Fill
+      Position: (-1.13, -6.43, 90.00)
+      Rotation: (0.00, 0.00, 0.00)
+      Scale: (1.00, 1.00, 1.00)
+      Components:
+        - RectTransform
+        - CanvasRenderer
+        - Image
+
+    GameObject: Handle Slide Area
+    Position: (-1.11, -6.43, 90.00)
+    Rotation: (0.00, 0.00, 0.00)
+    Scale: (1.00, 1.00, 1.00)
+    Components:
+      - RectTransform
+
+      GameObject: Handle
+      Position: (1.17, -6.43, 90.00)
+      Rotation: (0.00, 0.00, 0.00)
+      Scale: (1.00, 1.00, 1.00)
+      Components:
+        - RectTransform
+        - CanvasRenderer
+        - Image
+
+  GameObject: MusicVolumeText
+  Position: (-5.54, -6.38, 90.00)
+  Rotation: (0.00, 0.00, 0.00)
+  Scale: (1.00, 1.00, 1.00)
+  Components:
+    - RectTransform
+    - CanvasRenderer
+    - TextMeshProUGUI
+
+  GameObject: SettingsText
+  Position: (-6.82, -5.41, 90.00)
+  Rotation: (0.00, 0.00, 0.00)
+  Scale: (1.00, 1.00, 1.00)
+  Components:
+    - RectTransform
+    - CanvasRenderer
+    - TextMeshProUGUI
+
+  GameObject: SFXSlider
+  Position: (-1.11, -6.99, 90.00)
+  Rotation: (0.00, 0.00, 0.00)
+  Scale: (1.00, 1.00, 1.00)
+  Components:
+    - RectTransform
+    - Slider
+
+    GameObject: Background
+    Position: (-1.11, -6.99, 90.00)
+    Rotation: (0.00, 0.00, 0.00)
+    Scale: (1.00, 1.00, 1.00)
+    Components:
+      - RectTransform
+      - CanvasRenderer
+      - Image
+
+    GameObject: Fill Area
+    Position: (-1.16, -6.99, 90.00)
+    Rotation: (0.00, 0.00, 0.00)
+    Scale: (1.00, 1.00, 1.00)
+    Components:
+      - RectTransform
+
+      GameObject: Fill
+      Position: (-1.13, -6.99, 90.00)
+      Rotation: (0.00, 0.00, 0.00)
+      Scale: (1.00, 1.00, 1.00)
+      Components:
+        - RectTransform
+        - CanvasRenderer
+        - Image
+
+    GameObject: Handle Slide Area
+    Position: (-1.11, -6.99, 90.00)
+    Rotation: (0.00, 0.00, 0.00)
+    Scale: (1.00, 1.00, 1.00)
+    Components:
+      - RectTransform
+
+      GameObject: Handle
+      Position: (1.17, -6.99, 90.00)
+      Rotation: (0.00, 0.00, 0.00)
+      Scale: (1.00, 1.00, 1.00)
+      Components:
+        - RectTransform
+        - CanvasRenderer
+        - Image
+
+  GameObject: SFXVolumeText
+  Position: (-5.31, -6.93, 90.00)
+  Rotation: (0.00, 0.00, 0.00)
+  Scale: (1.00, 1.00, 1.00)
+  Components:
+    - RectTransform
+    - CanvasRenderer
+    - TextMeshProUGUI
+
+  GameObject: VoiceSlider
+  Position: (-1.11, -7.57, 90.00)
+  Rotation: (0.00, 0.00, 0.00)
+  Scale: (1.00, 1.00, 1.00)
+  Components:
+    - RectTransform
+    - Slider
+
+    GameObject: Background
+    Position: (-1.11, -7.57, 90.00)
+    Rotation: (0.00, 0.00, 0.00)
+    Scale: (1.00, 1.00, 1.00)
+    Components:
+      - RectTransform
+      - CanvasRenderer
+      - Image
+
+    GameObject: Fill Area
+    Position: (-1.16, -7.57, 90.00)
+    Rotation: (0.00, 0.00, 0.00)
+    Scale: (1.00, 1.00, 1.00)
+    Components:
+      - RectTransform
+
+      GameObject: Fill
+      Position: (-1.13, -7.57, 90.00)
+      Rotation: (0.00, 0.00, 0.00)
+      Scale: (1.00, 1.00, 1.00)
+      Components:
+        - RectTransform
+        - CanvasRenderer
+        - Image
+
+    GameObject: Handle Slide Area
+    Position: (-1.11, -7.57, 90.00)
+    Rotation: (0.00, 0.00, 0.00)
+    Scale: (1.00, 1.00, 1.00)
+    Components:
+      - RectTransform
+
+      GameObject: Handle
+      Position: (1.17, -7.57, 90.00)
+      Rotation: (0.00, 0.00, 0.00)
+      Scale: (1.00, 1.00, 1.00)
+      Components:
+        - RectTransform
+        - CanvasRenderer
+        - Image
+
+  GameObject: VoiceVolumeText
+  Position: (-5.50, -7.53, 90.00)
+  Rotation: (0.00, 0.00, 0.00)
+  Scale: (1.00, 1.00, 1.00)
+  Components:
+    - RectTransform
+    - CanvasRenderer
+    - TextMeshProUGUI
+
+  GameObject: CloseButton
+  Position: (7.07, -12.37, 90.00)
+  Rotation: (0.00, 0.00, 359.37)
+  Scale: (1.00, 1.00, 1.00)
+  Components:
+    - RectTransform
+    - CanvasRenderer
+    - Image
+    - Button
+
+    GameObject: Text (TMP)
+    Position: (7.07, -12.37, 90.00)
+    Rotation: (0.00, 0.00, 359.37)
+    Scale: (1.00, 1.00, 1.00)
+    Components:
+      - RectTransform
+      - CanvasRenderer
+      - TextMeshProUGUI
+
+GameObject: SettingsImage
+Position: (-0.02, -8.99, 90.00)
+Rotation: (0.00, 0.00, 0.00)
+Scale: (1.00, 1.00, 1.00)
+Components:
+  - RectTransform
+  - CanvasRenderer
+  - Image
+
+GameObject: MusicSlider
+Position: (-1.11, -6.43, 90.00)
+Rotation: (0.00, 0.00, 0.00)
+Scale: (1.00, 1.00, 1.00)
+Components:
+  - RectTransform
+  - Slider
+
+  GameObject: Background
+  Position: (-1.11, -6.43, 90.00)
+  Rotation: (0.00, 0.00, 0.00)
+  Scale: (1.00, 1.00, 1.00)
+  Components:
+    - RectTransform
+    - CanvasRenderer
+    - Image
+
+  GameObject: Fill Area
+  Position: (-1.16, -6.43, 90.00)
+  Rotation: (0.00, 0.00, 0.00)
+  Scale: (1.00, 1.00, 1.00)
+  Components:
+    - RectTransform
+
+    GameObject: Fill
+    Position: (-1.13, -6.43, 90.00)
+    Rotation: (0.00, 0.00, 0.00)
+    Scale: (1.00, 1.00, 1.00)
+    Components:
+      - RectTransform
+      - CanvasRenderer
+      - Image
+
+  GameObject: Handle Slide Area
+  Position: (-1.11, -6.43, 90.00)
+  Rotation: (0.00, 0.00, 0.00)
+  Scale: (1.00, 1.00, 1.00)
+  Components:
+    - RectTransform
+
+    GameObject: Handle
+    Position: (1.17, -6.43, 90.00)
+    Rotation: (0.00, 0.00, 0.00)
+    Scale: (1.00, 1.00, 1.00)
+    Components:
+      - RectTransform
+      - CanvasRenderer
+      - Image
+
+GameObject: MusicVolumeText
+Position: (-5.54, -6.38, 90.00)
+Rotation: (0.00, 0.00, 0.00)
+Scale: (1.00, 1.00, 1.00)
+Components:
+  - RectTransform
+  - CanvasRenderer
+  - TextMeshProUGUI
+
+GameObject: SettingsText
+Position: (-6.82, -5.41, 90.00)
+Rotation: (0.00, 0.00, 0.00)
+Scale: (1.00, 1.00, 1.00)
+Components:
+  - RectTransform
+  - CanvasRenderer
+  - TextMeshProUGUI
+
+GameObject: SFXSlider
+Position: (-1.11, -6.99, 90.00)
+Rotation: (0.00, 0.00, 0.00)
+Scale: (1.00, 1.00, 1.00)
+Components:
+  - RectTransform
+  - Slider
+
+  GameObject: Background
+  Position: (-1.11, -6.99, 90.00)
+  Rotation: (0.00, 0.00, 0.00)
+  Scale: (1.00, 1.00, 1.00)
+  Components:
+    - RectTransform
+    - CanvasRenderer
+    - Image
+
+  GameObject: Fill Area
+  Position: (-1.16, -6.99, 90.00)
+  Rotation: (0.00, 0.00, 0.00)
+  Scale: (1.00, 1.00, 1.00)
+  Components:
+    - RectTransform
+
+    GameObject: Fill
+    Position: (-1.13, -6.99, 90.00)
+    Rotation: (0.00, 0.00, 0.00)
+    Scale: (1.00, 1.00, 1.00)
+    Components:
+      - RectTransform
+      - CanvasRenderer
+      - Image
+
+  GameObject: Handle Slide Area
+  Position: (-1.11, -6.99, 90.00)
+  Rotation: (0.00, 0.00, 0.00)
+  Scale: (1.00, 1.00, 1.00)
+  Components:
+    - RectTransform
+
+    GameObject: Handle
+    Position: (1.17, -6.99, 90.00)
+    Rotation: (0.00, 0.00, 0.00)
+    Scale: (1.00, 1.00, 1.00)
+    Components:
+      - RectTransform
+      - CanvasRenderer
+      - Image
+
+GameObject: SFXVolumeText
+Position: (-5.31, -6.93, 90.00)
+Rotation: (0.00, 0.00, 0.00)
+Scale: (1.00, 1.00, 1.00)
+Components:
+  - RectTransform
+  - CanvasRenderer
+  - TextMeshProUGUI
+
+GameObject: VoiceSlider
+Position: (-1.11, -7.57, 90.00)
+Rotation: (0.00, 0.00, 0.00)
+Scale: (1.00, 1.00, 1.00)
+Components:
+  - RectTransform
+  - Slider
+
+  GameObject: Background
+  Position: (-1.11, -7.57, 90.00)
+  Rotation: (0.00, 0.00, 0.00)
+  Scale: (1.00, 1.00, 1.00)
+  Components:
+    - RectTransform
+    - CanvasRenderer
+    - Image
+
+  GameObject: Fill Area
+  Position: (-1.16, -7.57, 90.00)
+  Rotation: (0.00, 0.00, 0.00)
+  Scale: (1.00, 1.00, 1.00)
+  Components:
+    - RectTransform
+
+    GameObject: Fill
+    Position: (-1.13, -7.57, 90.00)
+    Rotation: (0.00, 0.00, 0.00)
+    Scale: (1.00, 1.00, 1.00)
+    Components:
+      - RectTransform
+      - CanvasRenderer
+      - Image
+
+  GameObject: Handle Slide Area
+  Position: (-1.11, -7.57, 90.00)
+  Rotation: (0.00, 0.00, 0.00)
+  Scale: (1.00, 1.00, 1.00)
+  Components:
+    - RectTransform
+
+    GameObject: Handle
+    Position: (1.17, -7.57, 90.00)
+    Rotation: (0.00, 0.00, 0.00)
+    Scale: (1.00, 1.00, 1.00)
+    Components:
+      - RectTransform
+      - CanvasRenderer
+      - Image
+
+GameObject: VoiceVolumeText
+Position: (-5.50, -7.53, 90.00)
+Rotation: (0.00, 0.00, 0.00)
+Scale: (1.00, 1.00, 1.00)
+Components:
+  - RectTransform
+  - CanvasRenderer
+  - TextMeshProUGUI
+
+GameObject: CloseButton
+Position: (7.07, -12.37, 90.00)
+Rotation: (0.00, 0.00, 359.37)
+Scale: (1.00, 1.00, 1.00)
+Components:
+  - RectTransform
+  - CanvasRenderer
+  - Image
+  - Button
+
+  GameObject: Text (TMP)
+  Position: (7.07, -12.37, 90.00)
+  Rotation: (0.00, 0.00, 359.37)
+  Scale: (1.00, 1.00, 1.00)
+  Components:
+    - RectTransform
+    - CanvasRenderer
+    - TextMeshProUGUI
+
+GameObject: LeavesSystem
+Position: (3.11, -6.84, 89.77)
+Rotation: (0.00, 0.00, 332.21)
+Scale: (0.02, 0.02, 0.02)
+Components:
+  - Transform
+  - ParticleSystem
+  - ParticleSystemRenderer
+
+GameObject: AudioManager
+Position: (0.00, 0.00, 0.00)
+Rotation: (0.00, 0.00, 0.00)
+Scale: (1.00, 1.00, 1.00)
+Components:
+  - Transform
+  - AudioLibrary
+  - AudioManager
+  - AudioSource
+  - AudioSource
+  - AudioSource
+  - AudioSource
+
+GameObject: EventSystem
+Position: (0.00, 0.00, 0.00)
+Rotation: (0.00, 0.00, 0.00)
+Scale: (1.00, 1.00, 1.00)
+Components:
+  - Transform
+  - EventSystem
+  - InputSystemUIInputModule
+

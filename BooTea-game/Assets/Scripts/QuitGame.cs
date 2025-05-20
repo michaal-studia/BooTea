@@ -7,6 +7,8 @@ public class QuitGame : MonoBehaviour
         AudioManager.Play("ButtonDissenting");
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false; // Zatrzymuje gre w edytorze
+                                                         //#else
+                                                         //SceneManager.LoadScene("StartScene");
 #endif
 
         Application.Quit();
