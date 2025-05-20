@@ -15,6 +15,14 @@ public class Stove : MonoBehaviour, IInteractable
 
     public void Interact()
     {
+        if (!isPanelOpen)
+        {
+            AudioManager.Play("MaximizeSwoosh1");
+        }
+        else
+        {
+            AudioManager.Play("MinimizeSwoosh1");
+        }
         isPanelOpen = !isPanelOpen;
         stovePanel.SetActive(isPanelOpen);
     }
