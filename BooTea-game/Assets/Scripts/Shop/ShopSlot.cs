@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class ShopSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerMoveHandler
+public class ShopSlot : MonoBehaviour
 {
     public Item itemSO;
     public TMP_Text itemNameText;
@@ -11,7 +11,6 @@ public class ShopSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     public Image itemImage;
 
     [SerializeField] private ShopManager shopManager;
-    [SerializeField] private InfoPopup infoPopup;
     private int price;
 
     public void Initialized(Item newItemSO, int price)
@@ -27,24 +26,5 @@ public class ShopSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
     public void OnBuyButtonClicked()
     {
         shopManager.TryBuyItem(itemSO, price);
-    }
-
-    public void OnPointerEnter(PointerEventData eventData)
-    {
-        if(itemSO != null)
-        {
-            infoPopup.ShowItemInfo(itemSO);
-        }
-    }
-    public void OnPointerExit(PointerEventData eventData)
-    {
-        infoPopup.HideItemInfo();
-    }
-    public void OnPointerMove(PointerEventData eventData)
-    {
-        if(itemSO != null)
-        {
-            infoPopup.FollowMouse();
-        }
     }
 }

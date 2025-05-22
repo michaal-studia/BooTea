@@ -32,7 +32,7 @@ public class InfoPopup : MonoBehaviour
     public void FollowMouse()
     {
         Vector3 mousePoiition = Input.mousePosition;
-        Vector3 offset = new Vector3(10, -10, 0);
+        Vector3 offset = new Vector3(10, 170, 0);
 
         infoPanelRect.position = mousePoiition + offset;
     }
