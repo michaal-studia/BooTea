@@ -3729,7 +3729,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.00000023841858, y: -0.57130575}
+  m_Offset: {x: -0.00000023841858, y: -0.34492302}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -3739,7 +3739,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.8711765, y: 2.1426115}
+  m_Size: {x: 1.8711765, y: 1.689846}
   m_EdgeRadius: 0
 --- !u!114 &211684460
 MonoBehaviour:
@@ -15843,17 +15843,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.013930678, y: -0.15390314}
+  m_Offset: {x: -0.0037279949, y: -0.15390314}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.48, y: 0.48}
-    newSize: {x: 0.36, y: 0.27}
+    oldSize: {x: 0.48, y: 0.32}
+    newSize: {x: 0.48, y: 0.32}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.52656996, y: 0.28058472}
+  m_Size: {x: 0.41764057, y: 0.28058472}
   m_EdgeRadius: 0
 --- !u!212 &651174119
 SpriteRenderer:
@@ -15904,7 +15904,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.36, y: 0.27}
+  m_Size: {x: 0.48, y: 0.32}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -19248,7 +19248,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.023345426, y: 0}
+  m_Offset: {x: -0.03866978, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -19258,7 +19258,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.9533092, y: 1}
+  m_Size: {x: 0.92266047, y: 1}
   m_EdgeRadius: 0
 --- !u!1 &807208474
 GameObject:
@@ -38915,7 +38915,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 0.48, y: 0.64}
-    newSize: {x: 1, y: 1}
+    newSize: {x: 0.48, y: 0.64}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -38971,7 +38971,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.48, y: 0.64}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -44572,9 +44572,9 @@ MonoBehaviour:
   slotResult: {fileID: 1875561767}
   recipes:
   - teaCupPrefab: {fileID: 2383687231310588358, guid: 8994b3fbba3834f43a5992e3de56dc5c, type: 3}
-    teaPrefab: {fileID: 6983367710039956740, guid: 8c28645a0f5e8ad41af8b744a4ebefa2, type: 3}
-    waterPrefab: {fileID: 4678585175034573676, guid: 4e3cbe41643dad94eb06942f18f63136, type: 3}
-    addonPrefab: {fileID: 2863920878645034395, guid: e7b30f24c0bd84d46a41d6149564b184, type: 3}
+    teaPrefab: {fileID: 2863920878645034395, guid: e7b30f24c0bd84d46a41d6149564b184, type: 3}
+    waterPrefab: {fileID: 6983367710039956740, guid: 8c28645a0f5e8ad41af8b744a4ebefa2, type: 3}
+    addonPrefab: {fileID: 4678585175034573676, guid: 4e3cbe41643dad94eb06942f18f63136, type: 3}
     resultPrefab: {fileID: 3423124821660942016, guid: fd87bebebb3edcf4f9cc511a7215cadc, type: 3}
 --- !u!114 &1850011140
 MonoBehaviour:
