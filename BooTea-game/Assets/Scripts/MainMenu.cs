@@ -5,18 +5,36 @@ public class MainMenu : MonoBehaviour
 {
     [Header("UI Panels")]
     public GameObject settingsPanel;
+    public GameObject loadUIPanel;
 
     [Header("Other GameObjects")]
     public GameObject leavesSystem; // <- Dodaj obiekt systemu cz¹steczek
 
+    [Header("Save System")]
+    public MainMenuSaveController saveController;
+
     public void OnStartClick()
     {
+        // Clear any pending loads for a fresh start
+        if (GameManager.Instance != null)
+        {
+            GameManager.Instance.ClearPendingLoad();
+        }
+
         AudioManager.Play("LoadGame");
         SceneManager.LoadScene("SampleScene");
     }
     public void OnLoadClick()
     {
-        AudioManager.Play("ButtonAffirmative");
+        if (saveController != null)
+        {
+            saveController.OpenLoadUI();
+        }
+        else
+        {
+            AudioManager.Play("ButtonAffirmative");
+            Debug.LogWarning("MainMenuSaveController not assigned!");
+        }
     }
 
     public void OnSettingsClick()
