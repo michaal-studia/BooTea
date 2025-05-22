@@ -20,6 +20,10 @@ PrefabInstance:
       propertyPath: itemIcon
       value: 
       objectReference: {fileID: 8776850209705289286, guid: 92c1006ee85b55a418d43ca998df9833, type: 3}
+    - target: {fileID: 3149267294969936952, guid: dd06bca9e6a16fe40b3540f14c085723, type: 3}
+      propertyPath: Description
+      value: A     plain     pot     with     nothing     inside.
+      objectReference: {fileID: 0}
     - target: {fileID: 8001215306773883909, guid: dd06bca9e6a16fe40b3540f14c085723, type: 3}
       propertyPath: m_Sprite
       value: 

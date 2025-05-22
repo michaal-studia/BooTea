@@ -20,6 +20,10 @@ PrefabInstance:
       propertyPath: itemIcon
       value: 
       objectReference: {fileID: 21300000, guid: 0541ba786ee1b9e46875a0b7d9f94190, type: 3}
+    - target: {fileID: 3149267294969936952, guid: dd06bca9e6a16fe40b3540f14c085723, type: 3}
+      propertyPath: Description
+      value: Rich,     oxidized     leaves.
+      objectReference: {fileID: 0}
     - target: {fileID: 4402665917703341960, guid: dd06bca9e6a16fe40b3540f14c085723, type: 3}
       propertyPath: m_BlocksRaycasts
       value: 1

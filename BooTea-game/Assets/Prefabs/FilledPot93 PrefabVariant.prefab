@@ -94,7 +94,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ID: 16
-  Name: Filled Pot 93
+  Name: "Filled Pot 93\xB0C"
+  Description: Hot     water     at     perfect     temp.
   itemIcon: {fileID: 21300000, guid: 1fa94f93d51fa3241a5b6c6034337225, type: 3}
 --- !u!114 &2616456008101716811
 MonoBehaviour:

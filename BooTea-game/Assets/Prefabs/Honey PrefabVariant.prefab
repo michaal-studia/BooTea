@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: ID
       value: 12
       objectReference: {fileID: 0}
+    - target: {fileID: 3149267294969936952, guid: dd06bca9e6a16fe40b3540f14c085723, type: 3}
+      propertyPath: Description
+      value: Sweet,     golden     nectar.          Natural     and     smooth.
+      objectReference: {fileID: 0}
     - target: {fileID: 8147131105462844588, guid: dd06bca9e6a16fe40b3540f14c085723, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

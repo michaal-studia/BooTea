@@ -20,6 +20,11 @@ PrefabInstance:
       propertyPath: itemIcon
       value: 
       objectReference: {fileID: 21300000, guid: b0140dd8da0f8c744aceff45119c34af, type: 3}
+    - target: {fileID: 3149267294969936952, guid: dd06bca9e6a16fe40b3540f14c085723, type: 3}
+      propertyPath: Description
+      value: A     pot     full     of     hot     water.          Ready     to    
+        brew.
+      objectReference: {fileID: 0}
     - target: {fileID: 8001215306773883909, guid: dd06bca9e6a16fe40b3540f14c085723, type: 3}
       propertyPath: m_Sprite
       value: 
