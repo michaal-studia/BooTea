@@ -121,6 +121,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ID: 15
   Name: Boiled Pot
+  Description: A     pot     of     overboiled     water.          Cloudy     and    
+    useless.
   itemIcon: {fileID: 7023173323483465874, guid: 62cb3ac12e82a234489868375455051d, type: 3}
 --- !u!212 &3692892559728384643
 SpriteRenderer:
@@ -164,7 +166,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -471812773
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 7023173323483465874, guid: 62cb3ac12e82a234489868375455051d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
