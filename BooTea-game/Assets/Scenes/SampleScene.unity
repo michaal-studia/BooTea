@@ -2655,11 +2655,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 137465248}
   m_CullTransparentMesh: 1
---- !u!1 &140855388 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3423124821660942016, guid: fd87bebebb3edcf4f9cc511a7215cadc, type: 3}
-  m_PrefabInstance: {fileID: 8979994524929001954}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &141228141
 GameObject:
   m_ObjectHideFlags: 0
@@ -43116,11 +43111,11 @@ MonoBehaviour:
   slotAddons: {fileID: 1532288157}
   slotResult: {fileID: 1875561767}
   recipes:
-  - teaCupID: 1
-    teaID: 2
-    waterID: 3
-    addonID: 16
-    resultPrefab: {fileID: 140855388}
+  - teaCupID: 3
+    teaID: 5
+    waterID: 10
+    addonID: 4
+    resultPrefab: {fileID: 3423124821660942016, guid: fd87bebebb3edcf4f9cc511a7215cadc, type: 3}
 --- !u!114 &1850011140
 MonoBehaviour:
   m_ObjectHideFlags: 0

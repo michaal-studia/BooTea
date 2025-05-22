@@ -17,7 +17,6 @@ public class ItemDictionary : MonoBehaviour
             if(itemPrefabs[i] != null)
             {
                 itemPrefabs[i].ID = i + 1;
-                Debug.Log($" - Added item ID {itemPrefabs[i].ID}: {itemPrefabs[i].name}");
             }
         }
 
@@ -25,7 +24,6 @@ public class ItemDictionary : MonoBehaviour
         {
             itemDictionary[item.ID] = item.gameObject;
         }
-        Debug.Log($"ItemDictionary initialized with {itemDictionary.Count} items");
     }
 
     public GameObject GetItemPrefab(int itemID)

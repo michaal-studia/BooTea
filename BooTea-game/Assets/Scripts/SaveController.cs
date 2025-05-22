@@ -63,8 +63,8 @@ public class SaveController : MonoBehaviour
         File.WriteAllText(path, saveJson);
 
         Debug.Log($"Game saved to slot: {slotName}");
-        Debug.Log($"Save contains {saveData.inventorySaveData.Count} inventory items and {saveData.hotbarSaveData.Count} hotbar items");
-        Debug.Log($"Save JSON: {saveJson}");
+        //Debug.Log($"Save contains {saveData.inventorySaveData.Count} inventory items and {saveData.hotbarSaveData.Count} hotbar items");
+        //Debug.Log($"Save JSON: {saveJson}");
     }
 
     public void LoadGameFromSlot(string slotName)
@@ -86,8 +86,6 @@ public class SaveController : MonoBehaviour
 
         string saveJson = File.ReadAllText(path);
         SaveData saveData = JsonUtility.FromJson<SaveData>(saveJson);
-
-        Debug.Log($"Loading save with {saveData.inventorySaveData.Count} inventory items and {saveData.hotbarSaveData.Count} hotbar items");
 
         // Set player position
         player.transform.position = saveData.playerPosition;

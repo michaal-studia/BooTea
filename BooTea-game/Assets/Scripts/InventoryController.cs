@@ -101,12 +101,9 @@ public class InventoryController : MonoBehaviour
                 }
             }
         }
-
-        Debug.Log($"Saving {invData.Count} inventory items");
         return invData;
     }
 
-    // Modified SetInventoryItems in InventoryController
     public IEnumerator SetInventoryItems(List<InventorySaveData> inventorySaveData)
     {
         // Make sure we have a reference to the item dictionary
@@ -117,8 +114,6 @@ public class InventoryController : MonoBehaviour
             Debug.LogError("ItemDictionary is null, can't load inventory items!");
             yield break;
         }
-
-        Debug.Log($"Loading {inventorySaveData.Count} inventory items");
 
         // Clear inventory panel - destroy all children
         foreach (Transform child in inventoryPanel.transform)
@@ -158,7 +153,6 @@ public class InventoryController : MonoBehaviour
                     GameObject item = Instantiate(itemPrefab, slot.transform);
                     item.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
                     slot.currentItem = item;
-                    Debug.Log($"Added item ID {data.itemID} to inventory slot {data.slotIndex}");
                 }
                 else
                 {
