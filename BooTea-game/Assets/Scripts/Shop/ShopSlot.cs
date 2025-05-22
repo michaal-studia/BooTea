@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class ShopSlot : MonoBehaviour
@@ -12,7 +13,7 @@ public class ShopSlot : MonoBehaviour
     [SerializeField] private ShopManager shopManager;
     private int price;
 
-    public void Initialized(Item newItemSO/*, int price*/, int price)
+    public void Initialized(Item newItemSO, int price)
     {
         // Fill the slot with information
         itemSO = newItemSO;

@@ -20,6 +20,10 @@ PrefabInstance:
       propertyPath: itemIcon
       value: 
       objectReference: {fileID: 21300000, guid: 59132f89896d93445ac16fca7d31ecd7, type: 3}
+    - target: {fileID: 3149267294969936952, guid: dd06bca9e6a16fe40b3540f14c085723, type: 3}
+      propertyPath: Description
+      value: Delicate,     pale     leaves.
+      objectReference: {fileID: 0}
     - target: {fileID: 4402665917703341960, guid: dd06bca9e6a16fe40b3540f14c085723, type: 3}
       propertyPath: m_BlocksRaycasts
       value: 1
@@ -59,6 +63,14 @@ PrefabInstance:
     - target: {fileID: 8147131105462844588, guid: dd06bca9e6a16fe40b3540f14c085723, type: 3}
       propertyPath: m_SizeDelta.y
       value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 8147131105462844588, guid: dd06bca9e6a16fe40b3540f14c085723, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8147131105462844588, guid: dd06bca9e6a16fe40b3540f14c085723, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8147131105462844588, guid: dd06bca9e6a16fe40b3540f14c085723, type: 3}
       propertyPath: m_LocalPosition.x
@@ -114,7 +126,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: 59132f89896d93445ac16fca7d31ecd7, type: 3}
     - target: {fileID: 8979867163389329660, guid: dd06bca9e6a16fe40b3540f14c085723, type: 3}
       propertyPath: m_Name
-      value: RedTeaLeaves PrefabVariant 1
+      value: WhiteTeaLeaves PrefabVariant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

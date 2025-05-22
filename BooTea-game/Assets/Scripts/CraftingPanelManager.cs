@@ -12,15 +12,26 @@ public class CraftingPanelManager : MonoBehaviour
     [System.Serializable]
     public class CraftingRecipe
     {
-        public int teaCupID;
-        public int teaID;
-        public int waterID;
-        public int addonID;
+        public GameObject teaCupPrefab;
+        public GameObject teaPrefab;
+        public GameObject waterPrefab;
+        public GameObject addonPrefab;
         public GameObject resultPrefab;
 
-        public bool Matches(int cup, int tea, int water, int addon)
+        public bool Matches(GameObject cup, GameObject tea, GameObject water, GameObject addon)
         {
-            return cup == teaCupID && tea == teaID && water == waterID && addon == addonID;
+            return CompareNames(cup, teaCupPrefab)
+                && CompareNames(tea, teaPrefab)
+                && CompareNames(water, waterPrefab)
+                && CompareNames(addon, addonPrefab);
+        }
+
+        private bool CompareNames(GameObject obj, GameObject prefab)
+        {
+            if (obj == null || prefab == null) return false;
+            string objName = obj.name.Replace("(Clone)", "").Trim();
+            string prefabName = prefab.name.Trim();
+            return objName == prefabName;
         }
     }
 
@@ -28,14 +39,14 @@ public class CraftingPanelManager : MonoBehaviour
 
     public void TryCraft()
     {
-        int cupID = GetItemID(slotTeaCup);
-        int teaID = GetItemID(slotTea);
-        int waterID = GetItemID(slotWater);
-        int addonID = GetItemID(slotAddons);
+        GameObject cupObj = GetItemPrefab(slotTeaCup);
+        GameObject teaObj = GetItemPrefab(slotTea);
+        GameObject waterObj = GetItemPrefab(slotWater);
+        GameObject addonObj = GetItemPrefab(slotAddons);
 
         foreach (CraftingRecipe recipe in recipes)
         {
-            if (recipe.Matches(cupID, teaID, waterID, addonID))
+            if (recipe.Matches(cupObj, teaObj, waterObj, addonObj))
             {
                 ClearSlot(slotTeaCup);
                 ClearSlot(slotTea);
@@ -49,14 +60,7 @@ public class CraftingPanelManager : MonoBehaviour
             }
         }
         AudioManager.Play("Error");
-        Debug.Log("Brak pasuj¹cego przepisu.");
-    }
-
-    private int GetItemID(Slot slot)
-    {
-        if (slot.currentItem == null) return -1;
-        Item item = slot.currentItem.GetComponent<Item>();
-        return item != null ? item.ID : -1;
+        Debug.Log("Brak pasujÄ…cego przepisu.");
     }
 
     private void ClearSlot(Slot slot)
@@ -66,5 +70,11 @@ public class CraftingPanelManager : MonoBehaviour
             Destroy(slot.currentItem);
             slot.currentItem = null;
         }
+    }
+
+    private GameObject GetItemPrefab(Slot slot)
+    {
+        if (slot.currentItem == null) return null;
+        return slot.currentItem;
     }
 }

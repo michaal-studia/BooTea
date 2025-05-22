@@ -1,7 +1,5 @@
-using UnityEngine;
 using System.Collections.Generic;
-using JetBrains.Annotations;
-using System.Security.Cryptography.X509Certificates;
+using UnityEngine;
 
 public class ItemDictionary : MonoBehaviour
 {
@@ -14,13 +12,13 @@ public class ItemDictionary : MonoBehaviour
         //AutoIncrement ID
         for (int i = 0; i < itemPrefabs.Count; i++)
         {
-            if(itemPrefabs[i] != null)
+            if (itemPrefabs[i] != null)
             {
                 itemPrefabs[i].ID = i + 1;
             }
         }
 
-        foreach(Item item in itemPrefabs)
+        foreach (Item item in itemPrefabs)
         {
             itemDictionary[item.ID] = item.gameObject;
         }

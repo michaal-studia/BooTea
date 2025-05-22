@@ -1,0 +1,407 @@
+GameObject: Main Camera
+Position: (0.00, -9.00, -10.00)
+Rotation: (0.00, 0.00, 0.00)
+Scale: (1.00, 1.00, 1.00)
+Components:
+  - Transform
+  - Camera
+  - AudioListener
+  - UniversalAdditionalCameraData
+  - MainMenu
+
+  GameObject: Canvas
+  Position: (0.00, -9.00, 90.00)
+  Rotation: (0.00, 0.00, 0.00)
+  Scale: (0.01, 0.01, 0.01)
+  Components:
+    - RectTransform
+    - Canvas
+    - CanvasScaler
+    - GraphicRaycaster
+
+    GameObject: MainMenu
+    Position: (0.00, -9.00, 90.00)
+    Rotation: (0.00, 0.00, 0.00)
+    Scale: (1.00, 1.00, 1.00)
+    Components:
+      - RectTransform
+      - CanvasRenderer
+      - Image
+
+      GameObject: Image
+      Position: (4.15, -6.66, 90.00)
+      Rotation: (0.00, 0.00, 0.00)
+      Scale: (3.28, 2.53, 0.88)
+      Components:
+        - RectTransform
+        - CanvasRenderer
+        - Image
+
+      GameObject: PlayButton
+      Position: (4.15, -9.98, 90.02)
+      Rotation: (0.00, 0.00, 0.00)
+      Scale: (1.00, 1.00, 1.00)
+      Components:
+        - RectTransform
+        - CanvasRenderer
+        - Image
+        - Button
+
+        GameObject: Text (TMP)
+        Position: (4.15, -9.98, 90.02)
+        Rotation: (0.00, 0.00, 0.00)
+        Scale: (1.00, 1.00, 1.00)
+        Components:
+          - RectTransform
+          - CanvasRenderer
+          - TextMeshProUGUI
+
+      GameObject: SettingsButton
+      Position: (4.15, -11.44, 90.02)
+      Rotation: (0.00, 0.00, 0.00)
+      Scale: (1.00, 1.00, 1.00)
+      Components:
+        - RectTransform
+        - CanvasRenderer
+        - Image
+        - Button
+
+        GameObject: Text (TMP)
+        Position: (4.15, -11.44, 90.02)
+        Rotation: (0.00, 0.00, 0.00)
+        Scale: (1.00, 1.00, 1.00)
+        Components:
+          - RectTransform
+          - CanvasRenderer
+          - TextMeshProUGUI
+
+      GameObject: QuitButton
+      Position: (4.15, -12.95, 90.02)
+      Rotation: (0.00, 0.00, 0.00)
+      Scale: (1.00, 1.00, 1.00)
+      Components:
+        - RectTransform
+        - CanvasRenderer
+        - Image
+        - Button
+
+        GameObject: Text (TMP)
+        Position: (4.15, -12.95, 90.02)
+        Rotation: (0.00, 0.00, 0.00)
+        Scale: (1.00, 1.00, 1.00)
+        Components:
+          - RectTransform
+          - CanvasRenderer
+          - TextMeshProUGUI
+
+    GameObject: LeavesSystem
+    Position: (3.11, -6.84, 89.77)
+    Rotation: (0.00, 0.00, 332.21)
+    Scale: (0.02, 0.02, 0.02)
+    Components:
+      - Transform
+      - ParticleSystem
+      - ParticleSystemRenderer
+
+    GameObject: Panel
+    Position: (0.00, -9.00, 90.00)
+    Rotation: (0.00, 0.00, 0.00)
+    Scale: (1.00, 1.00, 1.00)
+    Components:
+      - RectTransform
+      - CanvasRenderer
+      - Image
+
+GameObject: Canvas
+Position: (0.00, -9.00, 90.00)
+Rotation: (0.00, 0.00, 0.00)
+Scale: (0.01, 0.01, 0.01)
+Components:
+  - RectTransform
+  - Canvas
+  - CanvasScaler
+  - GraphicRaycaster
+
+  GameObject: MainMenu
+  Position: (0.00, -9.00, 90.00)
+  Rotation: (0.00, 0.00, 0.00)
+  Scale: (1.00, 1.00, 1.00)
+  Components:
+    - RectTransform
+    - CanvasRenderer
+    - Image
+
+    GameObject: Image
+    Position: (4.15, -6.66, 90.00)
+    Rotation: (0.00, 0.00, 0.00)
+    Scale: (3.28, 2.53, 0.88)
+    Components:
+      - RectTransform
+      - CanvasRenderer
+      - Image
+
+    GameObject: PlayButton
+    Position: (4.15, -9.98, 90.02)
+    Rotation: (0.00, 0.00, 0.00)
+    Scale: (1.00, 1.00, 1.00)
+    Components:
+      - RectTransform
+      - CanvasRenderer
+      - Image
+      - Button
+
+      GameObject: Text (TMP)
+      Position: (4.15, -9.98, 90.02)
+      Rotation: (0.00, 0.00, 0.00)
+      Scale: (1.00, 1.00, 1.00)
+      Components:
+        - RectTransform
+        - CanvasRenderer
+        - TextMeshProUGUI
+
+    GameObject: SettingsButton
+    Position: (4.15, -11.44, 90.02)
+    Rotation: (0.00, 0.00, 0.00)
+    Scale: (1.00, 1.00, 1.00)
+    Components:
+      - RectTransform
+      - CanvasRenderer
+      - Image
+      - Button
+
+      GameObject: Text (TMP)
+      Position: (4.15, -11.44, 90.02)
+      Rotation: (0.00, 0.00, 0.00)
+      Scale: (1.00, 1.00, 1.00)
+      Components:
+        - RectTransform
+        - CanvasRenderer
+        - TextMeshProUGUI
+
+    GameObject: QuitButton
+    Position: (4.15, -12.95, 90.02)
+    Rotation: (0.00, 0.00, 0.00)
+    Scale: (1.00, 1.00, 1.00)
+    Components:
+      - RectTransform
+      - CanvasRenderer
+      - Image
+      - Button
+
+      GameObject: Text (TMP)
+      Position: (4.15, -12.95, 90.02)
+      Rotation: (0.00, 0.00, 0.00)
+      Scale: (1.00, 1.00, 1.00)
+      Components:
+        - RectTransform
+        - CanvasRenderer
+        - TextMeshProUGUI
+
+  GameObject: LeavesSystem
+  Position: (3.11, -6.84, 89.77)
+  Rotation: (0.00, 0.00, 332.21)
+  Scale: (0.02, 0.02, 0.02)
+  Components:
+    - Transform
+    - ParticleSystem
+    - ParticleSystemRenderer
+
+  GameObject: Panel
+  Position: (0.00, -9.00, 90.00)
+  Rotation: (0.00, 0.00, 0.00)
+  Scale: (1.00, 1.00, 1.00)
+  Components:
+    - RectTransform
+    - CanvasRenderer
+    - Image
+
+GameObject: MainMenu
+Position: (0.00, -9.00, 90.00)
+Rotation: (0.00, 0.00, 0.00)
+Scale: (1.00, 1.00, 1.00)
+Components:
+  - RectTransform
+  - CanvasRenderer
+  - Image
+
+  GameObject: Image
+  Position: (4.15, -6.66, 90.00)
+  Rotation: (0.00, 0.00, 0.00)
+  Scale: (3.28, 2.53, 0.88)
+  Components:
+    - RectTransform
+    - CanvasRenderer
+    - Image
+
+  GameObject: PlayButton
+  Position: (4.15, -9.98, 90.02)
+  Rotation: (0.00, 0.00, 0.00)
+  Scale: (1.00, 1.00, 1.00)
+  Components:
+    - RectTransform
+    - CanvasRenderer
+    - Image
+    - Button
+
+    GameObject: Text (TMP)
+    Position: (4.15, -9.98, 90.02)
+    Rotation: (0.00, 0.00, 0.00)
+    Scale: (1.00, 1.00, 1.00)
+    Components:
+      - RectTransform
+      - CanvasRenderer
+      - TextMeshProUGUI
+
+  GameObject: SettingsButton
+  Position: (4.15, -11.44, 90.02)
+  Rotation: (0.00, 0.00, 0.00)
+  Scale: (1.00, 1.00, 1.00)
+  Components:
+    - RectTransform
+    - CanvasRenderer
+    - Image
+    - Button
+
+    GameObject: Text (TMP)
+    Position: (4.15, -11.44, 90.02)
+    Rotation: (0.00, 0.00, 0.00)
+    Scale: (1.00, 1.00, 1.00)
+    Components:
+      - RectTransform
+      - CanvasRenderer
+      - TextMeshProUGUI
+
+  GameObject: QuitButton
+  Position: (4.15, -12.95, 90.02)
+  Rotation: (0.00, 0.00, 0.00)
+  Scale: (1.00, 1.00, 1.00)
+  Components:
+    - RectTransform
+    - CanvasRenderer
+    - Image
+    - Button
+
+    GameObject: Text (TMP)
+    Position: (4.15, -12.95, 90.02)
+    Rotation: (0.00, 0.00, 0.00)
+    Scale: (1.00, 1.00, 1.00)
+    Components:
+      - RectTransform
+      - CanvasRenderer
+      - TextMeshProUGUI
+
+GameObject: Image
+Position: (4.15, -6.66, 90.00)
+Rotation: (0.00, 0.00, 0.00)
+Scale: (3.28, 2.53, 0.88)
+Components:
+  - RectTransform
+  - CanvasRenderer
+  - Image
+
+GameObject: PlayButton
+Position: (4.15, -9.98, 90.02)
+Rotation: (0.00, 0.00, 0.00)
+Scale: (1.00, 1.00, 1.00)
+Components:
+  - RectTransform
+  - CanvasRenderer
+  - Image
+  - Button
+
+  GameObject: Text (TMP)
+  Position: (4.15, -9.98, 90.02)
+  Rotation: (0.00, 0.00, 0.00)
+  Scale: (1.00, 1.00, 1.00)
+  Components:
+    - RectTransform
+    - CanvasRenderer
+    - TextMeshProUGUI
+
+GameObject: SettingsButton
+Position: (4.15, -11.44, 90.02)
+Rotation: (0.00, 0.00, 0.00)
+Scale: (1.00, 1.00, 1.00)
+Components:
+  - RectTransform
+  - CanvasRenderer
+  - Image
+  - Button
+
+  GameObject: Text (TMP)
+  Position: (4.15, -11.44, 90.02)
+  Rotation: (0.00, 0.00, 0.00)
+  Scale: (1.00, 1.00, 1.00)
+  Components:
+    - RectTransform
+    - CanvasRenderer
+    - TextMeshProUGUI
+
+GameObject: QuitButton
+Position: (4.15, -12.95, 90.02)
+Rotation: (0.00, 0.00, 0.00)
+Scale: (1.00, 1.00, 1.00)
+Components:
+  - RectTransform
+  - CanvasRenderer
+  - Image
+  - Button
+
+  GameObject: Text (TMP)
+  Position: (4.15, -12.95, 90.02)
+  Rotation: (0.00, 0.00, 0.00)
+  Scale: (1.00, 1.00, 1.00)
+  Components:
+    - RectTransform
+    - CanvasRenderer
+    - TextMeshProUGUI
+
+GameObject: Text (TMP)
+Position: (4.15, -12.95, 90.02)
+Rotation: (0.00, 0.00, 0.00)
+Scale: (1.00, 1.00, 1.00)
+Components:
+  - RectTransform
+  - CanvasRenderer
+  - TextMeshProUGUI
+
+GameObject: LeavesSystem
+Position: (3.11, -6.84, 89.77)
+Rotation: (0.00, 0.00, 332.21)
+Scale: (0.02, 0.02, 0.02)
+Components:
+  - Transform
+  - ParticleSystem
+  - ParticleSystemRenderer
+
+GameObject: Panel
+Position: (0.00, -9.00, 90.00)
+Rotation: (0.00, 0.00, 0.00)
+Scale: (1.00, 1.00, 1.00)
+Components:
+  - RectTransform
+  - CanvasRenderer
+  - Image
+
+GameObject: AudioManager
+Position: (0.00, 0.00, 0.00)
+Rotation: (0.00, 0.00, 0.00)
+Scale: (1.00, 1.00, 1.00)
+Components:
+  - Transform
+  - AudioLibrary
+  - AudioManager
+  - AudioSource
+  - AudioSource
+  - AudioSource
+  - AudioSource
+
+GameObject: EventSystem
+Position: (0.00, 0.00, 0.00)
+Rotation: (0.00, 0.00, 0.00)
+Scale: (1.00, 1.00, 1.00)
+Components:
+  - Transform
+  - EventSystem
+  - InputSystemUIInputModule
+

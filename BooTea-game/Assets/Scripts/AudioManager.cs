@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class AudioManager : MonoBehaviour
@@ -12,18 +13,18 @@ public class AudioManager : MonoBehaviour
     private static AudioLibrary audioLibrary;
     private static AudioSource musicSource;
 
-    [SerializeField]
     private Slider MusicSlider;
-    [SerializeField]
     private Slider SFXSlider;
-    [SerializeField]
     private Slider VoiceSlider;
 
     private void Awake()
     {
         if (Instance == null)
         {
+
             Instance = this;
+            DontDestroyOnLoad(gameObject);
+
             AudioSource[] audioSources = GetComponents<AudioSource>();
             audioSource = audioSources[0];
             randomPitchAudioSource = audioSources[1];
@@ -33,6 +34,63 @@ public class AudioManager : MonoBehaviour
         }
         else
             Destroy(gameObject);
+    }
+
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        StopAllCoroutines(); // zatrzymaj poprzednią muzykę
+
+        if (scene.name == "StartScene")
+        {
+            StartCoroutine(LoopMusic("MainMenuBackgroundMusic"));
+        }
+        else if (scene.name == "SampleScene")
+        {
+            StartCoroutine(LoopMusic("BackgroundMusic"));
+        }
+
+        // Spróbuj przypisać suwaki, jeśli są obecne w scenie
+        TryAssignSlidersFromScene();
+    }
+
+    private void TryAssignSlidersFromScene()
+    {
+        Slider music = GameObject.Find("MusicSlider")?.GetComponent<Slider>();
+        Slider sfx = GameObject.Find("SFXSlider")?.GetComponent<Slider>();
+        Slider voice = GameObject.Find("VoiceSlider")?.GetComponent<Slider>();
+
+        if (music != null && sfx != null && voice != null)
+        {
+            AssignSliders(music, sfx, voice);
+        }
+    }
+
+    public void AssignSliders(Slider music, Slider sfx, Slider voice)
+    {
+        MusicSlider = music;
+        SFXSlider = sfx;
+        VoiceSlider = voice;
+
+        LoadVolumeSettings(); // Od razu ustawia suwaki na właściwe wartości
+
+        if (MusicSlider != null)
+            MusicSlider.onValueChanged.AddListener(delegate { SetMusicVolume(MusicSlider.value); });
+
+        if (SFXSlider != null)
+            SFXSlider.onValueChanged.AddListener(delegate { SetSFXVolume(SFXSlider.value); });
+
+        if (VoiceSlider != null)
+            VoiceSlider.onValueChanged.AddListener(delegate { SetVoiceVolume(VoiceSlider.value); });
     }
 
     public static void Play(string soundName, bool randomPitch = false)
@@ -56,7 +114,18 @@ public class AudioManager : MonoBehaviour
     {
         LoadVolumeSettings();
 
-        StartCoroutine(LoopMusic());
+        string currentScene = SceneManager.GetActiveScene().name;
+
+        if (currentScene == "StartScene") // Main Menu
+        {
+            StartCoroutine(LoopMusic("MainMenuBackgroundMusic"));
+        }
+        else if (currentScene == "SampleScene") // Game
+        {
+            StopMusic(); // zatrzymaj poprzednią muzykę
+            StartCoroutine(LoopMusic("BackgroundMusic"));
+        }
+
 
         if (MusicSlider != null)
             MusicSlider.onValueChanged.AddListener(delegate { SetMusicVolume(MusicSlider.value); });
@@ -68,9 +137,11 @@ public class AudioManager : MonoBehaviour
             VoiceSlider.onValueChanged.AddListener(delegate { SetVoiceVolume(VoiceSlider.value); });
     }
 
-    private IEnumerator LoopMusic()
+    private IEnumerator LoopMusic(string music)
     {
-        AudioClip[] backgroundTracks = audioLibrary.GetClips("BackgroundMusic");
+        AudioClip[] backgroundTracks = audioLibrary.GetClips(music);
+
+        Debug.Log($"Ładowanie muzyki: {music}, ilość utworów: {backgroundTracks.Length}");
 
         if (backgroundTracks.Length == 0)
         {
