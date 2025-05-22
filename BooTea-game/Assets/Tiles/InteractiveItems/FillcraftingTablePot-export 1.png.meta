@@ -1,28 +1,28 @@
 fileFormatVersion: 2
-guid: 081ea58e0877d1648bcf6e4870ce75e2
+guid: 249f3d3f1cd0d8345a20a004ee7df90a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6115201753161461019
-    second: FillcraftingTablePot-export_0
+      213: 2853262276900700812
+    second: FillcraftingTablePot-export 1_0
   - first:
-      213: 5682291100414071931
-    second: FillcraftingTablePot-export_1
+      213: -222399621268772383
+    second: FillcraftingTablePot-export 1_1
   - first:
-      213: 1454547622920927578
-    second: FillcraftingTablePot-export_2
+      213: -1120270902250917423
+    second: FillcraftingTablePot-export 1_2
   - first:
-      213: 6268607999958321314
-    second: FillcraftingTablePot-export_3
+      213: -4973169261115310450
+    second: FillcraftingTablePot-export 1_3
   - first:
-      213: -3113038358686144191
-    second: FillcraftingTablePot-export_4
+      213: 7538845081235449155
+    second: FillcraftingTablePot-export 1_4
   - first:
-      213: 2348367431016602766
-    second: FillcraftingTablePot-export_5
+      213: -5339264794502717939
+    second: FillcraftingTablePot-export 1_5
   - first:
-      213: -6031150009103357316
-    second: FillcraftingTablePot-export_6
+      213: 8780413830197914532
+    second: FillcraftingTablePot-export 1_6
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -118,7 +118,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: FillcraftingTablePot-export_0
+      name: FillcraftingTablePot-export 1_0
       rect:
         serializedVersion: 2
         x: 0
@@ -133,14 +133,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b1de803489f8dd450800000000000000
-      internalID: 6115201753161461019
+      spriteID: c8240b17ce2d89720800000000000000
+      internalID: 2853262276900700812
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FillcraftingTablePot-export_1
+      name: FillcraftingTablePot-export 1_1
       rect:
         serializedVersion: 2
         x: 48
@@ -155,14 +155,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b745b8656ad8bde40800000000000000
-      internalID: 5682291100414071931
+      spriteID: 1e9e71809b0e9ecf0800000000000000
+      internalID: -222399621268772383
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FillcraftingTablePot-export_2
+      name: FillcraftingTablePot-export 1_2
       rect:
         serializedVersion: 2
         x: 96
@@ -177,14 +177,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a5937154b579f2410800000000000000
-      internalID: 1454547622920927578
+      spriteID: 1d1b023cc8ff370f0800000000000000
+      internalID: -1120270902250917423
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FillcraftingTablePot-export_3
+      name: FillcraftingTablePot-export 1_3
       rect:
         serializedVersion: 2
         x: 144
@@ -199,14 +199,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2a800b173c19ef650800000000000000
-      internalID: 6268607999958321314
+      spriteID: e8e745fe7e0cbfab0800000000000000
+      internalID: -4973169261115310450
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: FillcraftingTablePot-export_4
+      name: FillcraftingTablePot-export 1_4
       rect:
         serializedVersion: 2
         x: 192
@@ -221,8 +221,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 149e85a3b144cc4d0800000000000000
-      internalID: -3113038358686144191
+      spriteID: 3456dbba8ab5f9860800000000000000
+      internalID: 7538845081235449155
       vertices: []
       indices: 
       edges: []
@@ -231,7 +231,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 15f14ba726dd05b49a17cdb9e74908e3
+    spriteID: f954c4a831ca15d4b91d5adb73d1e4fd
     internalID: 0
     vertices: []
     indices: 
@@ -241,11 +241,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      FillcraftingTablePot-export_0: 6115201753161461019
-      FillcraftingTablePot-export_1: 5682291100414071931
-      FillcraftingTablePot-export_2: 1454547622920927578
-      FillcraftingTablePot-export_3: 6268607999958321314
-      FillcraftingTablePot-export_4: -3113038358686144191
+      FillcraftingTablePot-export 1_0: 2853262276900700812
+      FillcraftingTablePot-export 1_1: -222399621268772383
+      FillcraftingTablePot-export 1_2: -1120270902250917423
+      FillcraftingTablePot-export 1_3: -4973169261115310450
+      FillcraftingTablePot-export 1_4: 7538845081235449155
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

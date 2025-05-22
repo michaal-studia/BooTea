@@ -19,7 +19,7 @@ PrefabInstance:
     - target: {fileID: 3149267294969936952, guid: dd06bca9e6a16fe40b3540f14c085723, type: 3}
       propertyPath: itemIcon
       value: 
-      objectReference: {fileID: 8776850209705289286, guid: 92c1006ee85b55a418d43ca998df9833, type: 3}
+      objectReference: {fileID: 21300000, guid: 92c1006ee85b55a418d43ca998df9833, type: 3}
     - target: {fileID: 3149267294969936952, guid: dd06bca9e6a16fe40b3540f14c085723, type: 3}
       propertyPath: Description
       value: A     plain     pot     with     nothing     inside.

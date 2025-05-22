@@ -1,22 +1,22 @@
 fileFormatVersion: 2
-guid: fcace6945c6e2cc4aa40037588eae25d
+guid: b46048c1a3cf76f4781a1c74bf6a927d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5949619724160816217
-    second: stovePot_0
+      213: 4066825193609341692
+    second: stovePot 1_0
   - first:
-      213: -8031385101409774415
-    second: stovePot_1
+      213: 7150244392037271434
+    second: stovePot 1_1
   - first:
-      213: 3839117664523195357
-    second: stovePot_2
+      213: 1299534882695784024
+    second: stovePot 1_2
   - first:
-      213: 2349431992118183996
-    second: stovePot_3
+      213: -349932967536784478
+    second: stovePot 1_3
   - first:
-      213: -6736819593249490021
-    second: stovePot_4
+      213: 5692279365492809656
+    second: stovePot 1_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -125,10 +125,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 954534fdd9b419250800000000000000
-      internalID: 5949619724160816217
+      spriteID: a98bf36d6edb9de4297f3056202b0d5d
+      internalID: 167827900
       vertices: []
       indices: 
       edges: []
@@ -147,10 +147,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 1b41b186dc9ca8090800000000000000
-      internalID: -8031385101409774415
+      spriteID: 730b48e4d429fa04fb4083b0d21a178f
+      internalID: 2108392592
       vertices: []
       indices: 
       edges: []
@@ -169,10 +169,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: dd315d4ec29474530800000000000000
-      internalID: 3839117664523195357
+      spriteID: 4303f93e33a02a14b9c3584ed1a8b493
+      internalID: 2078960365
       vertices: []
       indices: 
       edges: []
@@ -191,10 +191,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: c388422f2fbda9020800000000000000
-      internalID: 2349431992118183996
+      spriteID: 9e32ef5b247a0524bac8d2e54e345885
+      internalID: 211163620
       vertices: []
       indices: 
       edges: []
@@ -213,10 +213,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: b9bf87ce5420282a0800000000000000
-      internalID: -6736819593249490021
+      spriteID: ec0192a240bf968448159a34e0529379
+      internalID: -1556980488
       vertices: []
       indices: 
       edges: []
@@ -225,7 +225,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 7c343eafb15959941906ffad35c178cb
+    spriteID: f608db3f0b12997468dc6eac52d0bf97
     internalID: 0
     vertices: []
     indices: 
@@ -235,11 +235,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      stovePot_0: 5949619724160816217
-      stovePot_1: -8031385101409774415
-      stovePot_2: 3839117664523195357
-      stovePot_3: 2349431992118183996
-      stovePot_4: -6736819593249490021
+      stovePot_0: 167827900
+      stovePot_1: 2108392592
+      stovePot_2: 2078960365
+      stovePot_3: 211163620
+      stovePot_4: -1556980488
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
