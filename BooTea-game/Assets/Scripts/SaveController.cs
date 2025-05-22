@@ -26,6 +26,53 @@ public class SaveController : MonoBehaviour
         if (inventoryController == null) Debug.LogError("InventoryController not found!");
         if (hotbarController == null) Debug.LogError("HotbarController not found!");
         if (itemDictionary == null) Debug.LogError("ItemDictionary not found!");
+
+        // Check if we need to load a save from main menu
+        CheckForPendingLoad();
+    }
+
+    private void CheckForPendingLoad()
+    {
+        if (GameManager.Instance != null && GameManager.Instance.HasPendingLoad())
+        {
+            Debug.Log($"Loading pending save: {GameManager.Instance.loadedSlotName}");
+            StartCoroutine(LoadPendingSaveCoroutine());
+        }
+    }
+
+    private IEnumerator LoadPendingSaveCoroutine()
+    {
+        // Wait a few frames to ensure all components are ready
+        yield return null;
+
+        if (GameManager.Instance?.pendingSaveData != null)
+        {
+            SaveData saveData = GameManager.Instance.pendingSaveData;
+
+            // Set player position
+            if (player != null)
+            {
+                player.transform.position = saveData.playerPosition;
+            }
+
+            // Set camera boundary if it exists
+            if (!string.IsNullOrEmpty(saveData.mapBoundary))
+            {
+                GameObject boundaryObject = GameObject.Find(saveData.mapBoundary);
+                if (boundaryObject && cinemachineConfiner != null)
+                {
+                    cinemachineConfiner.BoundingShape2D = boundaryObject.GetComponent<PolygonCollider2D>();
+                }
+            }
+
+            // Load inventory and hotbar items
+            yield return LoadItemsCoroutine(saveData);
+
+            Debug.Log($"Successfully loaded save from slot: {GameManager.Instance.loadedSlotName}");
+
+            // Clear the pending load
+            GameManager.Instance.ClearPendingLoad();
+        }
     }
 
     private string GetSavePath(string slotName)
@@ -59,12 +106,10 @@ public class SaveController : MonoBehaviour
         };
 
         string path = GetSavePath(slotName);
-        string saveJson = JsonUtility.ToJson(saveData, true); // Use pretty printing for debugging
+        string saveJson = JsonUtility.ToJson(saveData, true);
         File.WriteAllText(path, saveJson);
 
         Debug.Log($"Game saved to slot: {slotName}");
-        //Debug.Log($"Save contains {saveData.inventorySaveData.Count} inventory items and {saveData.hotbarSaveData.Count} hotbar items");
-        //Debug.Log($"Save JSON: {saveJson}");
     }
 
     public void LoadGameFromSlot(string slotName)
