@@ -612,7 +612,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0.2003884}
+  m_Offset: {x: 0, y: -0.053674936}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -622,7 +622,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 0.5992232}
+  m_Size: {x: 1, y: 1.1073499}
   m_EdgeRadius: 0
 --- !u!1 &19314794
 GameObject:
@@ -17137,7 +17137,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.03663656, y: -0.030169182}
+  m_Offset: {x: -0.03663656, y: -0.1045911}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -17147,7 +17147,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.3298933, y: 0.21601148}
+  m_Size: {x: 0.3298933, y: 0.3648671}
   m_EdgeRadius: 0
 --- !u!212 &730819929
 SpriteRenderer:
@@ -19239,7 +19239,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.23277548, y: 0}
+  m_Offset: {x: -0.023345426, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -19249,7 +19249,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.53444904, y: 1}
+  m_Size: {x: 0.9533092, y: 1}
   m_EdgeRadius: 0
 --- !u!1 &807208474
 GameObject:
@@ -38901,7 +38901,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.017965913, y: -0.07709832}
+  m_Offset: {x: 0.017965913, y: -0.16269177}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -38911,7 +38911,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.4071265, y: 0.2020063}
+  m_Size: {x: 0.4071265, y: 0.37319314}
   m_EdgeRadius: 0
 --- !u!212 &1625845478
 SpriteRenderer:
