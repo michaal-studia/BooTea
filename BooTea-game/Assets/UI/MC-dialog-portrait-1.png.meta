@@ -134,7 +134,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      MC-dialog-portrait-1_0: 3116399186174773965
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,5 +1,5 @@
-using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine;
 
 
 public class QuestController : MonoBehaviour
@@ -12,7 +12,7 @@ public class QuestController : MonoBehaviour
     {
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
-        
+
         questUI = FindObjectOfType<QuestUI>();
     }
 
@@ -22,8 +22,8 @@ public class QuestController : MonoBehaviour
 
         activateQuests.Add(new QuestProgress(quest));
 
-        questUI.UpdateQuestUI(); 
+        questUI.UpdateQuestUI();
     }
 
-    public bool IsQuestActive(string questID)=> activateQuests.Exists(q => q.QuestID == questID);
+    public bool IsQuestActive(string questID) => activateQuests.Exists(q => q.QuestID == questID);
 }
