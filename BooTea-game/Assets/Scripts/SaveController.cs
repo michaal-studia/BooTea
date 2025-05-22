@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using Unity.Cinemachine;
@@ -9,6 +10,7 @@ public class SaveController : MonoBehaviour
     private HotbarController hotbarController;
     private GameObject player;
     private CinemachineConfiner2D cinemachineConfiner;
+    private ItemDictionary itemDictionary;
 
     void Start()
     {
@@ -16,6 +18,14 @@ public class SaveController : MonoBehaviour
         cinemachineConfiner = Object.FindFirstObjectByType<CinemachineConfiner2D>();
         inventoryController = FindFirstObjectByType<InventoryController>();
         hotbarController = FindFirstObjectByType<HotbarController>();
+        itemDictionary = FindFirstObjectByType<ItemDictionary>();
+
+        // Verify all required components were found
+        if (player == null) Debug.LogError("Player not found!");
+        if (cinemachineConfiner == null) Debug.LogError("CinemachineConfiner2D not found!");
+        if (inventoryController == null) Debug.LogError("InventoryController not found!");
+        if (hotbarController == null) Debug.LogError("HotbarController not found!");
+        if (itemDictionary == null) Debug.LogError("ItemDictionary not found!");
     }
 
     private string GetSavePath(string slotName)
@@ -27,19 +37,34 @@ public class SaveController : MonoBehaviour
     {
         if (string.IsNullOrEmpty(slotName)) return;
 
+        // Check if required components exist
+        if (player == null || inventoryController == null || hotbarController == null)
+        {
+            Debug.LogError("Cannot save: Missing required components!");
+            return;
+        }
+
         AudioManager.Play("ButtonAffirmative");
+
+        // Get inventory and hotbar items
+        List<InventorySaveData> inventoryItems = inventoryController.GetInventoryItems();
+        List<InventorySaveData> hotbarItems = hotbarController.GetHotbarItems();
 
         SaveData saveData = new SaveData
         {
             playerPosition = player.transform.position,
             mapBoundary = cinemachineConfiner.BoundingShape2D?.gameObject.name,
-            inventorySaveData = inventoryController.GetInventoryItems() ?? new List<InventorySaveData>(),
-            hotbarSaveData = hotbarController.GetHotbarItems()
+            inventorySaveData = inventoryItems ?? new List<InventorySaveData>(),
+            hotbarSaveData = hotbarItems ?? new List<InventorySaveData>()
         };
 
         string path = GetSavePath(slotName);
-        File.WriteAllText(path, JsonUtility.ToJson(saveData));
+        string saveJson = JsonUtility.ToJson(saveData, true); // Use pretty printing for debugging
+        File.WriteAllText(path, saveJson);
+
         Debug.Log($"Game saved to slot: {slotName}");
+        //Debug.Log($"Save contains {saveData.inventorySaveData.Count} inventory items and {saveData.hotbarSaveData.Count} hotbar items");
+        //Debug.Log($"Save JSON: {saveJson}");
     }
 
     public void LoadGameFromSlot(string slotName)
@@ -51,21 +76,38 @@ public class SaveController : MonoBehaviour
             return;
         }
 
-        AudioManager.Play("ButtonAffirmative");
-        SaveData saveData = JsonUtility.FromJson<SaveData>(File.ReadAllText(path));
+        if (player == null || inventoryController == null || hotbarController == null || itemDictionary == null)
+        {
+            Debug.LogError("Cannot load: Missing required components!");
+            return;
+        }
 
+        AudioManager.Play("ButtonAffirmative");
+
+        string saveJson = File.ReadAllText(path);
+        SaveData saveData = JsonUtility.FromJson<SaveData>(saveJson);
+
+        // Set player position
         player.transform.position = saveData.playerPosition;
 
+        // Set camera boundary if it exists
         GameObject boundaryObject = GameObject.Find(saveData.mapBoundary);
         if (boundaryObject)
         {
             cinemachineConfiner.BoundingShape2D = boundaryObject.GetComponent<PolygonCollider2D>();
         }
 
-        inventoryController.SetInventoryItems(saveData.inventorySaveData);
-        hotbarController.SetHotbarItems(saveData.hotbarSaveData);
+        // Load inventory and hotbar items with coroutine
+        StartCoroutine(LoadItemsCoroutine(saveData));
+    }
 
-        Debug.Log($"Game loaded from slot: {slotName}");
+    private IEnumerator LoadItemsCoroutine(SaveData saveData)
+    {
+        // Wait one frame to ensure everything is ready
+        yield return null;
+
+        yield return inventoryController.StartCoroutine(inventoryController.SetInventoryItems(saveData.inventorySaveData));
+        yield return hotbarController.StartCoroutine(hotbarController.SetHotbarItems(saveData.hotbarSaveData));
     }
 
     public void DeleteSlot(string slotName)

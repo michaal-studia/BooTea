@@ -10,7 +10,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2354502266523903752, guid: ae7752738634b9a4f9a4d66043cff69e, type: 3}
       propertyPath: m_Name
-      value: ShopCanvas
+      value: ShopCanvas Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 3396827781028343123, guid: ae7752738634b9a4f9a4d66043cff69e, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6135687799784101013, guid: ae7752738634b9a4f9a4d66043cff69e, type: 3}
       propertyPath: m_Pivot.x

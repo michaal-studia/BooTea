@@ -2624,11 +2624,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 137465248}
   m_CullTransparentMesh: 1
---- !u!1 &140855388 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3423124821660942016, guid: fd87bebebb3edcf4f9cc511a7215cadc, type: 3}
-  m_PrefabInstance: {fileID: 8979994524929001954}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &141228141
 GameObject:
   m_ObjectHideFlags: 0
@@ -13926,6 +13921,20 @@ MonoBehaviour:
   itemPrefabs:
   - {fileID: 3149267294969936952, guid: dd06bca9e6a16fe40b3540f14c085723, type: 3}
   - {fileID: 1069686428793769457, guid: 0ec21dabcd64f69478687f27e1b62637, type: 3}
+  - {fileID: 8520276787628004610, guid: 8994b3fbba3834f43a5992e3de56dc5c, type: 3}
+  - {fileID: 8112149155507470687, guid: e7b30f24c0bd84d46a41d6149564b184, type: 3}
+  - {fileID: 4018182415182291392, guid: 8c28645a0f5e8ad41af8b744a4ebefa2, type: 3}
+  - {fileID: 8035916715550814836, guid: b233286e316fa30479350a452cfe55cd, type: 3}
+  - {fileID: 8695313518613234180, guid: fd87bebebb3edcf4f9cc511a7215cadc, type: 3}
+  - {fileID: 2023017958980452334, guid: 05a1f6b639cf1a34d81f478937b3ab1b, type: 3}
+  - {fileID: 2023017958980452334, guid: 9a91f035650da6046941349cff48eaa9, type: 3}
+  - {fileID: 2343423828065416900, guid: 4e3cbe41643dad94eb06942f18f63136, type: 3}
+  - {fileID: 1109305160093772291, guid: e01ab0ffde5ede4479fa2dfef5bd98aa, type: 3}
+  - {fileID: 2373371302756826913, guid: 014405bb4d75f0c4791a0b3a9f0c4d0b, type: 3}
+  - {fileID: 3982073838054976718, guid: 94ab426a315ae0040b2c21be53ca9d08, type: 3}
+  - {fileID: 3982073838054976718, guid: fc1fc8deca98e5841a1ea9f68cc8af6c, type: 3}
+  - {fileID: 1109305160093772291, guid: 659c65f248588a443abfbf791f3f8b97, type: 3}
+  - {fileID: 1109305160093772291, guid: 89418e7c6a979544e8f9965373edbe2a, type: 3}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -44563,10 +44572,10 @@ MonoBehaviour:
   slotResult: {fileID: 1875561767}
   recipes:
   - teaCupPrefab: {fileID: 2383687231310588358, guid: 8994b3fbba3834f43a5992e3de56dc5c, type: 3}
-    teaPrefab: {fileID: 2863920878645034395, guid: e7b30f24c0bd84d46a41d6149564b184, type: 3}
-    waterPrefab: {fileID: 6983367710039956740, guid: 8c28645a0f5e8ad41af8b744a4ebefa2, type: 3}
-    addonPrefab: {fileID: 4678585175034573676, guid: 4e3cbe41643dad94eb06942f18f63136, type: 3}
-    resultPrefab: {fileID: 140855388}
+    teaPrefab: {fileID: 6983367710039956740, guid: 8c28645a0f5e8ad41af8b744a4ebefa2, type: 3}
+    waterPrefab: {fileID: 4678585175034573676, guid: 4e3cbe41643dad94eb06942f18f63136, type: 3}
+    addonPrefab: {fileID: 2863920878645034395, guid: e7b30f24c0bd84d46a41d6149564b184, type: 3}
+    resultPrefab: {fileID: 3423124821660942016, guid: fd87bebebb3edcf4f9cc511a7215cadc, type: 3}
 --- !u!114 &1850011140
 MonoBehaviour:
   m_ObjectHideFlags: 0

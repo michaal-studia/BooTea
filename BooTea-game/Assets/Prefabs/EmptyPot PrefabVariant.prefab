@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3149267294969936952, guid: dd06bca9e6a16fe40b3540f14c085723, type: 3}
       propertyPath: ID
-      value: 14
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 3149267294969936952, guid: dd06bca9e6a16fe40b3540f14c085723, type: 3}
       propertyPath: Name
@@ -25,9 +25,21 @@ PrefabInstance:
       value: A     plain     pot     with     nothing     inside.
       objectReference: {fileID: 0}
     - target: {fileID: 8001215306773883909, guid: dd06bca9e6a16fe40b3540f14c085723, type: 3}
+      propertyPath: m_Size.x
+      value: 1.1034483
+      objectReference: {fileID: 0}
+    - target: {fileID: 8001215306773883909, guid: dd06bca9e6a16fe40b3540f14c085723, type: 3}
+      propertyPath: m_Size.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8001215306773883909, guid: dd06bca9e6a16fe40b3540f14c085723, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 8776850209705289286, guid: 92c1006ee85b55a418d43ca998df9833, type: 3}
+      objectReference: {fileID: 21300000, guid: 92c1006ee85b55a418d43ca998df9833, type: 3}
+    - target: {fileID: 8001215306773883909, guid: dd06bca9e6a16fe40b3540f14c085723, type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8147131105462844588, guid: dd06bca9e6a16fe40b3540f14c085723, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -111,7 +123,7 @@ PrefabInstance:
     - target: {fileID: 8803692929835455334, guid: dd06bca9e6a16fe40b3540f14c085723, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 8776850209705289286, guid: 92c1006ee85b55a418d43ca998df9833, type: 3}
+      objectReference: {fileID: 21300000, guid: 92c1006ee85b55a418d43ca998df9833, type: 3}
     - target: {fileID: 8979867163389329660, guid: dd06bca9e6a16fe40b3540f14c085723, type: 3}
       propertyPath: m_Name
       value: EmptyPot PrefabVariant

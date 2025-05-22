@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -68,32 +69,36 @@ public class HotbarController : MonoBehaviour
         return hotbarData;
     }
 
-    public void SetHotbarItems(List<InventorySaveData> inventorySaveData)
+    public IEnumerator SetHotbarItems(List<InventorySaveData> inventorySaveData)
     {
-        //Clear inventory panel - avoid duplication
+        // Clear inventory panel - avoid duplication
         foreach (Transform child in hotbarPanel.transform)
         {
             Destroy(child.gameObject);
         }
 
-        //Create new slots
+        yield return null;
+
+        // Create new slots
         for (int i = 0; i < slotCount; i++)
         {
             Instantiate(slotPrefab, hotbarPanel.transform);
         }
 
-        //Populate slots with saved items
+        yield return null;
+
+        // Populate slots with saved items
         foreach (InventorySaveData data in inventorySaveData)
         {
-            if (data.slotIndex < slotCount)
+            if (data.slotIndex < hotbarPanel.transform.childCount)
             {
                 Slot slot = hotbarPanel.transform.GetChild(data.slotIndex).GetComponent<Slot>();
                 GameObject itemPrefab = itemDictionary.GetItemPrefab(data.itemID);
                 if (itemPrefab != null)
                 {
                     GameObject item = Instantiate(itemPrefab, slot.transform);
-                    item.GetComponent<RectTransform>().anchoredPosition = Vector2.zero; // Ustawienie pozycji przedmiotu w slocie
-                    slot.currentItem = item; // Przypisanie przedmiotu do slota
+                    item.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
+                    slot.currentItem = item;
                 }
             }
         }
