@@ -44562,10 +44562,10 @@ MonoBehaviour:
   slotAddons: {fileID: 1532288157}
   slotResult: {fileID: 1875561767}
   recipes:
-  - teaCupID: 1
-    teaID: 2
-    waterID: 3
-    addonID: 16
+  - teaCupPrefab: {fileID: 2383687231310588358, guid: 8994b3fbba3834f43a5992e3de56dc5c, type: 3}
+    teaPrefab: {fileID: 2863920878645034395, guid: e7b30f24c0bd84d46a41d6149564b184, type: 3}
+    waterPrefab: {fileID: 6983367710039956740, guid: 8c28645a0f5e8ad41af8b744a4ebefa2, type: 3}
+    addonPrefab: {fileID: 4678585175034573676, guid: 4e3cbe41643dad94eb06942f18f63136, type: 3}
     resultPrefab: {fileID: 140855388}
 --- !u!114 &1850011140
 MonoBehaviour:
