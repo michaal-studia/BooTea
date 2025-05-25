@@ -43,6 +43,8 @@ public class QuestController : MonoBehaviour
 
         foreach (QuestProgress quest in activateQuests)
         {
+            if (quest.isCompleted)
+                continue; // Pomijaj ukoñczone questy
             foreach (QuestObjective questObjective in quest.objectives) {
                 if (questObjective.type != ObjectiveType.CollectItem) continue;
                 if (!int.TryParse(questObjective.objectiveID, out int itemID)) continue;

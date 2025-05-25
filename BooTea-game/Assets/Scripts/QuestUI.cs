@@ -28,13 +28,28 @@ public class QuestUI : MonoBehaviour
             TMP_Text questNameText = entry.transform.Find("QuestNameText").GetComponent<TMP_Text>();
             Transform objectiveList = entry.transform.Find("ObjectiveList");
 
-            questNameText.text = quest.quest.name;
+            questNameText.text = quest.quest.QuestName;
+
+            // WYSZARZANIE i komunikat
+            if (quest.isCompleted)
+            {
+                // Wyszarz tekst questa
+                questNameText.color = Color.gray;
+
+                // Dodaj komunikat o ukoñczeniu
+                GameObject objTextGO = Instantiate(objectiveTextPrefab, objectiveList);
+                TMP_Text objText = objTextGO.GetComponent<TMP_Text>();
+                objText.text = "<b>Quest ukoñczony!</b>";
+                objText.color = Color.green;
+            }
 
             foreach (var objective in quest.objectives)
             {
                 GameObject objTextGO = Instantiate(objectiveTextPrefab, objectiveList);
                 TMP_Text objText = objTextGO.GetComponent<TMP_Text>();
                 objText.text = $"{objective.description} ({objective.currentAmount}/{objective.requiredAmount})";
+                if (quest.isCompleted)
+                    objText.color = Color.gray; // Wyszarz cele
             }
         }
     }

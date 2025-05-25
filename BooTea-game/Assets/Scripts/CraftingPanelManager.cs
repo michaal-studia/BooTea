@@ -9,6 +9,8 @@ public class CraftingPanelManager : MonoBehaviour
     public Slot slotAddons;
     public Slot slotResult;
 
+    public GameObject spoiledTeaPrefab;
+
     [System.Serializable]
     public class CraftingRecipe
     {
@@ -46,7 +48,7 @@ public class CraftingPanelManager : MonoBehaviour
 
         foreach (CraftingRecipe recipe in recipes)
         {
-            if (recipe.Matches(cupObj, teaObj, waterObj, addonObj))
+            if (recipe.Matches(cupObj, teaObj, addonObj, waterObj))
             {
                 ClearSlot(slotTeaCup);
                 ClearSlot(slotTea);
@@ -59,6 +61,20 @@ public class CraftingPanelManager : MonoBehaviour
                 return;
             }
         }
+        if (cupObj != null && teaObj != null && waterObj != null && addonObj != null && spoiledTeaPrefab != null)
+        {
+            ClearSlot(slotTeaCup);
+            ClearSlot(slotTea);
+            ClearSlot(slotWater);
+            ClearSlot(slotAddons);
+            AudioManager.Play("Error");
+            Debug.Log("Brak pasującego przepisu. Tworzę zepsutą herbatę.");
+            GameObject spoiledTea = Instantiate(spoiledTeaPrefab, slotResult.transform);
+            spoiledTea.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
+            slotResult.currentItem = spoiledTea;
+            return;
+        }
+
         AudioManager.Play("Error");
         Debug.Log("Brak pasującego przepisu.");
     }
