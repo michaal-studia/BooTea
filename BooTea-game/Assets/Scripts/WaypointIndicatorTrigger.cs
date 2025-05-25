@@ -111,7 +111,7 @@ public class WaypointIndicatorTrigger : MonoBehaviour
     private void ShowAppropriateIndicator()
     {
         NPC npc = GetComponent<NPC>();
-        if (npc != null && npc.IsFirstDialogueCompleted())
+        if (npc != null && npc.IsDialogueCompleted())
         {
             indicatorController.ShowCompletedQuestIndicator();
         }
