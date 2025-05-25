@@ -4,14 +4,12 @@ using UnityEngine;
 public class NPC : MonoBehaviour, IInteractable
 {
     public NPCDialogue dialogueData;
-    public NPCDialogue secondDialogueData; // Dialogue to use after first interaction is complete
 
     private DialogueController dialogueUI;
     private int dialogueIndex;
     private bool isTyping, isDialogueActive;
     private NPCIndicatorController indicatorController;
-    private bool isFirstDialogueCompleted = false;
-    private bool isSecondDialogueCompleted = false;
+    private bool isDialogueCompleted = false;
 
     private enum QuestState { NotStarted, InProgress, Compleated }
     private QuestState questState = QuestState.NotStarted;
@@ -42,25 +40,15 @@ public class NPC : MonoBehaviour, IInteractable
             dialogueData.playerName = playerName;
         if (dialogueData.playerPortrait == null && playerPortrait != null)
             dialogueData.playerPortrait = playerPortrait;
-
-        if (secondDialogueData != null)
-        {
-            if (secondDialogueData.playerName == "Player" && !string.IsNullOrEmpty(playerName))
-                secondDialogueData.playerName = playerName;
-            if (secondDialogueData.playerPortrait == null && playerPortrait != null)
-                secondDialogueData.playerPortrait = playerPortrait;
-        }
     }
 
-    public bool IsFirstDialogueCompleted() => isFirstDialogueCompleted;
+    public bool IsDialogueCompleted() => isDialogueCompleted;
     public bool IsInDialogue() => isDialogueActive;
     public bool canInteract() => !isDialogueActive;
 
     public void Interact()
     {
-        if ((dialogueData == null && !isFirstDialogueCompleted) ||
-            (secondDialogueData == null && isFirstDialogueCompleted) ||
-            (PauseController.IsGamePaused && !isDialogueActive))
+        if (dialogueData == null || (PauseController.IsGamePaused && !isDialogueActive))
             return;
 
         if (isDialogueActive)
@@ -84,54 +72,61 @@ public class NPC : MonoBehaviour, IInteractable
         dialogueUI.ClearChoices();
         indicatorController.HideAllIndicators();
 
-        NPCDialogue currentDialogue = isFirstDialogueCompleted ? secondDialogueData : dialogueData;
-        UpdateSpeakerInfo(currentDialogue);
+        UpdateSpeakerInfo(dialogueData);
 
         dialogueUI.ShowDialogueUI(true);
         PauseController.SetPause(true);
-        DisplayCurrentLine(currentDialogue);
+        DisplayCurrentLine(dialogueData);
     }
 
     private void SyncQuestState()
     {
         if (dialogueData.quest == null) return;
+
         var questID = dialogueData.quest.QuestID;
-        questState = QuestController.Instance.IsQuestActive(questID)
-                     ? QuestState.InProgress
-                     : QuestState.NotStarted;
+
+        // Check if quest is completed first
+        if (QuestController.Instance.IsQuestCompleted(questID))
+        {
+            questState = QuestState.Compleated;
+        }
+        // Then check if quest is active (in progress)
+        else if (QuestController.Instance.IsQuestActive(questID))
+        {
+            questState = QuestState.InProgress;
+        }
+        // Otherwise it's not started
+        else
+        {
+            questState = QuestState.NotStarted;
+        }
     }
 
     void NextLine()
     {
-        NPCDialogue currentDialogue = isFirstDialogueCompleted ? secondDialogueData : dialogueData;
-
         if (isTyping)
         {
             StopAllCoroutines();
-            dialogueUI.SetDialogueText(currentDialogue.dialogueLines[dialogueIndex]);
+            dialogueUI.SetDialogueText(dialogueData.dialogueLines[dialogueIndex]);
             isTyping = false;
             return;
         }
 
         dialogueUI.ClearChoices();
 
-        if (currentDialogue.endDialogueLines.Length > dialogueIndex &&
-            currentDialogue.endDialogueLines[dialogueIndex])
+        if (dialogueData.endDialogueLines.Length > dialogueIndex &&
+            dialogueData.endDialogueLines[dialogueIndex])
         {
-            if (!isFirstDialogueCompleted && currentDialogue == dialogueData)
+            if (!isDialogueCompleted)
             {
-                isFirstDialogueCompleted = true;
+                isDialogueCompleted = true;
                 indicatorController.ShowCompletedQuestIndicator();
-            }
-            else if (isFirstDialogueCompleted && secondDialogueData != null)
-            {
-                isSecondDialogueCompleted = true;
             }
             EndDialogue();
             return;
         }
 
-        foreach (var choice in currentDialogue.choices)
+        foreach (var choice in dialogueData.choices)
         {
             if (choice.dialogueIndex == dialogueIndex)
             {
@@ -140,16 +135,16 @@ public class NPC : MonoBehaviour, IInteractable
             }
         }
 
-        if (++dialogueIndex < currentDialogue.dialogueLines.Length)
+        if (++dialogueIndex < dialogueData.dialogueLines.Length)
         {
-            UpdateSpeakerInfo(currentDialogue);
-            DisplayCurrentLine(currentDialogue);
+            UpdateSpeakerInfo(dialogueData);
+            DisplayCurrentLine(dialogueData);
         }
         else
         {
-            if (!isFirstDialogueCompleted && currentDialogue == dialogueData)
+            if (!isDialogueCompleted)
             {
-                isFirstDialogueCompleted = true;
+                isDialogueCompleted = true;
                 indicatorController.ShowCompletedQuestIndicator();
             }
             EndDialogue();
@@ -204,8 +199,9 @@ public class NPC : MonoBehaviour, IInteractable
     {
         for (int i = 0; i < choice.choices.Length; i++)
         {
-            int nextIndex = choice.nextDialogueIndexes[i];
-            bool givesQuest = choice.givesQuest[i];
+            // Add bounds checking to prevent IndexOutOfRangeException
+            int nextIndex = i < choice.nextDialogueIndexes.Length ? choice.nextDialogueIndexes[i] : 0;
+            bool givesQuest = i < choice.givesQuest.Length ? choice.givesQuest[i] : false;
             int musicChoiceIdx = i;
 
             dialogueUI.CreateChoiceButton(choice.choices[i], () =>
@@ -223,11 +219,10 @@ public class NPC : MonoBehaviour, IInteractable
         }
 
         dialogueIndex = nextIndex;
-        NPCDialogue currentDialogue = isFirstDialogueCompleted ? secondDialogueData : dialogueData;
 
-        if (dialogueIndex >= currentDialogue.dialogueLines.Length)
+        if (dialogueIndex >= dialogueData.dialogueLines.Length)
         {
-            Debug.LogError($"[NPC] nextIndex ({dialogueIndex}) out of bounds in ChooseOption. Lines count: {currentDialogue.dialogueLines.Length}");
+            Debug.LogError($"[NPC] nextIndex ({dialogueIndex}) out of bounds in ChooseOption. Lines count: {dialogueData.dialogueLines.Length}");
             EndDialogue();
             return;
         }
@@ -241,8 +236,8 @@ public class NPC : MonoBehaviour, IInteractable
             pianoNPC.PlayBackgroundMusicForChoice(musicChoiceIndex);
         }
 
-        UpdateSpeakerInfo(currentDialogue);
-        DisplayCurrentLine(currentDialogue);
+        UpdateSpeakerInfo(dialogueData);
+        DisplayCurrentLine(dialogueData);
     }
 
     void DisplayCurrentLine(NPCDialogue currentDialogue)
@@ -264,25 +259,11 @@ public class NPC : MonoBehaviour, IInteractable
         dialogueUI.ShowDialogueUI(false);
         PauseController.SetPause(false);
 
-        if (isFirstDialogueCompleted && secondDialogueData)
+        if (isDialogueCompleted && questState == QuestState.Compleated)
         {
-            if (isSecondDialogueCompleted)
-            {
-                indicatorController.HideAllIndicators();
-                indicatorController.ShowEmoteAfter2ndDialogue();
-                StartReverseMovement();
-            }
-        }
-        else if (isFirstDialogueCompleted && secondDialogueData == null)
-        {
-            isFirstDialogueCompleted = false;
-        }
-        else
-        {
-            if (isFirstDialogueCompleted)
-                indicatorController.ShowCompletedQuestIndicator();
-            else
-                indicatorController.ShowInitialQuestIndicator();
+            indicatorController.HideAllIndicators();
+            indicatorController.ShowEmoteAfter2ndDialogue();
+            StartReverseMovement();
         }
     }
 }
