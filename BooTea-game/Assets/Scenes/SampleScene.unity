@@ -266,7 +266,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueData: {fileID: 11400000, guid: e19a510d5cb3b3247b1ff4df2bbb5c02, type: 2}
-  secondDialogueData: {fileID: 11400000, guid: 5e52bdd763f71ef4a9f54fb080265fe7, type: 2}
   NPCId: 2
   playerName: Player
   playerPortrait: {fileID: -9180426125723624345, guid: d163dfeb4849edd42a10d15c40a84d36, type: 3}
@@ -13076,7 +13075,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueData: {fileID: 11400000, guid: a9071e6739e1e944e861d4616b169635, type: 2}
-  secondDialogueData: {fileID: 0}
   NPCId: 1
   playerName: Player
   playerPortrait: {fileID: -9180426125723624345, guid: d163dfeb4849edd42a10d15c40a84d36, type: 3}
@@ -24706,7 +24704,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueData: {fileID: 11400000, guid: 0095922b73d9c3f469d50007a125e86d, type: 2}
-  secondDialogueData: {fileID: 0}
   NPCId: 0
   playerName: Player
   playerPortrait: {fileID: -9180426125723624345, guid: d163dfeb4849edd42a10d15c40a84d36, type: 3}
@@ -37726,7 +37723,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 15, y: -51.08}
+  m_AnchoredPosition: {x: 169, y: -50}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1532288159
@@ -40781,7 +40778,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 169, y: -51.08}
+  m_AnchoredPosition: {x: 17, y: -49.999985}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1639754973
@@ -42674,8 +42671,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 16777215
-  m_fontColor: {r: 1, g: 1, b: 1, a: 0}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -44681,8 +44678,8 @@ RectTransform:
   m_Children:
   - {fileID: 227430211}
   - {fileID: 882120458}
-  - {fileID: 1639754972}
   - {fileID: 1532288158}
+  - {fileID: 1639754972}
   - {fileID: 1875561768}
   - {fileID: 820818480}
   - {fileID: 1569435426}
@@ -44710,11 +44707,17 @@ MonoBehaviour:
   slotWater: {fileID: 1639754971}
   slotAddons: {fileID: 1532288157}
   slotResult: {fileID: 1875561767}
+  spoiledTeaPrefab: {fileID: 8023126233509160577, guid: 459a7a8b4ef579f43a8d1f5b41539d38, type: 3}
   recipes:
   - teaCupPrefab: {fileID: 2383687231310588358, guid: 8994b3fbba3834f43a5992e3de56dc5c, type: 3}
-    teaPrefab: {fileID: 2863920878645034395, guid: e7b30f24c0bd84d46a41d6149564b184, type: 3}
-    waterPrefab: {fileID: 6983367710039956740, guid: 8c28645a0f5e8ad41af8b744a4ebefa2, type: 3}
-    addonPrefab: {fileID: 4678585175034573676, guid: 4e3cbe41643dad94eb06942f18f63136, type: 3}
+    teaPrefab: {fileID: 6983367710039956740, guid: 8c28645a0f5e8ad41af8b744a4ebefa2, type: 3}
+    waterPrefab: {fileID: 4678585175034573676, guid: 4e3cbe41643dad94eb06942f18f63136, type: 3}
+    addonPrefab: {fileID: 2863920878645034395, guid: e7b30f24c0bd84d46a41d6149564b184, type: 3}
+    resultPrefab: {fileID: 3423124821660942016, guid: fd87bebebb3edcf4f9cc511a7215cadc, type: 3}
+  - teaCupPrefab: {fileID: 2383687231310588358, guid: 8994b3fbba3834f43a5992e3de56dc5c, type: 3}
+    teaPrefab: {fileID: 6983367710039956740, guid: 8c28645a0f5e8ad41af8b744a4ebefa2, type: 3}
+    waterPrefab: {fileID: 2863920878645034395, guid: e7b30f24c0bd84d46a41d6149564b184, type: 3}
+    addonPrefab: {fileID: 86848639610744441, guid: b233286e316fa30479350a452cfe55cd, type: 3}
     resultPrefab: {fileID: 3423124821660942016, guid: fd87bebebb3edcf4f9cc511a7215cadc, type: 3}
 --- !u!114 &1850011140
 MonoBehaviour:

@@ -47,8 +47,7 @@ public class QuestProgress
     public QuestProgress(Quest quest)
     {
         this.quest = quest;
-        objectives = new List<QuestObjective>(quest.objectives);
-
+        objectives = new List<QuestObjective>();
         foreach (var obj in quest.objectives)
         {
             objectives.Add(new QuestObjective
@@ -58,7 +57,7 @@ public class QuestProgress
                 type = obj.type,
                 requiredAmount = obj.requiredAmount,
                 currentAmount = 0
-            }); // Initialize current amount to 0
+            });
         }
     }
     public bool isCompleted => objectives.TrueForAll(o => o.isCompleted);
