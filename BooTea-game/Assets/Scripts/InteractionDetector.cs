@@ -25,6 +25,7 @@ public class InteractionDetector : MonoBehaviour
         if (collision.TryGetComponent(out IInteractable interactable) && interactable.canInteract())
         {
             interactableInRange = interactable;
+            AudioManager.Play("PopUpEmote");
             interactionIcon.SetActive(true);
         }
     }

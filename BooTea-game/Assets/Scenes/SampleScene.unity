@@ -266,7 +266,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueData: {fileID: 11400000, guid: e19a510d5cb3b3247b1ff4df2bbb5c02, type: 2}
-  secondDialogueData: {fileID: 11400000, guid: 5e52bdd763f71ef4a9f54fb080265fe7, type: 2}
   NPCId: 2
   playerName: Player
   playerPortrait: {fileID: -9180426125723624345, guid: d163dfeb4849edd42a10d15c40a84d36, type: 3}
@@ -13076,7 +13075,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueData: {fileID: 11400000, guid: a9071e6739e1e944e861d4616b169635, type: 2}
-  secondDialogueData: {fileID: 0}
   NPCId: 1
   playerName: Player
   playerPortrait: {fileID: -9180426125723624345, guid: d163dfeb4849edd42a10d15c40a84d36, type: 3}
@@ -24706,7 +24704,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueData: {fileID: 11400000, guid: 0095922b73d9c3f469d50007a125e86d, type: 2}
-  secondDialogueData: {fileID: 0}
   NPCId: 0
   playerName: Player
   playerPortrait: {fileID: -9180426125723624345, guid: d163dfeb4849edd42a10d15c40a84d36, type: 3}
@@ -35321,20 +35318,68 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2252819440931742184, guid: af62654bf2f907944804cb30fc3acf22, type: 3}
       propertyPath: audioGroups.Array.size
-      value: 17
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 2252819440931742184, guid: af62654bf2f907944804cb30fc3acf22, type: 3}
       propertyPath: audioGroups.Array.data[16].name
       value: KettleWhistle
       objectReference: {fileID: 0}
     - target: {fileID: 2252819440931742184, guid: af62654bf2f907944804cb30fc3acf22, type: 3}
+      propertyPath: audioGroups.Array.data[17].name
+      value: PopUpEmote
+      objectReference: {fileID: 0}
+    - target: {fileID: 2252819440931742184, guid: af62654bf2f907944804cb30fc3acf22, type: 3}
+      propertyPath: audioGroups.Array.data[18].name
+      value: StoveOff
+      objectReference: {fileID: 0}
+    - target: {fileID: 2252819440931742184, guid: af62654bf2f907944804cb30fc3acf22, type: 3}
+      propertyPath: audioGroups.Array.data[19].name
+      value: StoveSuccess
+      objectReference: {fileID: 0}
+    - target: {fileID: 2252819440931742184, guid: af62654bf2f907944804cb30fc3acf22, type: 3}
+      propertyPath: audioGroups.Array.data[0].audioClips.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2252819440931742184, guid: af62654bf2f907944804cb30fc3acf22, type: 3}
       propertyPath: audioGroups.Array.data[16].audioClips.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2252819440931742184, guid: af62654bf2f907944804cb30fc3acf22, type: 3}
+      propertyPath: audioGroups.Array.data[17].audioClips.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2252819440931742184, guid: af62654bf2f907944804cb30fc3acf22, type: 3}
+      propertyPath: audioGroups.Array.data[18].audioClips.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2252819440931742184, guid: af62654bf2f907944804cb30fc3acf22, type: 3}
+      propertyPath: audioGroups.Array.data[19].audioClips.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2252819440931742184, guid: af62654bf2f907944804cb30fc3acf22, type: 3}
+      propertyPath: 'audioGroups.Array.data[0].audioClips.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: dd9ca39f700fd1c4f90378471b34d7b7, type: 3}
+    - target: {fileID: 2252819440931742184, guid: af62654bf2f907944804cb30fc3acf22, type: 3}
       propertyPath: 'audioGroups.Array.data[16].audioClips.Array.data[0]'
       value: 
       objectReference: {fileID: 8300000, guid: 0c2107a0df98c9b449bf412b01ae269b, type: 3}
+    - target: {fileID: 2252819440931742184, guid: af62654bf2f907944804cb30fc3acf22, type: 3}
+      propertyPath: 'audioGroups.Array.data[17].audioClips.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 753a81b6844077445be49eb2d23baca5, type: 3}
+    - target: {fileID: 2252819440931742184, guid: af62654bf2f907944804cb30fc3acf22, type: 3}
+      propertyPath: 'audioGroups.Array.data[17].audioClips.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 753a81b6844077445be49eb2d23baca5, type: 3}
+    - target: {fileID: 2252819440931742184, guid: af62654bf2f907944804cb30fc3acf22, type: 3}
+      propertyPath: 'audioGroups.Array.data[18].audioClips.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: b4f9cffe8fa0dac429237af9dfd97730, type: 3}
+    - target: {fileID: 2252819440931742184, guid: af62654bf2f907944804cb30fc3acf22, type: 3}
+      propertyPath: 'audioGroups.Array.data[19].audioClips.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: dda28e0b42b840e419115e57a38d2c2a, type: 3}
     - target: {fileID: 6514037391138685450, guid: af62654bf2f907944804cb30fc3acf22, type: 3}
       propertyPath: m_Name
       value: AudioManager

@@ -33,6 +33,7 @@ public class StovePanelManager : MonoBehaviour
 
         if (inputPrefab == null)
         {
+            AudioManager.Play("Error");
             Debug.Log("Brak przedmiotu w slocie.");
             return;
         }
@@ -49,15 +50,22 @@ public class StovePanelManager : MonoBehaviour
                 GameObject resultItem = Instantiate(resultPrefab, slotResult.transform);
                 resultItem.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
                 slotResult.currentItem = resultItem;
+                if (qteSuccess)
+                {
+                    AudioManager.Play("StoveSuccess");
+                }
+                AudioManager.Play(qteSuccess ? "StoveOff" : "KettleWhistle");
                 return;
             }
             else if (recipe.Matches(inputPrefab, temperature) && slotResult.currentItem != null)
             {
+                AudioManager.Play("Error");
                 Debug.Log("Slot na wynik zajęty.");
                 return;
             }
         }
 
+        AudioManager.Play("Error");
         Debug.Log("Brak pasującego przepisu.");
     }
 
