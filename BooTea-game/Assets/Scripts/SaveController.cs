@@ -102,7 +102,9 @@ public class SaveController : MonoBehaviour
             playerPosition = player.transform.position,
             mapBoundary = cinemachineConfiner.BoundingShape2D?.gameObject.name,
             inventorySaveData = inventoryItems ?? new List<InventorySaveData>(),
-            hotbarSaveData = hotbarItems ?? new List<InventorySaveData>()
+            hotbarSaveData = hotbarItems ?? new List<InventorySaveData>(),
+            questProgressData = QuestController.Instance.activateQuests
+
         };
 
         string path = GetSavePath(slotName);
@@ -144,6 +146,7 @@ public class SaveController : MonoBehaviour
 
         // Load inventory and hotbar items with coroutine
         StartCoroutine(LoadItemsCoroutine(saveData));
+        QuestController.Instance.LoadQuestProgress(saveData.questProgressData);
     }
 
     private IEnumerator LoadItemsCoroutine(SaveData saveData)

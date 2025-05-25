@@ -13,6 +13,9 @@ public class NPC : MonoBehaviour, IInteractable
     private bool isFirstDialogueCompleted = false;
     private bool isSecondDialogueCompleted = false;
 
+    private enum QuestState { NotStarted, InProgress, Compleated }
+    private QuestState questState = QuestState.NotStarted;
+
     [Header("NPC Settings")]
     public int NPCId;  // Unikalny identyfikator NPC, np. 0 = Cat, 1 = Piano, itd.
 
@@ -23,7 +26,7 @@ public class NPC : MonoBehaviour, IInteractable
     [Header("Movement Settings")]
     public WaypointMover waypointMover; // Reference to WaypointMover component
 
-    public void Start()
+    void Start()
     {
         dialogueUI = DialogueController.Instance;
         indicatorController = GetComponent<NPCIndicatorController>();
@@ -32,46 +35,26 @@ public class NPC : MonoBehaviour, IInteractable
             indicatorController = gameObject.AddComponent<NPCIndicatorController>();
         }
 
-        // Check if this NPC has a WaypointMover
         if (waypointMover == null)
-        {
             waypointMover = GetComponent<WaypointMover>();
-        }
 
-        // Use default player info if not set in dialogue data
         if (dialogueData.playerName == "Player" && !string.IsNullOrEmpty(playerName))
             dialogueData.playerName = playerName;
-
         if (dialogueData.playerPortrait == null && playerPortrait != null)
             dialogueData.playerPortrait = playerPortrait;
 
-        // Also set for second dialogue if present
         if (secondDialogueData != null)
         {
             if (secondDialogueData.playerName == "Player" && !string.IsNullOrEmpty(playerName))
                 secondDialogueData.playerName = playerName;
-
             if (secondDialogueData.playerPortrait == null && playerPortrait != null)
                 secondDialogueData.playerPortrait = playerPortrait;
         }
     }
 
-    // Public accessor method for dialogue completion status
-    public bool IsFirstDialogueCompleted()
-    {
-        return isFirstDialogueCompleted;
-    }
-
-    // Public accessor to check if dialogue is active
-    public bool IsInDialogue()
-    {
-        return isDialogueActive;
-    }
-
-    public bool canInteract()
-    {
-        return !isDialogueActive;
-    }
+    public bool IsFirstDialogueCompleted() => isFirstDialogueCompleted;
+    public bool IsInDialogue() => isDialogueActive;
+    public bool canInteract() => !isDialogueActive;
 
     public void Interact()
     {
@@ -81,39 +64,45 @@ public class NPC : MonoBehaviour, IInteractable
             return;
 
         if (isDialogueActive)
-        {
             NextLine();
-        }
         else
-        {
             StartDialogue();
-        }
     }
 
     void StartDialogue()
     {
-        isDialogueActive = true;
-        dialogueIndex = 0;
-        dialogueUI.ClearChoices();
+        SyncQuestState();
 
-        // Hide indicators during dialogue
+        if (questState == QuestState.NotStarted)
+            dialogueIndex = 0;
+        else if (questState == QuestState.InProgress)
+            dialogueIndex = dialogueData.questInProgressIndex;
+        else // Compleated
+            dialogueIndex = dialogueData.questCompletedIndex;
+
+        isDialogueActive = true;
+        dialogueUI.ClearChoices();
         indicatorController.HideAllIndicators();
 
-        // Choose which dialogue to use based on completion state
         NPCDialogue currentDialogue = isFirstDialogueCompleted ? secondDialogueData : dialogueData;
-
-        // Set initial speaker
         UpdateSpeakerInfo(currentDialogue);
 
         dialogueUI.ShowDialogueUI(true);
         PauseController.SetPause(true);
-
         DisplayCurrentLine(currentDialogue);
+    }
+
+    private void SyncQuestState()
+    {
+        if (dialogueData.quest == null) return;
+        var questID = dialogueData.quest.QuestID;
+        questState = QuestController.Instance.IsQuestActive(questID)
+                     ? QuestState.InProgress
+                     : QuestState.NotStarted;
     }
 
     void NextLine()
     {
-        // Choose which dialogue to use based on completion state
         NPCDialogue currentDialogue = isFirstDialogueCompleted ? secondDialogueData : dialogueData;
 
         if (isTyping)
@@ -124,17 +113,14 @@ public class NPC : MonoBehaviour, IInteractable
             return;
         }
 
-        //Clear choices
         dialogueUI.ClearChoices();
 
-        //Check endDialogueLines
-        if (currentDialogue.endDialogueLines.Length > dialogueIndex && currentDialogue.endDialogueLines[dialogueIndex])
+        if (currentDialogue.endDialogueLines.Length > dialogueIndex &&
+            currentDialogue.endDialogueLines[dialogueIndex])
         {
-            // If this is the first dialogue and it's ending
             if (!isFirstDialogueCompleted && currentDialogue == dialogueData)
             {
                 isFirstDialogueCompleted = true;
-                // Show grey question mark after first dialogue completion
                 indicatorController.ShowCompletedQuestIndicator();
             }
             else if (isFirstDialogueCompleted && secondDialogueData != null)
@@ -145,76 +131,71 @@ public class NPC : MonoBehaviour, IInteractable
             return;
         }
 
-        //Check if choices & display
-        foreach (DialogueChoice dialogueChoice in currentDialogue.choices)
+        foreach (var choice in currentDialogue.choices)
         {
-            if (dialogueChoice.dialogueIndex == dialogueIndex)
+            if (choice.dialogueIndex == dialogueIndex)
             {
-                DisplayChoices(dialogueChoice);
+                DisplayChoices(choice);
                 return;
             }
         }
 
         if (++dialogueIndex < currentDialogue.dialogueLines.Length)
         {
-            // Update speaker info for the new line
             UpdateSpeakerInfo(currentDialogue);
             DisplayCurrentLine(currentDialogue);
         }
         else
         {
-            // If we've reached the end of dialogue lines without hitting a specifically marked end
             if (!isFirstDialogueCompleted && currentDialogue == dialogueData)
             {
                 isFirstDialogueCompleted = true;
-                // Show grey question mark after first dialogue completion
                 indicatorController.ShowCompletedQuestIndicator();
             }
             EndDialogue();
         }
     }
 
-    // Updated to use the current dialogue
     void UpdateSpeakerInfo(NPCDialogue currentDialogue)
     {
-        bool isPlayer = currentDialogue.isPlayerSpeaking.Length > dialogueIndex && currentDialogue.isPlayerSpeaking[dialogueIndex];
+        bool isPlayer = currentDialogue.isPlayerSpeaking.Length > dialogueIndex
+                        && currentDialogue.isPlayerSpeaking[dialogueIndex];
 
         if (isPlayer)
-        {
             dialogueUI.SetSpeakerInfo(currentDialogue.playerName, currentDialogue.playerPortrait);
-        }
         else
-        {
             dialogueUI.SetSpeakerInfo(currentDialogue.npcName, currentDialogue.npcPortrait);
-        }
     }
 
     IEnumerator TypeLine(NPCDialogue currentDialogue)
     {
         isTyping = true;
-        dialogueUI.SetDialogueText("");
 
-        // Get whether the current speaker is player or NPC
-        bool isPlayer = currentDialogue.isPlayerSpeaking.Length > dialogueIndex && currentDialogue.isPlayerSpeaking[dialogueIndex];
+        if (dialogueIndex >= currentDialogue.dialogueLines.Length)
+        {
+            Debug.LogError($"[NPC] dialogueIndex ({dialogueIndex}) out of bounds in TypeLine. Lines count: {currentDialogue.dialogueLines.Length}");
+            EndDialogue();
+            yield break;
+        }
+
+        dialogueUI.SetDialogueText("");
+        bool isPlayer = currentDialogue.isPlayerSpeaking.Length > dialogueIndex
+                        && currentDialogue.isPlayerSpeaking[dialogueIndex];
         AudioClip voiceToUse = isPlayer ? currentDialogue.playerVoiceSound : currentDialogue.voiceSound;
         float pitchToUse = isPlayer ? currentDialogue.playerVoicePitch : currentDialogue.voicePitch;
 
-        // Type out the current line
         foreach (char letter in currentDialogue.dialogueLines[dialogueIndex])
         {
-            dialogueUI.SetDialogueText(dialogueUI.dialogueTextRef.text += letter);
+            dialogueUI.SetDialogueText(dialogueUI.dialogueTextRef.text + letter);
             if (voiceToUse != null)
-            {
-                AudioManager.PlayVoice(dialogueData.voiceSound, dialogueData.voicePitch);
-            }
+                AudioManager.PlayVoice(voiceToUse, pitchToUse);
             yield return new WaitForSeconds(currentDialogue.typingSpeed);
         }
 
         isTyping = false;
-
-        if (currentDialogue.autoProgressLines.Length > dialogueIndex && currentDialogue.autoProgressLines[dialogueIndex])
+        if (currentDialogue.autoProgressLines.Length > dialogueIndex
+            && currentDialogue.autoProgressLines[dialogueIndex])
         {
-            // Only show choices if not auto-progressing
             NextLine();
         }
     }
@@ -224,25 +205,42 @@ public class NPC : MonoBehaviour, IInteractable
         for (int i = 0; i < choice.choices.Length; i++)
         {
             int nextIndex = choice.nextDialogueIndexes[i];
-            int musicChoiceIndex = i;
-            dialogueUI.CreateChoiceButton(choice.choices[i], () => ChooseOption(nextIndex, musicChoiceIndex));
+            bool givesQuest = choice.givesQuest[i];
+            int musicChoiceIdx = i;
+
+            dialogueUI.CreateChoiceButton(choice.choices[i], () =>
+                ChooseOption(nextIndex, musicChoiceIdx, givesQuest)
+            );
         }
     }
 
-    void ChooseOption(int nextIndex, int musicChoiceIndex)
+    void ChooseOption(int nextIndex, int musicChoiceIndex, bool givesQuest)
     {
+        if (givesQuest)
+        {
+            QuestController.Instance.AcceptQuest(dialogueData.quest);
+            questState = QuestState.InProgress;
+        }
+
         dialogueIndex = nextIndex;
+        NPCDialogue currentDialogue = isFirstDialogueCompleted ? secondDialogueData : dialogueData;
+
+        if (dialogueIndex >= currentDialogue.dialogueLines.Length)
+        {
+            Debug.LogError($"[NPC] nextIndex ({dialogueIndex}) out of bounds in ChooseOption. Lines count: {currentDialogue.dialogueLines.Length}");
+            EndDialogue();
+            return;
+        }
+
         dialogueUI.ClearChoices();
 
-        if (NPCId == 1) // if Piano is interacting with us we want to change music based on the clicked option that we were given
+        if (NPCId == 1)
         {
             Debug.Log(musicChoiceIndex);
-            PianoNPC pianoNPC = FindFirstObjectByType<PianoNPC>();
+            var pianoNPC = Object.FindFirstObjectByType<PianoNPC>();
             pianoNPC.PlayBackgroundMusicForChoice(musicChoiceIndex);
         }
 
-        // Update speaker info for the new dialogue line
-        NPCDialogue currentDialogue = isFirstDialogueCompleted ? secondDialogueData : dialogueData;
         UpdateSpeakerInfo(currentDialogue);
         DisplayCurrentLine(currentDialogue);
     }
@@ -255,10 +253,7 @@ public class NPC : MonoBehaviour, IInteractable
 
     public void StartReverseMovement()
     {
-        if (waypointMover != null)
-        {
-            waypointMover.StartReverseMovement();
-        }
+        waypointMover?.StartReverseMovement();
     }
 
     public void EndDialogue()
@@ -278,23 +273,16 @@ public class NPC : MonoBehaviour, IInteractable
                 StartReverseMovement();
             }
         }
-
-        // If there's no second dialogue, reset to first dialogue
         else if (isFirstDialogueCompleted && secondDialogueData == null)
         {
             isFirstDialogueCompleted = false;
         }
         else
         {
-            // Show appropriate indicator after dialogue ends
             if (isFirstDialogueCompleted)
-            {
                 indicatorController.ShowCompletedQuestIndicator();
-            }
             else
-            {
                 indicatorController.ShowInitialQuestIndicator();
-            }
         }
     }
 }
