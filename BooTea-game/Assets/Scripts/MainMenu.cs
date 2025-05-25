@@ -8,7 +8,7 @@ public class MainMenu : MonoBehaviour
     public GameObject loadUIPanel;
 
     [Header("Other GameObjects")]
-    public GameObject leavesSystem; // <- Dodaj obiekt systemu cz¹steczek
+    public GameObject leavesSystem;
 
     [Header("Save System")]
     public MainMenuSaveController saveController;
@@ -39,7 +39,6 @@ public class MainMenu : MonoBehaviour
 
     public void OnSettingsClick()
     {
-
         if (settingsPanel != null)
         {
             bool shouldShow = !settingsPanel.activeSelf;
@@ -53,7 +52,6 @@ public class MainMenu : MonoBehaviour
             }
             settingsPanel.SetActive(shouldShow);
 
-            // Ukryj lub poka¿ system liœci
             if (leavesSystem != null)
             {
                 leavesSystem.SetActive(!shouldShow);

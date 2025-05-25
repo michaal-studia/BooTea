@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class Item : MonoBehaviour
 {
-    public int ID; 
+    public int ID;
     public string Name;
     public string Description;
     public Sprite itemIcon;

@@ -87,6 +87,7 @@ public class SaveController : MonoBehaviour
         // Check if required components exist
         if (player == null || inventoryController == null || hotbarController == null)
         {
+            AudioManager.Play("Error");
             Debug.LogError("Cannot save: Missing required components!");
             return;
         }
@@ -117,12 +118,14 @@ public class SaveController : MonoBehaviour
         string path = GetSavePath(slotName);
         if (!File.Exists(path))
         {
+            AudioManager.Play("Error");
             Debug.LogWarning($"Save slot '{slotName}' not found.");
             return;
         }
 
         if (player == null || inventoryController == null || hotbarController == null || itemDictionary == null)
         {
+            AudioManager.Play("Error");
             Debug.LogError("Cannot load: Missing required components!");
             return;
         }
@@ -160,11 +163,13 @@ public class SaveController : MonoBehaviour
         string path = GetSavePath(slotName);
         if (File.Exists(path))
         {
+            AudioManager.Play("ButtonAffirmative");
             File.Delete(path);
             Debug.Log($"Deleted save slot: {slotName}");
         }
         else
         {
+            AudioManager.Play("Error");
             Debug.LogWarning($"No save to delete in slot: {slotName}");
         }
     }

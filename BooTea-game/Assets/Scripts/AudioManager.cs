@@ -17,11 +17,12 @@ public class AudioManager : MonoBehaviour
     private Slider SFXSlider;
     private Slider VoiceSlider;
 
+    private Coroutine musicLoopCoroutine;
+
     private void Awake()
     {
         if (Instance == null)
         {
-
             Instance = this;
             DontDestroyOnLoad(gameObject);
 
@@ -33,7 +34,9 @@ public class AudioManager : MonoBehaviour
             audioLibrary = GetComponent<AudioLibrary>();
         }
         else
+        {
             Destroy(gameObject);
+        }
     }
 
     private void OnEnable()
@@ -52,11 +55,11 @@ public class AudioManager : MonoBehaviour
 
         if (scene.name == "StartScene")
         {
-            StartCoroutine(LoopMusic("MainMenuBackgroundMusic"));
+            StartMusicLoop("MainMenuBackgroundMusic");
         }
         else if (scene.name == "SampleScene")
         {
-            StartCoroutine(LoopMusic("BackgroundMusic"));
+            StartMusicLoop("BackgroundMusic");
         }
 
         // Spróbuj przypisać suwaki, jeśli są obecne w scenie
@@ -77,11 +80,12 @@ public class AudioManager : MonoBehaviour
 
     public void AssignSliders(Slider music, Slider sfx, Slider voice)
     {
+
         MusicSlider = music;
         SFXSlider = sfx;
         VoiceSlider = voice;
 
-        LoadVolumeSettings(); // Od razu ustawia suwaki na właściwe wartości
+        LoadVolumeSettings();
 
         if (MusicSlider != null)
             MusicSlider.onValueChanged.AddListener(delegate { SetMusicVolume(MusicSlider.value); });
@@ -137,11 +141,22 @@ public class AudioManager : MonoBehaviour
             VoiceSlider.onValueChanged.AddListener(delegate { SetVoiceVolume(VoiceSlider.value); });
     }
 
+    private void StartMusicLoop(string music)
+    {
+        if (musicLoopCoroutine != null)
+        {
+            StopCoroutine(musicLoopCoroutine);
+            musicLoopCoroutine = null;
+        }
+
+        musicLoopCoroutine = StartCoroutine(LoopMusic(music));
+    }
+
     private IEnumerator LoopMusic(string music)
     {
         AudioClip[] backgroundTracks = audioLibrary.GetClips(music);
 
-        Debug.Log($"Ładowanie muzyki: {music}, ilość utworów: {backgroundTracks.Length}");
+        //Debug.Log($"Ładowanie muzyki: {music}, ilość utworów: {backgroundTracks.Length}");
 
         if (backgroundTracks.Length == 0)
         {
@@ -160,6 +175,11 @@ public class AudioManager : MonoBehaviour
     public void StopMusic()
     {
         musicSource.Stop();
+        if (musicLoopCoroutine != null)
+        {
+            StopCoroutine(musicLoopCoroutine);
+            musicLoopCoroutine = null;
+        }
     }
 
     public void PauseMusic()

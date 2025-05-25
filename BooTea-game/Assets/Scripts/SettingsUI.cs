@@ -7,9 +7,9 @@ public class SettingsUI : MonoBehaviour
     public Slider sfxSlider;
     public Slider voiceSlider;
 
-    private void Start()
+    private void OnEnable()
     {
-        if (AudioManager.Instance != null)
+        if (AudioManager.Instance != null && musicSlider != null && sfxSlider != null && voiceSlider != null)
         {
             AudioManager.Instance.AssignSliders(musicSlider, sfxSlider, voiceSlider);
         }
