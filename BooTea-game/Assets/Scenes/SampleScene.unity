@@ -4730,6 +4730,7 @@ GameObject:
   - component: {fileID: 275001831}
   - component: {fileID: 275001833}
   - component: {fileID: 275001834}
+  - component: {fileID: 275001835}
   m_Layer: 0
   m_Name: GameController
   m_TagString: Untagged
@@ -4797,6 +4798,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33f0c88deab27f84d91f7ef20112d488, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &275001835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 275001830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f9a2d2bff9cf464182a70ab65116fdb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activateQuests: []
 --- !u!1 &276005215
 GameObject:
   m_ObjectHideFlags: 0
@@ -12820,8 +12834,6 @@ MonoBehaviour:
   questListContent: {fileID: 244053325}
   questEntryPrefab: {fileID: 7702531708459198411, guid: a2d1c0a4218abea428d96d0a2db9ab91, type: 3}
   objectiveTextPrefab: {fileID: 2451531392283109516, guid: f3e29de4a5a4fe54691ce4083b6221b7, type: 3}
-  testQuest: {fileID: 11400000, guid: 13aec6f02960f42408daca02af540f74, type: 2}
-  testQuestAmount: 3
 --- !u!1 &459118140
 GameObject:
   m_ObjectHideFlags: 0

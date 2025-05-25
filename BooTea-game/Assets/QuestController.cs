@@ -14,6 +14,10 @@ public class QuestController : MonoBehaviour
         else Destroy(gameObject);
 
         questUI = FindObjectOfType<QuestUI>();
+        InventoryController.Instance.OnInventoryChanged += () => {
+            QuestController.Instance.CheckInventoryForQuests();
+            questUI.UpdateQuestUI();
+        }; // Subscribe to inventory changes
     }
 
     public void AcceptQuest(Quest quest)
@@ -21,9 +25,38 @@ public class QuestController : MonoBehaviour
         if (IsQuestActive(quest.QuestID)) return;
 
         activateQuests.Add(new QuestProgress(quest));
-
-        questUI.UpdateQuestUI();
+        CheckInventoryForQuests(); // Check inventory for quest items
+        questUI.UpdateQuestUI(); 
     }
 
-    public bool IsQuestActive(string questID) => activateQuests.Exists(q => q.QuestID == questID);
+    public bool IsQuestActive(string questID)=> activateQuests.Exists(q => q.QuestID == questID);
+
+    public void CheckInventoryForQuests()
+    {
+        Dictionary<int, int> itemCounts = InventoryController.Instance.GetItemCounts();
+
+        foreach (QuestProgress quest in activateQuests)
+        {
+            foreach (QuestObjective questObjective in quest.objectives) {
+                if (questObjective.type != ObjectiveType.CollectItem) continue;
+                if (!int.TryParse(questObjective.objectiveID, out int itemID)) continue;
+
+                int newAmount = itemCounts.TryGetValue(itemID, out int count) ? Mathf.Min(count, questObjective.requiredAmount) : 0;
+
+                if (questObjective.currentAmount != newAmount) 
+                {
+                    questObjective.currentAmount = newAmount;
+                }
+            }
+        }
+        questUI.UpdateQuestUI(); // Update the quest UI after checking inventory
+    }
+    public void LoadQuestProgress(List<QuestProgress> savedQuests)
+    {
+        activateQuests = savedQuests ?? new();
+
+        CheckInventoryForQuests(); // Ensure inventory is checked after loading quests
+        questUI.UpdateQuestUI(); // Update the quest UI after loading quests
+    }
+
 }
