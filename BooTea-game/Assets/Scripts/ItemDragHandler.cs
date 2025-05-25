@@ -118,5 +118,6 @@ public class ItemDragHandler : MonoBehaviour, IBeginDragHandler, IDragHandler, I
 
         // Destroy the UI one
         Destroy(gameObject);
+        InventoryController.Instance.RebuiltItemCounts(); // Rebuild item counts after dropping
     }
 }

@@ -17,82 +17,31 @@ MonoBehaviour:
   playerName: Witch
   playerPortrait: {fileID: -9180426125723624345, guid: d163dfeb4849edd42a10d15c40a84d36, type: 3}
   dialogueLines:
-  - Ah, what have we here? A charming little establishment for spirits like myself?
-    How intriguing.
   - Welcome to the tea shop! What brings you in today?
-  - "Ah, how delightful\u2026"
-  - "It\u2019s been so long since I\u2019ve found myself in a tea room, much less
-    one as cozy and inviting as this one."
-  - I must say, I am quite taken with the atmosphere. You have a charming little
-    hut here.
-  - "I\u2019m glad you like it! Can I offer you a cup of tea?"
-  - "Tea\u2026"
-  - "Yes, yes, of course. How could I resist such a fine invitation? I must admit,
-    I\u2019ve been longing for a proper brew\u2026 Perhaps something with a hint
-    of the past\u2026"
-  - Ah, but I suppose I should introduce myself first.
-  - "Earl Grey, at your service young lady, though I must warn you, I\u2019ve been
-    known to be quite particular when it comes to my tea."
-  - Earl Grey? Like the tea?
-  - Quite so!
-  - You see, this blend is quite dear to me. It is, in fact, my own creation. A story,
-    if you will, of discovery and serendipity.
-  - "I\u2019d love to hear your story!"
-  - "Ah, well then\u2026 It all began one evening, as I sat with a cup of my favorite
-    black tea\u2026"
-  - "My maid has prepared it, as she always did - perfectly timed, perfectly steeped.
-    But on this occasion, something in the air was different\u2026"
-  - "I looked out the window and saw a rare flower blooming in the garden, its fragrance
-    was just exquisite\u2026"
-  - I had the most curious idea - what would it be like, I wondered, to blend that
-    delicate scent with my tea?
-  - Did you try it? How was it?
-  - "The result\u2026"
-  - "was extraordinary. It was a marriage of tradition and a new discovery, and I,
-    in my infinite wisdom, decided to name it after myself. Earl Grey. Quite fitting,
-    wouldn\u2019t you say?"
-  - "I\u2019ve always loved Earl Grey tea, but I have to admit, I usually just buy
-    the blend from the store. It\u2019s so easy that way."
-  - "Hmm\u2026 You store-bought it, did you?"
-  - "While I can appreciate the convenience of such things, I must confess, it does
-    irk me just a tad. You see, back in my day, there was a certain art to brewing
-    a proper cup of Earl Grey. It wasn\u2019t even simply about adding a floral essence
-    to some already prepared leaves."
-  - No, no, my dear. The true essence of the blend - the heart of it - was in the
-    balance, the careful infusion, done with love and precision. It was an experience,
-    not an afterthought.
-  - I never thought about it that way. So, how would you make it properly?
-  - "Ah, yes, the proper way\u2026"
-  - First and foremost, you must select a good, strong black tea - a fine English
-    breakfast, perhaps, though one can experiment if one feels particularly adventurous.
-  - Next, you must acquire the freshest bergamot oil, distilled to perfection. The
-    oil should be blended carefully - not simply sprayed or added haphazardly. But
-    the when is important here.
-  - You must properly mix the oil into the leaves before adding them into the water.
-    Not after, mind you, for the oil must be allowed to steep with the leaves, so
-    as to not overwhelm them.
-  - "Now, here\u2019s where the art comes in. The water temperature, my dear, is
-    key. You want it to be just below boiling - about 93C - to avoid burning the
-    delicate leaves. Too hot, and you\u2019ll ruin the balance. Too cold, and the
-    flavor won\u2019t be properly extracted."
-  - So, not boiling water?
-  - Precisely! Boiling water is far too harsh for such a refined tea.
-  - Now, once the water is ready, pour it gently over the leaves, allowing them to
-    swirl and infuse for about 4 minutes. You want the tea to steep just enough to
-    release its full-bodied richness, without becoming bitter.
-  - "That\u2019s a lot more careful than I thought!"
-  - "Indeed, my dear. You must show the tea the respect it deserves - only then will
-    you unlock its true potential. When done correctly, you\u2019ll have a cup that
-    is rich, refined, and oh, so satisfying."
-  - "Now, why don\u2019t you try making a cup for me, my dear? I do believe it\u2019s
-    time for a proper tasting."
-  isPlayerSpeaking: 00010000000100000000010000010000000001000001000000010000000000010000010000
-  autoProgressLines: 
-  endDialogueLines: 00000000000000000000000000000000000000000000000000000000000000000000000001
+  - ' I suppose I should introduce myself first.'
+  - 'I am Earl Gray. Would You make me some tea? Perhaps an... Earl gray, surprisingly.   '
+  - Thanks!
+  - 'I knew You would help. '
+  - Oh... ok...
+  - Maybe next time...
+  - Still waiting for my tea!
+  - Perfect. Exactly as I remember it...
+  isPlayerSpeaking: 010000000000000000
+  autoProgressLines: 010000000000000000
+  endDialogueLines: 000000000100010001
   autoProgressDelay: 1.5
   typingSpeed: 0.05
   voiceSound: {fileID: 8300000, guid: b9c9d295e5d8e5b4997f8d7a56be8fd5, type: 3}
   voicePitch: 1
   playerVoiceSound: {fileID: 8300000, guid: b9c9d295e5d8e5b4997f8d7a56be8fd5, type: 3}
   playerVoicePitch: 1
-  choices: []
+  choices:
+  - dialogueIndex: 2
+    choices:
+    - Yes
+    - No
+    nextDialogueIndexes: 0300000005000000
+    givesQuest: 0100
+  questInProgressIndex: 3
+  questCompletedIndex: 8
+  quest: {fileID: 11400000, guid: 13aec6f02960f42408daca02af540f74, type: 2}

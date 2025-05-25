@@ -16,8 +16,8 @@ MonoBehaviour:
   QuestName: COLLECT       CUP
   description: Find a cup suited for Earl Gray
   objectives:
-  - objectiveID: 2
+  - objectiveID: 3
     description: FIND     A     CUP     SUITED     FOR     EARL     GRAY
     type: 0
-    requiredAmount: 1
+    requiredAmount: 5
     currentAmount: 0
