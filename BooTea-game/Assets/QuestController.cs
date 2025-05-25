@@ -31,6 +31,12 @@ public class QuestController : MonoBehaviour
 
     public bool IsQuestActive(string questID)=> activateQuests.Exists(q => q.QuestID == questID);
 
+    public bool IsQuestCompleted(string questID)
+    {
+        var questProgress = activateQuests.Find(q => q.QuestID == questID);
+        return questProgress != null && questProgress.isCompleted;
+    }
+
     public void CheckInventoryForQuests()
     {
         Dictionary<int, int> itemCounts = InventoryController.Instance.GetItemCounts();

@@ -28,7 +28,7 @@ MonoBehaviour:
   - Perfect. Exactly as I remember it...
   isPlayerSpeaking: 010000000000000000
   autoProgressLines: 010000000000000000
-  endDialogueLines: 000000000100010001
+  endDialogueLines: 000000000100010101
   autoProgressDelay: 1.5
   typingSpeed: 0.05
   voiceSound: {fileID: 8300000, guid: b9c9d295e5d8e5b4997f8d7a56be8fd5, type: 3}
@@ -42,6 +42,6 @@ MonoBehaviour:
     - No
     nextDialogueIndexes: 0300000005000000
     givesQuest: 0100
-  questInProgressIndex: 3
+  questInProgressIndex: 7
   questCompletedIndex: 8
   quest: {fileID: 11400000, guid: 13aec6f02960f42408daca02af540f74, type: 2}
