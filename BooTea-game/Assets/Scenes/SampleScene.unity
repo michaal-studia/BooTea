@@ -35318,7 +35318,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2252819440931742184, guid: af62654bf2f907944804cb30fc3acf22, type: 3}
       propertyPath: audioGroups.Array.size
-      value: 20
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 2252819440931742184, guid: af62654bf2f907944804cb30fc3acf22, type: 3}
       propertyPath: audioGroups.Array.data[16].name
@@ -35335,6 +35335,14 @@ PrefabInstance:
     - target: {fileID: 2252819440931742184, guid: af62654bf2f907944804cb30fc3acf22, type: 3}
       propertyPath: audioGroups.Array.data[19].name
       value: StoveSuccess
+      objectReference: {fileID: 0}
+    - target: {fileID: 2252819440931742184, guid: af62654bf2f907944804cb30fc3acf22, type: 3}
+      propertyPath: audioGroups.Array.data[20].name
+      value: Error2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2252819440931742184, guid: af62654bf2f907944804cb30fc3acf22, type: 3}
+      propertyPath: audioGroups.Array.data[21].name
+      value: TeaSpoiled
       objectReference: {fileID: 0}
     - target: {fileID: 2252819440931742184, guid: af62654bf2f907944804cb30fc3acf22, type: 3}
       propertyPath: audioGroups.Array.data[0].audioClips.Array.size
@@ -35354,6 +35362,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2252819440931742184, guid: af62654bf2f907944804cb30fc3acf22, type: 3}
       propertyPath: audioGroups.Array.data[19].audioClips.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2252819440931742184, guid: af62654bf2f907944804cb30fc3acf22, type: 3}
+      propertyPath: audioGroups.Array.data[20].audioClips.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2252819440931742184, guid: af62654bf2f907944804cb30fc3acf22, type: 3}
+      propertyPath: audioGroups.Array.data[21].audioClips.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2252819440931742184, guid: af62654bf2f907944804cb30fc3acf22, type: 3}
@@ -35380,6 +35396,14 @@ PrefabInstance:
       propertyPath: 'audioGroups.Array.data[19].audioClips.Array.data[0]'
       value: 
       objectReference: {fileID: 8300000, guid: dda28e0b42b840e419115e57a38d2c2a, type: 3}
+    - target: {fileID: 2252819440931742184, guid: af62654bf2f907944804cb30fc3acf22, type: 3}
+      propertyPath: 'audioGroups.Array.data[20].audioClips.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 68d3410cddf0e3046a8da641c2a505da, type: 3}
+    - target: {fileID: 2252819440931742184, guid: af62654bf2f907944804cb30fc3acf22, type: 3}
+      propertyPath: 'audioGroups.Array.data[21].audioClips.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 5e43d0c04f9a7f0469a702ec89454c57, type: 3}
     - target: {fileID: 6514037391138685450, guid: af62654bf2f907944804cb30fc3acf22, type: 3}
       propertyPath: m_Name
       value: AudioManager

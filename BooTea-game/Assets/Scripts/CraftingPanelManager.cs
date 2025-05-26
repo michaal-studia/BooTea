@@ -54,6 +54,7 @@ public class CraftingPanelManager : MonoBehaviour
                 ClearSlot(slotTea);
                 ClearSlot(slotWater);
                 ClearSlot(slotAddons);
+                AudioManager.Play("StoveSuccess");
                 AudioManager.Play("TeaCrafted");
                 GameObject resultItem = Instantiate(recipe.resultPrefab, slotResult.transform);
                 resultItem.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
@@ -67,7 +68,8 @@ public class CraftingPanelManager : MonoBehaviour
             ClearSlot(slotTea);
             ClearSlot(slotWater);
             ClearSlot(slotAddons);
-            AudioManager.Play("Error");
+            AudioManager.Play("Error2");
+            AudioManager.Play("TeaSpoiled");
             Debug.Log("Brak pasującego przepisu. Tworzę zepsutą herbatę.");
             GameObject spoiledTea = Instantiate(spoiledTeaPrefab, slotResult.transform);
             spoiledTea.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;

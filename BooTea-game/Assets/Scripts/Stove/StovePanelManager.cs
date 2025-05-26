@@ -50,10 +50,8 @@ public class StovePanelManager : MonoBehaviour
                 GameObject resultItem = Instantiate(resultPrefab, slotResult.transform);
                 resultItem.GetComponent<RectTransform>().anchoredPosition = Vector2.zero;
                 slotResult.currentItem = resultItem;
-                if (qteSuccess)
-                {
-                    AudioManager.Play("StoveSuccess");
-                }
+
+                AudioManager.Play(qteSuccess ? "StoveSuccess" : "Error2");
                 AudioManager.Play(qteSuccess ? "StoveOff" : "KettleWhistle");
                 return;
             }
