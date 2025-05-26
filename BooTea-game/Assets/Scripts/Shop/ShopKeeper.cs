@@ -16,6 +16,7 @@ public class ShopKeeper : MonoBehaviour, IInteractable
     public static event Action<ShopManager, bool> OnShopStateChanged;
 
     private bool isShopOpen;
+    private bool tabOpened = false;
 
     public bool canInteract()
     {
@@ -57,11 +58,21 @@ public class ShopKeeper : MonoBehaviour, IInteractable
 
     public void OpenTeaLeavesShop()
     {
+        if (tabOpened == true)
+        {
+            AudioManager.Play("MaximizeSwoosh2");
+            tabOpened = false;
+        }
         shopManager.PopulateShopItems(shopTeaLeaves);
     }
 
     public void OpenExtrasShop()
     {
+        if (tabOpened == false)
+        {
+            AudioManager.Play("MaximizeSwoosh2");
+            tabOpened = true;
+        }
         shopManager.PopulateShopItems(shopExtras);
     }
     public void OpenCupsShop()

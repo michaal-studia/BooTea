@@ -45,7 +45,7 @@ public class NPCIndicatorController : MonoBehaviour
 
     public void ShowEmoteAfter2ndDialogue()
     {
-        StartCoroutine(ShowAndHideEmote());   
+        StartCoroutine(ShowAndHideEmote());
     }
 
     private IEnumerator ShowAndHideEmote()

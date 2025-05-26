@@ -31,9 +31,9 @@ MonoBehaviour:
   endDialogueLines: 000000000100010101
   autoProgressDelay: 1.5
   typingSpeed: 0.05
-  voiceSound: {fileID: 8300000, guid: b9c9d295e5d8e5b4997f8d7a56be8fd5, type: 3}
+  voiceSound: {fileID: 8300000, guid: df38fe548d775db47a7e94465e61b040, type: 3}
   voicePitch: 1
-  playerVoiceSound: {fileID: 8300000, guid: b9c9d295e5d8e5b4997f8d7a56be8fd5, type: 3}
+  playerVoiceSound: {fileID: 8300000, guid: 9f82d465723fce34a87e52af342ea43e, type: 3}
   playerVoicePitch: 1
   choices:
   - dialogueIndex: 2

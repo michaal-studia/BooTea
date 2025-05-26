@@ -38,7 +38,7 @@ MonoBehaviour:
   endDialogueLines: 0000000001000001000001000001
   autoProgressDelay: 1.5
   typingSpeed: 0.05
-  voiceSound: {fileID: 8300000, guid: 4e9fe136dd4acab4b9dd02b1af2bc885, type: 3}
+  voiceSound: {fileID: 8300000, guid: b66a5d29a8ff29645ada5b462e30376e, type: 3}
   voicePitch: 1
   playerVoiceSound: {fileID: 0}
   playerVoicePitch: 1
@@ -50,3 +50,7 @@ MonoBehaviour:
     - BackgroundMusic3
     - BackgroundMusic4
     nextDialogueIndexes: 0200000005000000080000000b000000
+    givesQuest: 
+  questInProgressIndex: 0
+  questCompletedIndex: 0
+  quest: {fileID: 0}

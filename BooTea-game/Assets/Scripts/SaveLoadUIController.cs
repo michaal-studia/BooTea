@@ -34,6 +34,7 @@ public class SaveLoadUIController : MonoBehaviour
     // These functions are now callable from Buttons
     public void OpenSaveUI()
     {
+        AudioManager.Play("ButtonAffirmative");
         uiManager.settingsPage.SetActive(false);
         uiManager.saveUIPage.SetActive(true);
         isSaveMode = true;
@@ -43,6 +44,7 @@ public class SaveLoadUIController : MonoBehaviour
 
     public void OpenLoadUI()
     {
+        AudioManager.Play("ButtonAffirmative");
         uiManager.settingsPage.SetActive(false);
         uiManager.loadUIPage.SetActive(true);
         isSaveMode = false;
@@ -52,6 +54,8 @@ public class SaveLoadUIController : MonoBehaviour
 
     public void GoBackToSettings()
     {
+
+        AudioManager.Play("ButtonDissenting");
         uiManager.saveUIPage.SetActive(false);
         uiManager.loadUIPage.SetActive(false);
         uiManager.settingsPage.SetActive(true);
@@ -67,6 +71,7 @@ public class SaveLoadUIController : MonoBehaviour
 
     public void SelectSlot(string slotName)
     {
+        AudioManager.Play("ButtonAffirmative");
         selectedSlotName = slotName;
         if (isSaveMode)
         {

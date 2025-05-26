@@ -1,5 +1,5 @@
-using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine;
 
 
 public class QuestController : MonoBehaviour
@@ -12,7 +12,7 @@ public class QuestController : MonoBehaviour
     {
         if (Instance == null) Instance = this;
         else Destroy(gameObject);
-        
+
         questUI = FindObjectOfType<QuestUI>();
         InventoryController.Instance.OnInventoryChanged += () => {
             QuestController.Instance.CheckInventoryForQuests();

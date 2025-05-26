@@ -26,7 +26,7 @@ MonoBehaviour:
   endDialogueLines: 00000101
   autoProgressDelay: 1.5
   typingSpeed: 0.08
-  voiceSound: {fileID: 8300000, guid: affdccd1176a1894fb7c928ee07b0e7e, type: 3}
+  voiceSound: {fileID: 8300000, guid: 35c68f013d61a7b46b4c770d859c68fa, type: 3}
   voicePitch: 1
   playerVoiceSound: {fileID: 8300000, guid: b9c9d295e5d8e5b4997f8d7a56be8fd5, type: 3}
   playerVoicePitch: 1
@@ -36,3 +36,7 @@ MonoBehaviour:
     - Pet?
     - Bye
     nextDialogueIndexes: 0200000003000000
+    givesQuest: 
+  questInProgressIndex: 0
+  questCompletedIndex: 0
+  quest: {fileID: 0}
