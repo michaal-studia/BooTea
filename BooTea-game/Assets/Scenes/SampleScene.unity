@@ -939,6 +939,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiManager: {fileID: 35879923}
   saveController: {fileID: 275001831}
+  saveTimePlayedText: {fileID: 324626442}
+  loadTimePlayedText: {fileID: 584148340}
+  saveSlotButtons:
+  - {fileID: 763167792}
+  - {fileID: 1167736094}
+  - {fileID: 791617674}
+  - {fileID: 68763631}
+  - {fileID: 2034700415}
+  - {fileID: 1550355422}
+  - {fileID: 207618323}
+  - {fileID: 878696059}
+  - {fileID: 1657182164}
+  - {fileID: 1060858163}
+  loadSlotButtons:
+  - {fileID: 926715368}
+  - {fileID: 1255028868}
+  - {fileID: 754124635}
+  - {fileID: 769577318}
+  - {fileID: 835522588}
+  - {fileID: 694057071}
+  - {fileID: 1657459463}
+  - {fileID: 1186175526}
+  - {fileID: 1865512270}
+  - {fileID: 1431956799}
+  emptySlotAlpha: 0.3
+  filledSlotAlpha: 1
 --- !u!1 &41986638
 GameObject:
   m_ObjectHideFlags: 0
@@ -1523,7 +1549,7 @@ GameObject:
   - component: {fileID: 68763632}
   - component: {fileID: 68763631}
   m_Layer: 5
-  m_Name: SaveSlot (3)
+  m_Name: Save #4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3479,7 +3505,7 @@ GameObject:
   - component: {fileID: 207618324}
   - component: {fileID: 207618323}
   m_Layer: 5
-  m_Name: SaveSlot (6)
+  m_Name: Save #7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8825,7 +8851,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Content: {fileID: 580439113}
-  m_Horizontal: 1
+  m_Horizontal: 0
   m_Vertical: 1
   m_MovementType: 1
   m_Elasticity: 0.1
@@ -16575,7 +16601,7 @@ GameObject:
   - component: {fileID: 694057072}
   - component: {fileID: 694057071}
   m_Layer: 5
-  m_Name: SaveSlot (5)
+  m_Name: Save #6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17487,7 +17513,7 @@ GameObject:
   - component: {fileID: 754124636}
   - component: {fileID: 754124635}
   m_Layer: 5
-  m_Name: SaveSlot (2)
+  m_Name: Save #3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17699,7 +17725,7 @@ GameObject:
   - component: {fileID: 763167793}
   - component: {fileID: 763167792}
   m_Layer: 5
-  m_Name: SaveSlot
+  m_Name: Save #1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17939,7 +17965,7 @@ GameObject:
   - component: {fileID: 769577319}
   - component: {fileID: 769577318}
   m_Layer: 5
-  m_Name: SaveSlot (3)
+  m_Name: Save #4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19085,7 +19111,7 @@ GameObject:
   - component: {fileID: 791617675}
   - component: {fileID: 791617674}
   m_Layer: 5
-  m_Name: SaveSlot (2)
+  m_Name: Save #3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19817,7 +19843,7 @@ GameObject:
   - component: {fileID: 835522589}
   - component: {fileID: 835522588}
   m_Layer: 5
-  m_Name: SaveSlot (4)
+  m_Name: Save #5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20168,7 +20194,7 @@ GameObject:
   - component: {fileID: 878696060}
   - component: {fileID: 878696059}
   m_Layer: 5
-  m_Name: SaveSlot (7)
+  m_Name: Save #8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24036,7 +24062,7 @@ GameObject:
   - component: {fileID: 926715369}
   - component: {fileID: 926715368}
   m_Layer: 5
-  m_Name: SaveSlot
+  m_Name: Save #1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25724,7 +25750,7 @@ GameObject:
   - component: {fileID: 1060858164}
   - component: {fileID: 1060858163}
   m_Layer: 5
-  m_Name: SaveSlot (9)
+  m_Name: Save #10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26600,7 +26626,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Content: {fileID: 698732717}
-  m_Horizontal: 1
+  m_Horizontal: 0
   m_Vertical: 1
   m_MovementType: 1
   m_Elasticity: 0.1
@@ -26745,7 +26771,7 @@ GameObject:
   - component: {fileID: 1167736095}
   - component: {fileID: 1167736094}
   m_Layer: 5
-  m_Name: SaveSlot (1)
+  m_Name: Save #2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27253,7 +27279,7 @@ GameObject:
   - component: {fileID: 1186175527}
   - component: {fileID: 1186175526}
   m_Layer: 5
-  m_Name: SaveSlot (7)
+  m_Name: Save #8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -34818,7 +34844,7 @@ GameObject:
   - component: {fileID: 1255028869}
   - component: {fileID: 1255028868}
   m_Layer: 5
-  m_Name: SaveSlot (1)
+  m_Name: Save #2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -36477,7 +36503,7 @@ GameObject:
   - component: {fileID: 1431956800}
   - component: {fileID: 1431956799}
   m_Layer: 5
-  m_Name: SaveSlot (9)
+  m_Name: Save #10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -37889,7 +37915,7 @@ GameObject:
   - component: {fileID: 1550355423}
   - component: {fileID: 1550355422}
   m_Layer: 5
-  m_Name: SaveSlot (5)
+  m_Name: Save #6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -38352,6 +38378,11 @@ MonoBehaviour:
   musicSlider: {fileID: 1289199378}
   sfxSlider: {fileID: 227589600}
   voiceSlider: {fileID: 149545286}
+--- !u!1 &1582707983 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3423124821660942016, guid: fd87bebebb3edcf4f9cc511a7215cadc, type: 3}
+  m_PrefabInstance: {fileID: 8979994524929001954}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1600479935
 GameObject:
   m_ObjectHideFlags: 0
@@ -41265,7 +41296,7 @@ GameObject:
   - component: {fileID: 1657182165}
   - component: {fileID: 1657182164}
   m_Layer: 5
-  m_Name: SaveSlot (8)
+  m_Name: Save #9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -41398,7 +41429,7 @@ GameObject:
   - component: {fileID: 1657459464}
   - component: {fileID: 1657459463}
   m_Layer: 5
-  m_Name: SaveSlot (6)
+  m_Name: Save #7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -44713,7 +44744,7 @@ MonoBehaviour:
     teaPrefab: {fileID: 6983367710039956740, guid: 8c28645a0f5e8ad41af8b744a4ebefa2, type: 3}
     waterPrefab: {fileID: 4678585175034573676, guid: 4e3cbe41643dad94eb06942f18f63136, type: 3}
     addonPrefab: {fileID: 2863920878645034395, guid: e7b30f24c0bd84d46a41d6149564b184, type: 3}
-    resultPrefab: {fileID: 3423124821660942016, guid: fd87bebebb3edcf4f9cc511a7215cadc, type: 3}
+    resultPrefab: {fileID: 1582707983}
   - teaCupPrefab: {fileID: 2383687231310588358, guid: 8994b3fbba3834f43a5992e3de56dc5c, type: 3}
     teaPrefab: {fileID: 6983367710039956740, guid: 8c28645a0f5e8ad41af8b744a4ebefa2, type: 3}
     waterPrefab: {fileID: 2863920878645034395, guid: e7b30f24c0bd84d46a41d6149564b184, type: 3}
@@ -44918,7 +44949,7 @@ GameObject:
   - component: {fileID: 1865512271}
   - component: {fileID: 1865512270}
   m_Layer: 5
-  m_Name: SaveSlot (8)
+  m_Name: Save #9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47335,7 +47366,7 @@ GameObject:
   - component: {fileID: 2034700416}
   - component: {fileID: 2034700415}
   m_Layer: 5
-  m_Name: SaveSlot (4)
+  m_Name: Save #5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

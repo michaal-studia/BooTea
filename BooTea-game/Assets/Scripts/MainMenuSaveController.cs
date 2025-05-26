@@ -1,15 +1,26 @@
 using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MainMenuSaveController : MonoBehaviour
 {
     [Header("UI References")]
     public GameObject loadUIPanel;
     public TMPro.TMP_Text selectedSlotText;
+    public TMPro.TMP_Text timePlayedText; // New field for time display
+
+    [Header("Slot Buttons")]
+    public Button[] slotButtons; // Array of slot buttons
+
+    [Header("Visual Settings")]
+    [Range(0f, 1f)]
+    public float emptySlotAlpha = 0.3f; // Transparency for empty slots
+    [Range(0f, 1f)]
+    public float filledSlotAlpha = 1f; // Opacity for filled slots
 
     [Header("Other GameObjects")]
-    public GameObject leavesSystem; // <- Dodaj obiekt systemu cz¹steczek
+    public GameObject leavesSystem;
 
     private string selectedSlotName = "";
 
@@ -21,11 +32,55 @@ public class MainMenuSaveController : MonoBehaviour
             GameObject gameManagerObj = new GameObject("GameManager");
             gameManagerObj.AddComponent<GameManager>();
         }
+
+        // Update slot button visuals on start
+        UpdateSlotButtonVisuals();
     }
 
     private string GetSavePath(string slotName)
     {
         return Path.Combine(Application.persistentDataPath, $"saveData_{slotName}.json");
+    }
+
+    public void UpdateSlotButtonVisuals()
+    {
+        if (slotButtons == null) return;
+
+        for (int i = 0; i < slotButtons.Length; i++)
+        {
+            if (slotButtons[i] == null) continue;
+
+            string slotName = $"Save #{i + 1}"; // Assuming slots are named Save #1, Save #2, etc.
+            bool hasData = HasSaveInSlot(slotName);
+
+            SetSlotButtonVisual(slotButtons[i], hasData);
+        }
+    }
+
+    private void SetSlotButtonVisual(Button button, bool hasData)
+    {
+        if (button == null) return;
+
+        // Get all Image components (button itself and children)
+        Image[] images = button.GetComponentsInChildren<Image>();
+
+        float targetAlpha = hasData ? filledSlotAlpha : emptySlotAlpha;
+
+        foreach (Image img in images)
+        {
+            Color color = img.color;
+            color.a = targetAlpha;
+            img.color = color;
+        }
+
+        // Also update text components if any
+        TMPro.TMP_Text[] texts = button.GetComponentsInChildren<TMPro.TMP_Text>();
+        foreach (TMPro.TMP_Text text in texts)
+        {
+            Color color = text.color;
+            color.a = targetAlpha;
+            text.color = color;
+        }
     }
 
     public void OpenLoadUI()
@@ -35,6 +90,13 @@ public class MainMenuSaveController : MonoBehaviour
             loadUIPanel.SetActive(true);
             leavesSystem.SetActive(false);
             AudioManager.Play("ButtonAffirmative");
+
+            // Update visuals when opening the UI
+            UpdateSlotButtonVisuals();
+
+            // Clear selection when opening
+            selectedSlotName = "";
+            UpdateSelectedSlotDisplay();
         }
     }
 
@@ -45,8 +107,7 @@ public class MainMenuSaveController : MonoBehaviour
             leavesSystem.SetActive(true);
             loadUIPanel.SetActive(false);
             selectedSlotName = "";
-            if (selectedSlotText != null)
-                selectedSlotText.text = "";
+            UpdateSelectedSlotDisplay();
             AudioManager.Play("ButtonDissenting");
         }
     }
@@ -58,10 +119,7 @@ public class MainMenuSaveController : MonoBehaviour
         if (File.Exists(savePath))
         {
             selectedSlotName = slotName;
-            if (selectedSlotText != null)
-            {
-                selectedSlotText.text = slotName;
-            }
+            UpdateSelectedSlotDisplay();
             Debug.Log($"Selected slot: {slotName}");
             AudioManager.Play("ButtonAffirmative");
         }
@@ -69,12 +127,58 @@ public class MainMenuSaveController : MonoBehaviour
         {
             // No save in this slot - clear selection
             selectedSlotName = "";
-            if (selectedSlotText != null)
-            {
-                selectedSlotText.text = "No Save Found";
-            }
+            UpdateSelectedSlotDisplay();
             Debug.Log($"No save found in slot: {slotName}");
             AudioManager.Play("ButtonDissenting");
+        }
+    }
+
+    private void UpdateSelectedSlotDisplay()
+    {
+        if (string.IsNullOrEmpty(selectedSlotName))
+        {
+            // No slot selected or empty slot
+            if (selectedSlotText != null)
+                selectedSlotText.text = "";
+            if (timePlayedText != null)
+                timePlayedText.text = "";
+        }
+        else
+        {
+            // Valid slot selected
+            if (selectedSlotText != null)
+                selectedSlotText.text = selectedSlotName;
+
+            // Get and display time played
+            SaveData saveData = GetSaveDataFromSlot(selectedSlotName);
+            if (saveData != null && timePlayedText != null)
+            {
+                timePlayedText.text = $"TIME PLAYED: {saveData.GetFormattedPlayTime()}";
+            }
+            else if (timePlayedText != null)
+            {
+                timePlayedText.text = "TIME PLAYED: 00:00";
+            }
+        }
+    }
+
+    private SaveData GetSaveDataFromSlot(string slotName)
+    {
+        string path = GetSavePath(slotName);
+        if (!File.Exists(path))
+        {
+            return null;
+        }
+
+        try
+        {
+            string saveJson = File.ReadAllText(path);
+            return JsonUtility.FromJson<SaveData>(saveJson);
+        }
+        catch (System.Exception e)
+        {
+            Debug.LogError($"Failed to read save data from slot {slotName}: {e.Message}");
+            return null;
         }
     }
 
@@ -115,15 +219,57 @@ public class MainMenuSaveController : MonoBehaviour
         }
     }
 
+    public void DeleteSelectedSlot()
+    {
+        if (string.IsNullOrEmpty(selectedSlotName)) return;
+        DeleteSlot(selectedSlotName);
+
+        UpdateSpecificSlotVisual(selectedSlotName);
+        UpdateSlotButtonVisuals();
+        // Clear selection after deletion
+        selectedSlotName = "";
+        UpdateSelectedSlotDisplay();
+    }
+
+    public void DeleteSlot(string slotName)
+    {
+        string path = GetSavePath(slotName);
+        if (File.Exists(path))
+        {
+            File.Delete(path);
+            Debug.Log($"Deleted save slot: {slotName}");
+        }
+        else
+        {
+            Debug.LogWarning($"No save to delete in slot: {slotName}");
+        }
+    }
+
     public bool IsSlotEmpty(string slotName)
     {
         string savePath = GetSavePath(slotName);
         return !File.Exists(savePath);
     }
 
-    // Method to check if a slot has a save (useful for UI visual updates)
     public bool HasSaveInSlot(string slotName)
     {
         return !IsSlotEmpty(slotName);
+    }
+
+    // Method to update a specific slot's visual after save/delete operations
+    public void UpdateSpecificSlotVisual(string slotName)
+    {
+        if (slotButtons == null) return;
+
+        // Extract slot number from slot name (assuming format like "Save #1", "Save #2", etc.)
+        if (slotName.StartsWith("Save #") && int.TryParse(slotName.Substring(6), out int slotNumber))
+        {
+            int index = slotNumber - 1; // Convert to 0-based index
+            if (index >= 0 && index < slotButtons.Length && slotButtons[index] != null)
+            {
+                bool hasData = HasSaveInSlot(slotName);
+                SetSlotButtonVisual(slotButtons[index], hasData);
+            }
+        }
     }
 }

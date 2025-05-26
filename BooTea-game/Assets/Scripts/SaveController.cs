@@ -27,6 +27,13 @@ public class SaveController : MonoBehaviour
         if (hotbarController == null) Debug.LogError("HotbarController not found!");
         if (itemDictionary == null) Debug.LogError("ItemDictionary not found!");
 
+        // Initialize time tracker if it doesn't exist
+        if (GameTimeTracker.Instance == null)
+        {
+            GameObject timeTrackerObj = new GameObject("GameTimeTracker");
+            timeTrackerObj.AddComponent<GameTimeTracker>();
+        }
+
         // Check if we need to load a save from main menu
         CheckForPendingLoad();
     }
@@ -38,10 +45,24 @@ public class SaveController : MonoBehaviour
             Debug.Log($"Loading pending save: {GameManager.Instance.loadedSlotName}");
             StartCoroutine(LoadPendingSaveCoroutine());
         }
+        else
+        {
+            // If starting fresh, reset the timer
+            if (GameTimeTracker.Instance != null)
+            {
+                GameTimeTracker.Instance.ResetTimer();
+            }
+        }
     }
 
     private IEnumerator LoadPendingSaveCoroutine()
     {
+        // Wait for QuestController to be initialized
+        while (QuestController.Instance == null)
+        {
+            yield return null;
+        }
+
         // Wait a few frames to ensure all components are ready
         yield return null;
 
@@ -68,7 +89,17 @@ public class SaveController : MonoBehaviour
             // Load inventory and hotbar items
             yield return LoadItemsCoroutine(saveData);
 
-            Debug.Log($"Successfully loaded save from slot: {GameManager.Instance.loadedSlotName}");
+            // Load quest progress after inventory is loaded
+            if (saveData.questProgressData != null && QuestController.Instance != null)
+            {
+                QuestController.Instance.LoadQuestProgress(saveData.questProgressData);
+            }
+
+            // Set the play time in the time tracker
+            if (GameTimeTracker.Instance != null)
+            {
+                GameTimeTracker.Instance.SetTotalPlayTime(saveData.totalPlayTime);
+            }
 
             // Clear the pending load
             GameManager.Instance.ClearPendingLoad();
@@ -103,15 +134,16 @@ public class SaveController : MonoBehaviour
             mapBoundary = cinemachineConfiner.BoundingShape2D?.gameObject.name,
             inventorySaveData = inventoryItems ?? new List<InventorySaveData>(),
             hotbarSaveData = hotbarItems ?? new List<InventorySaveData>(),
-            questProgressData = QuestController.Instance.activateQuests
-
+            questProgressData = QuestController.Instance.activateQuests,
+            totalPlayTime = GameTimeTracker.Instance != null ? GameTimeTracker.Instance.GetCurrentTotalPlayTime() : 0f,
+            lastSaveDate = System.DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")
         };
 
         string path = GetSavePath(slotName);
         string saveJson = JsonUtility.ToJson(saveData, true);
         File.WriteAllText(path, saveJson);
 
-        Debug.Log($"Game saved to slot: {slotName}");
+        Debug.Log($"Game saved to slot: {slotName} with play time: {saveData.GetFormattedPlayTime()}");
     }
 
     public void LoadGameFromSlot(string slotName)
@@ -144,6 +176,12 @@ public class SaveController : MonoBehaviour
             cinemachineConfiner.BoundingShape2D = boundaryObject.GetComponent<PolygonCollider2D>();
         }
 
+        // Set the play time in the time tracker
+        if (GameTimeTracker.Instance != null)
+        {
+            GameTimeTracker.Instance.SetTotalPlayTime(saveData.totalPlayTime);
+        }
+
         // Load inventory and hotbar items with coroutine
         StartCoroutine(LoadItemsCoroutine(saveData));
         QuestController.Instance.LoadQuestProgress(saveData.questProgressData);
@@ -169,6 +207,27 @@ public class SaveController : MonoBehaviour
         else
         {
             Debug.LogWarning($"No save to delete in slot: {slotName}");
+        }
+    }
+
+    // Helper method to get save data for UI display
+    public SaveData GetSaveDataFromSlot(string slotName)
+    {
+        string path = GetSavePath(slotName);
+        if (!File.Exists(path))
+        {
+            return null;
+        }
+
+        try
+        {
+            string saveJson = File.ReadAllText(path);
+            return JsonUtility.FromJson<SaveData>(saveJson);
+        }
+        catch (System.Exception e)
+        {
+            Debug.LogError($"Failed to read save data from slot {slotName}: {e.Message}");
+            return null;
         }
     }
 }
