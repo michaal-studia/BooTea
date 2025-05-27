@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class CraftingPanelManager : MonoBehaviour
@@ -49,7 +49,7 @@ public class CraftingPanelManager : MonoBehaviour
             }
         }
         AudioManager.Play("Error");
-        Debug.Log("Brak pasuj�cego przepisu.");
+        Debug.Log("Brak pasującego przepisu.");
     }
 
     private int GetItemID(Slot slot)
