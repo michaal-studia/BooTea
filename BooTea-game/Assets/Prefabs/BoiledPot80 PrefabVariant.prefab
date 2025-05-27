@@ -18,9 +18,9 @@ GameObject:
   - component: {fileID: 818242839775427332}
   - component: {fileID: 6098566758400661321}
   m_Layer: 5
-  m_Name: FilledPot93 PrefabVariant
+  m_Name: BoiledPot80 PrefabVariant
   m_TagString: Item
-  m_Icon: {fileID: 2800000, guid: 1fa94f93d51fa3241a5b6c6034337225, type: 3}
+  m_Icon: {fileID: 2800000, guid: e1e30ee6eaad32d43a7da5d325a899ac, type: 3}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -71,7 +71,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1fa94f93d51fa3241a5b6c6034337225, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e1e30ee6eaad32d43a7da5d325a899ac, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -93,10 +93,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cab02c9354e3ce14b82f4c0b7f7dc2ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ID: 16
-  Name: "Filled Pot 93\xB0C"
+  ID: 23
+  Name: "Filled Pot 80\xB0C"
   Description: Hot     water     at     perfect     temp.
-  itemIcon: {fileID: 21300000, guid: 1fa94f93d51fa3241a5b6c6034337225, type: 3}
+  itemIcon: {fileID: 21300000, guid: e1e30ee6eaad32d43a7da5d325a899ac, type: 3}
 --- !u!114 &2616456008101716811
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -167,7 +167,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 1fa94f93d51fa3241a5b6c6034337225, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e1e30ee6eaad32d43a7da5d325a899ac, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
