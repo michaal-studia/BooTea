@@ -14039,13 +14039,18 @@ MonoBehaviour:
   - {fileID: 8695313518613234180, guid: fd87bebebb3edcf4f9cc511a7215cadc, type: 3}
   - {fileID: 2023017958980452334, guid: 05a1f6b639cf1a34d81f478937b3ab1b, type: 3}
   - {fileID: 2023017958980452334, guid: 9a91f035650da6046941349cff48eaa9, type: 3}
-  - {fileID: 2343423828065416900, guid: 4e3cbe41643dad94eb06942f18f63136, type: 3}
   - {fileID: 1109305160093772291, guid: e01ab0ffde5ede4479fa2dfef5bd98aa, type: 3}
   - {fileID: 2373371302756826913, guid: 014405bb4d75f0c4791a0b3a9f0c4d0b, type: 3}
   - {fileID: 3982073838054976718, guid: 94ab426a315ae0040b2c21be53ca9d08, type: 3}
   - {fileID: 3982073838054976718, guid: fc1fc8deca98e5841a1ea9f68cc8af6c, type: 3}
   - {fileID: 1109305160093772291, guid: 659c65f248588a443abfbf791f3f8b97, type: 3}
   - {fileID: 1109305160093772291, guid: 89418e7c6a979544e8f9965373edbe2a, type: 3}
+  - {fileID: 2343423828065416900, guid: d203e2c36a84aef44bbe13897ac3a2c5, type: 3}
+  - {fileID: 2343423828065416900, guid: 0516960032385634ab79a59f2c063f81, type: 3}
+  - {fileID: 2343423828065416900, guid: c0de332f06f6fe94192cd322bcda2595, type: 3}
+  - {fileID: 2343423828065416900, guid: d7f8d45774b2c9f449fe3776eeeb5690, type: 3}
+  - {fileID: 2343423828065416900, guid: 637dc8c308039cd42aedefbf61ceeb02, type: 3}
+  - {fileID: 2343423828065416900, guid: d1c51e72b06e41f48a57fd70bd9a6666, type: 3}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -20344,7 +20349,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 938486962}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 6
+  m_MaxValue: 5
   m_WholeNumbers: 1
   m_Value: 0
   m_OnValueChanged:
@@ -36623,9 +36628,29 @@ MonoBehaviour:
   slotResult: {fileID: 320137203}
   recipes:
   - filledPotPrefab: {fileID: 5420540017673487146, guid: 9a91f035650da6046941349cff48eaa9, type: 3}
-    successResultPrefab: {fileID: 4678585175034573676, guid: 4e3cbe41643dad94eb06942f18f63136, type: 3}
+    successResultPrefab: {fileID: 4678585175034573676, guid: d1c51e72b06e41f48a57fd70bd9a6666, type: 3}
     failResultPrefab: {fileID: 86848639610744441, guid: b233286e316fa30479350a452cfe55cd, type: 3}
     requiredTemperature: 95
+  - filledPotPrefab: {fileID: 5420540017673487146, guid: 9a91f035650da6046941349cff48eaa9, type: 3}
+    successResultPrefab: {fileID: 4678585175034573676, guid: d203e2c36a84aef44bbe13897ac3a2c5, type: 3}
+    failResultPrefab: {fileID: 86848639610744441, guid: b233286e316fa30479350a452cfe55cd, type: 3}
+    requiredTemperature: 70
+  - filledPotPrefab: {fileID: 5420540017673487146, guid: 9a91f035650da6046941349cff48eaa9, type: 3}
+    successResultPrefab: {fileID: 4678585175034573676, guid: 0516960032385634ab79a59f2c063f81, type: 3}
+    failResultPrefab: {fileID: 86848639610744441, guid: b233286e316fa30479350a452cfe55cd, type: 3}
+    requiredTemperature: 75
+  - filledPotPrefab: {fileID: 5420540017673487146, guid: 9a91f035650da6046941349cff48eaa9, type: 3}
+    successResultPrefab: {fileID: 4678585175034573676, guid: c0de332f06f6fe94192cd322bcda2595, type: 3}
+    failResultPrefab: {fileID: 86848639610744441, guid: b233286e316fa30479350a452cfe55cd, type: 3}
+    requiredTemperature: 80
+  - filledPotPrefab: {fileID: 5420540017673487146, guid: 9a91f035650da6046941349cff48eaa9, type: 3}
+    successResultPrefab: {fileID: 4678585175034573676, guid: 637dc8c308039cd42aedefbf61ceeb02, type: 3}
+    failResultPrefab: {fileID: 86848639610744441, guid: b233286e316fa30479350a452cfe55cd, type: 3}
+    requiredTemperature: 90
+  - filledPotPrefab: {fileID: 5420540017673487146, guid: 9a91f035650da6046941349cff48eaa9, type: 3}
+    successResultPrefab: {fileID: 4678585175034573676, guid: d7f8d45774b2c9f449fe3776eeeb5690, type: 3}
+    failResultPrefab: {fileID: 86848639610744441, guid: b233286e316fa30479350a452cfe55cd, type: 3}
+    requiredTemperature: 85
 --- !u!114 &1382947791
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45360,7 +45385,7 @@ MonoBehaviour:
   recipes:
   - teaCupPrefab: {fileID: 2383687231310588358, guid: 8994b3fbba3834f43a5992e3de56dc5c, type: 3}
     teaPrefab: {fileID: 6983367710039956740, guid: 8c28645a0f5e8ad41af8b744a4ebefa2, type: 3}
-    waterPrefab: {fileID: 4678585175034573676, guid: 4e3cbe41643dad94eb06942f18f63136, type: 3}
+    waterPrefab: {fileID: 4678585175034573676, guid: d1c51e72b06e41f48a57fd70bd9a6666, type: 3}
     addonPrefab: {fileID: 2863920878645034395, guid: e7b30f24c0bd84d46a41d6149564b184, type: 3}
     resultPrefab: {fileID: 1582707983}
   - teaCupPrefab: {fileID: 2383687231310588358, guid: 8994b3fbba3834f43a5992e3de56dc5c, type: 3}
@@ -48287,8 +48312,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 130.6, y: 6.2194}
-  m_SizeDelta: {x: 112.3064, y: 73.801}
+  m_AnchoredPosition: {x: 124.5, y: 13.369}
+  m_SizeDelta: {x: 90, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2044506466
 MonoBehaviour:
@@ -48310,7 +48335,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 5254128946787034650, guid: de8f04e30812ab64d983542190b2774d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 46c031fdb443a8b48a92602b8fd6a7c3, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
