@@ -1,10 +1,9 @@
-using UnityEngine;
 using System.Collections.Generic;
-using UnityEngine.Events;
-[CreateAssetMenu(menuName="Quests/Quest")]
+using UnityEngine;
+[CreateAssetMenu(menuName = "Quests/Quest")]
 public class Quest : ScriptableObject
 {
-    public string QuestID; 
+    public string QuestID;
     public string QuestName;
     public string description;
     public List<QuestObjective> objectives;

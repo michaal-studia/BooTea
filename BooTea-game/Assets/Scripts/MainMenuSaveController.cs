@@ -237,10 +237,12 @@ public class MainMenuSaveController : MonoBehaviour
         if (File.Exists(path))
         {
             File.Delete(path);
+            AudioManager.Play("ButtonAffirmative");
             Debug.Log($"Deleted save slot: {slotName}");
         }
         else
         {
+            AudioManager.Play("ButtonDissenting");
             Debug.LogWarning($"No save to delete in slot: {slotName}");
         }
     }

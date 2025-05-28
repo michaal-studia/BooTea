@@ -51,6 +51,42 @@ public class NPC : MonoBehaviour, IInteractable
         if (dialogueData == null || (PauseController.IsGamePaused && !isDialogueActive))
             return;
 
+        // First check and update quest state if needed
+        if (dialogueData.quest != null && questState == QuestState.InProgress)
+        {
+            var questProgress = QuestController.Instance.LoadQuestProgress(dialogueData.quest.QuestID);
+            if (questProgress != null)
+            {
+                bool allOtherObjectivesComplete = true;
+                foreach (var obj in questProgress.objectives)
+                {
+                    if (obj.type == ObjectiveType.TalkNPC) continue;
+                    if (!obj.isCompleted)
+                    {
+                        allOtherObjectivesComplete = false;
+                        break;
+                    }
+                }
+
+                if (allOtherObjectivesComplete)
+                {
+                    foreach (var obj in questProgress.objectives)
+                    {
+                        if (obj.type == ObjectiveType.TalkNPC && obj.currentAmount < obj.requiredAmount)
+                        {
+                            obj.currentAmount = obj.requiredAmount;
+                            QuestController.Instance.UpdateQuestProgress(dialogueData.quest);
+                            questState = QuestState.Compleated;
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+
+        // Then sync the quest state again to get the updated state
+        SyncQuestState();
+
         if (isDialogueActive)
             NextLine();
         else

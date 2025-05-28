@@ -14,7 +14,8 @@ public class QuestController : MonoBehaviour
         else Destroy(gameObject);
 
         questUI = FindObjectOfType<QuestUI>();
-        InventoryController.Instance.OnInventoryChanged += () => {
+        InventoryController.Instance.OnInventoryChanged += () =>
+        {
             QuestController.Instance.CheckInventoryForQuests();
             questUI.UpdateQuestUI();
         }; // Subscribe to inventory changes
@@ -26,10 +27,10 @@ public class QuestController : MonoBehaviour
 
         activateQuests.Add(new QuestProgress(quest));
         CheckInventoryForQuests(); // Check inventory for quest items
-        questUI.UpdateQuestUI(); 
+        questUI.UpdateQuestUI();
     }
 
-    public bool IsQuestActive(string questID)=> activateQuests.Exists(q => q.QuestID == questID);
+    public bool IsQuestActive(string questID) => activateQuests.Exists(q => q.QuestID == questID);
 
     public bool IsQuestCompleted(string questID)
     {
@@ -45,13 +46,14 @@ public class QuestController : MonoBehaviour
         {
             if (quest.isCompleted)
                 continue; // Pomijaj ukoñczone questy
-            foreach (QuestObjective questObjective in quest.objectives) {
+            foreach (QuestObjective questObjective in quest.objectives)
+            {
                 if (questObjective.type != ObjectiveType.CollectItem) continue;
                 if (!int.TryParse(questObjective.objectiveID, out int itemID)) continue;
 
                 int newAmount = itemCounts.TryGetValue(itemID, out int count) ? Mathf.Min(count, questObjective.requiredAmount) : 0;
 
-                if (questObjective.currentAmount != newAmount) 
+                if (questObjective.currentAmount != newAmount)
                 {
                     questObjective.currentAmount = newAmount;
                 }
@@ -65,6 +67,20 @@ public class QuestController : MonoBehaviour
 
         CheckInventoryForQuests(); // Ensure inventory is checked after loading quests
         questUI.UpdateQuestUI(); // Update the quest UI after loading quests
+    }
+
+    public QuestProgress LoadQuestProgress(string questID)
+    {
+        return activateQuests.Find(q => q.QuestID == questID);
+    }
+
+    public void UpdateQuestProgress(Quest quest)
+    {
+        var questProgress = activateQuests.Find(q => q.QuestID == quest.QuestID);
+        if (questProgress != null && questProgress.isCompleted)
+        {
+            questUI.UpdateQuestUI();
+        }
     }
 
 }
